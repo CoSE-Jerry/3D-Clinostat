@@ -8,6 +8,7 @@ import sys
 import Settings
 
 # import custom functions
+import Command
  
 # import Qt content
 import PyQt5
