@@ -7,3 +7,9 @@ def init():
     global IR_STAT
     IR_STAT = False
 
+    global inner_RPM
+    inner_RPM = 3
+
+    global outer_RPM
+    outer_RPM = 3
+

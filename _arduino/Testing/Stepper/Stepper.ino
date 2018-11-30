@@ -1,16 +1,16 @@
 /* This example shows basic use of the AMIS-30543 stepper motor
-driver.
+  driver.
 
-It shows how to initialize the driver, set the current limit, set
-the micro-stepping mode, and enable the driver.  It shows how to
-send pulses to the NXT/STEP pin to get the driver to take steps
-and how to switch directions using the DIR pin.  The DO pin is
-not used and does not need to be connected.
+  It shows how to initialize the driver, set the current limit, set
+  the micro-stepping mode, and enable the driver.  It shows how to
+  send pulses to the NXT/STEP pin to get the driver to take steps
+  and how to switch directions using the DIR pin.  The DO pin is
+  not used and does not need to be connected.
 
-Before using this example, be sure to change the
-setCurrentMilliamps line to have an appropriate current limit for
-your system.  Also, see this library's documentation for
-information about how to connect the driver:
+  Before using this example, be sure to change the
+  setCurrentMilliamps line to have an appropriate current limit for
+  your system.  Also, see this library's documentation for
+  information about how to connect the driver:
 
     http://pololu.github.io/amis-30543-arduino/
 */
@@ -23,14 +23,15 @@ const uint8_t amisStepPin = 3;
 const uint8_t amisSlaveSelect = 4;
 
 uint8_t pause;
-uint8_t RPM=3;
+uint8_t RPM = 3;
+String input;
 
 AMIS30543 stepper;
 
 void setup()
 {
-  Serial.begin(9600);
-  
+  Serial.begin(19200);
+
   SPI.begin();
   stepper.init(amisSlaveSelect);
 
@@ -57,7 +58,7 @@ void setup()
   stepper.enableDriver();
 
 
-  pause=((60/RPM)/0.0512)-4;
+  pause = ((60 / RPM) / 0.0512) - 4;
   Serial.println(pause);
 }
 
@@ -70,8 +71,17 @@ void loop()
     step();
   }
 
-  delay(5000);
+  delay(2000);
 
+  if (Serial.available()) {
+    delay(30);  //delay to allow buffer to fill
+    while (Serial.available() > 0) {
+      char c = Serial.read();  //gets one byte from serial buffer
+      input += c; //makes the string readString
+    }
+    input.trim();
+    Serial.println(input);
+  }
 
 }
 

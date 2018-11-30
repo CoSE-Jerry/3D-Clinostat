@@ -8,23 +8,27 @@
 int serial_CMD;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRBW + NEO_KHZ800);
+#include <SoftwareSerial.h>
 
+//SoftwareSerial innerSerial(10, 9); // RX, TX
+SoftwareSerial outterSerial(5, 4); // RX, TX
 
 void setup() {
 
   pinMode(2, OUTPUT);
   digitalWrite(2, HIGH);
   Serial.begin(9600);
+  outterSerial.begin(19200);
 
   strip.setBrightness(BRIGHTNESS);
   strip.begin();
   strip.show();
 
-    colorWipe(strip.Color(100, 50, 50, 50), 3);
-    colorWipe(strip.Color(50, 100, 50, 50), 3);
-    colorWipe(strip.Color(50, 50, 100, 50), 3);
-    colorWipe(strip.Color(50, 50, 50, 100), 3);
-    colorWipe(strip.Color(0, 0, 0, 0), 1);
+  colorWipe(strip.Color(100, 50, 50, 50), 3);
+  colorWipe(strip.Color(50, 100, 50, 50), 3);
+  colorWipe(strip.Color(50, 50, 100, 50), 3);
+  colorWipe(strip.Color(50, 50, 50, 100), 3);
+  colorWipe(strip.Color(0, 0, 0, 0), 1);
 }
 
 void loop() {
@@ -58,14 +62,21 @@ void loop() {
   if (serial_CMD == 53)
   {
     digitalWrite(2, HIGH);
-    Serial.println("false");
   }
 
   if (serial_CMD == 54)
   {
     digitalWrite(2, LOW);
-    Serial.println("false");
   }
+
+  if (serial_CMD == 55)
+  {
+
+    Serial.println("sent");
+  }
+  outterSerial.write("13");
+  delay(1000);
+
 }
 
 

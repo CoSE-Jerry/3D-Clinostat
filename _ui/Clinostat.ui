@@ -507,7 +507,7 @@
        <number>15</number>
       </property>
      </widget>
-     <widget class="QSpinBox" name="spinBox_2">
+     <widget class="QSpinBox" name="outer_spinBox">
       <property name="geometry">
        <rect>
         <x>140</x>
@@ -583,9 +583,9 @@
       <widget class="QSpinBox" name="spinBox_3">
        <property name="geometry">
         <rect>
-         <x>80</x>
-         <y>20</y>
-         <width>51</width>
+         <x>20</x>
+         <y>40</y>
+         <width>101</width>
          <height>22</height>
         </rect>
        </property>
@@ -595,58 +595,58 @@
         <rect>
          <x>10</x>
          <y>20</y>
-         <width>61</width>
+         <width>111</width>
          <height>21</height>
         </rect>
        </property>
        <property name="text">
-        <string>Current Limit:</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Current Limit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spinBox_4">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>90</y>
+         <width>101</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spinBox_5">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>140</y>
+         <width>101</width>
+         <height>22</height>
+        </rect>
        </property>
       </widget>
       <widget class="QLabel" name="label_5">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>50</y>
-         <width>61</width>
+         <y>70</y>
+         <width>111</width>
          <height>21</height>
         </rect>
        </property>
        <property name="text">
-        <string>Micro-Stepping:</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Current Limit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="spinBox_4">
-       <property name="geometry">
-        <rect>
-         <x>80</x>
-         <y>50</y>
-         <width>51</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_6">
+      <widget class="QLabel" name="label_7">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>80</y>
-         <width>61</width>
+         <y>120</y>
+         <width>111</width>
          <height>21</height>
         </rect>
        </property>
        <property name="text">
-        <string>Pulse Width</string>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="spinBox_5">
-       <property name="geometry">
-        <rect>
-         <x>80</x>
-         <y>80</y>
-         <width>51</width>
-         <height>22</height>
-        </rect>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pulse Width&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </widget>
