@@ -52,14 +52,14 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
+      <x>10</x>
+      <y>10</y>
       <width>421</width>
-      <height>411</height>
+      <height>441</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -246,9 +246,9 @@
       <widget class="QComboBox" name="topColor_comboBox">
        <property name="geometry">
         <rect>
-         <x>310</x>
-         <y>50</y>
-         <width>71</width>
+         <x>280</x>
+         <y>30</y>
+         <width>91</width>
          <height>21</height>
         </rect>
        </property>
@@ -288,7 +288,7 @@
         <rect>
          <x>10</x>
          <y>270</y>
-         <width>101</width>
+         <width>121</width>
          <height>21</height>
         </rect>
        </property>
@@ -299,9 +299,9 @@
       <widget class="QComboBox" name="rightColor__comboBox">
        <property name="geometry">
         <rect>
-         <x>250</x>
-         <y>250</y>
-         <width>71</width>
+         <x>280</x>
+         <y>230</y>
+         <width>91</width>
          <height>21</height>
         </rect>
        </property>
@@ -340,8 +340,8 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>200</y>
-         <width>71</width>
+         <y>220</y>
+         <width>91</width>
          <height>21</height>
         </rect>
        </property>
@@ -379,9 +379,9 @@
       <widget class="QComboBox" name="leftColor_comboBox">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>20</y>
-         <width>71</width>
+         <x>20</x>
+         <y>30</y>
+         <width>91</width>
          <height>21</height>
         </rect>
        </property>
@@ -426,7 +426,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>20</y>
+        <y>10</y>
         <width>20</width>
         <height>291</height>
        </rect>
@@ -448,7 +448,7 @@
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>20</y>
+        <y>10</y>
         <width>21</width>
         <height>291</height>
        </rect>
@@ -537,27 +537,27 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>309</y>
-        <width>91</width>
+        <x>160</x>
+        <y>300</y>
+        <width>51</width>
         <height>21</height>
        </rect>
       </property>
       <property name="text">
-       <string>OUTER MOTOR</string>
+       <string>OUTER MT</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>309</y>
-        <width>81</width>
+        <x>40</x>
+        <y>300</y>
+        <width>41</width>
         <height>21</height>
        </rect>
       </property>
       <property name="text">
-       <string>INNER MOTOR</string>
+       <string>INNER MT</string>
       </property>
      </widget>
      <widget class="Line" name="line">
@@ -595,7 +595,7 @@
     <property name="geometry">
      <rect>
       <x>470</x>
-      <y>350</y>
+      <y>340</y>
       <width>121</width>
       <height>51</height>
      </rect>
@@ -656,7 +656,7 @@
     <property name="geometry">
      <rect>
       <x>470</x>
-      <y>410</y>
+      <y>390</y>
       <width>91</width>
       <height>41</height>
      </rect>
