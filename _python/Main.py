@@ -27,8 +27,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
  # access variables inside of the UI's file
 
     def outer_change(self):
-        Settings.outer_RPM=outer_verticalSlider.sliderPosition()
-        outer_spinBox.setValue(Settings.outer_RPM)
+        Settings.outer_RPM=self.outer_verticalSlider.sliderPosition()
+        self.outer_spinBox.setValue(Settings.outer_RPM)
         
  
     def __init__(self):
