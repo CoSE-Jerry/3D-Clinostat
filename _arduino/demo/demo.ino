@@ -5,14 +5,16 @@
 #define QUARTER NUM_LEDS/4
 
 
-
 int serial_CMD;
-boolean CMD_updated;
+boolean IR_STAT = false;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRBW + NEO_KHZ800);
 
 
 void setup() {
+
+  pinMode(3, OUTPUT);
+  digitalWrite(3, HIGH);
   Serial.begin(9600);
 
   strip.setBrightness(BRIGHTNESS);
@@ -54,9 +56,21 @@ void loop() {
     bottom_white();
   }
 
+  if (serial_CMD == 53)
+  { if (!IR_STAT)
+    {
+      digitalWrite(3, HIGH);
+      IR_STAT = true;
+      Serial.println("false");
+    }
+    else
+    {
+      digitalWrite(3, LOW);
+      IR_STAT = false;
+      Serial.println("true");
+    }
 
-  // put your setup code here, to run once:
-
+  }
 }
 
 

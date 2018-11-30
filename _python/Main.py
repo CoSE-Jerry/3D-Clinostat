@@ -34,6 +34,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.leftColor_comboBox.currentIndexChanged.connect(lambda: Command.left_color_change(self))
         self.rightColor_comboBox.currentIndexChanged.connect(lambda: Command.right_color_change(self))
         self.bottomColor_comboBox.currentIndexChanged.connect(lambda: Command.bottom_color_change(self))
+        self.IR_pushButton.clicked.connect(lambda: Command.IR_trigger(self))
+
+        
 
 # main function
 def main():
