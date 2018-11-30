@@ -29,6 +29,10 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def outer_change(self):
         Settings.outer_RPM=self.outer_verticalSlider.sliderPosition()
         self.outer_spinBox.setValue(Settings.outer_RPM)
+
+    def inner_change(self):
+        Settings.inner_RPM=self.inner_verticalSlider.sliderPosition()
+        self.inner_spinBox.setValue(Settings.innner_RPM)
         
  
     def __init__(self):
@@ -42,8 +46,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.bottomColor_comboBox.currentIndexChanged.connect(lambda: Command.bottom_color_change(self))
         self.IR_pushButton.clicked.connect(lambda: Command.IR_trigger(self))
         self.outer_verticalSlider.valueChanged.connect(lambda: self.outer_change())
-        
-
+        self.inner_verticalSlider.valueChanged.connect(lambda: self.inner_change())
+        //self.outer_spinBox.valueChanged.connect(lambda: self.inner_spin_change())
+        //self.inner_spinBox.valueChanged.connect(lambda: self.inner_spin_hange())
         
 
 # main function
