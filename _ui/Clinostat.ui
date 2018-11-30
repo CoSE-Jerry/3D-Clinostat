@@ -287,9 +287,9 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>270</y>
+         <y>260</y>
          <width>141</width>
-         <height>21</height>
+         <height>31</height>
         </rect>
        </property>
        <property name="text">
@@ -425,9 +425,9 @@
      <widget class="QSlider" name="inner_verticalSlider">
       <property name="geometry">
        <rect>
-        <x>50</x>
+        <x>49</x>
         <y>10</y>
-        <width>20</width>
+        <width>21</width>
         <height>291</height>
        </rect>
       </property>
@@ -511,8 +511,8 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>310</y>
+        <x>165</x>
+        <y>300</y>
         <width>71</width>
         <height>21</height>
        </rect>
@@ -524,8 +524,8 @@
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>310</y>
+        <x>45</x>
+        <y>300</y>
         <width>71</width>
         <height>21</height>
        </rect>
@@ -605,7 +605,7 @@
     <property name="geometry">
      <rect>
       <x>470</x>
-      <y>340</y>
+      <y>350</y>
       <width>131</width>
       <height>91</height>
      </rect>
