@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>450</height>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -59,7 +59,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -109,7 +109,7 @@
      <widget class="QLabel" name="from_label">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>210</x>
         <y>330</y>
         <width>47</width>
         <height>13</height>
@@ -199,7 +199,7 @@
      <widget class="QLabel" name="to_label">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>220</x>
         <y>360</y>
         <width>47</width>
         <height>13</height>
@@ -246,9 +246,9 @@
       <widget class="QComboBox" name="topColor_comboBox">
        <property name="geometry">
         <rect>
-         <x>320</x>
-         <y>60</y>
-         <width>61</width>
+         <x>310</x>
+         <y>50</y>
+         <width>71</width>
          <height>21</height>
         </rect>
        </property>
@@ -288,7 +288,7 @@
         <rect>
          <x>10</x>
          <y>270</y>
-         <width>80</width>
+         <width>101</width>
          <height>21</height>
         </rect>
        </property>
@@ -301,7 +301,7 @@
         <rect>
          <x>250</x>
          <y>250</y>
-         <width>61</width>
+         <width>71</width>
          <height>21</height>
         </rect>
        </property>
@@ -339,9 +339,9 @@
       <widget class="QComboBox" name="bottomColor_comboBox">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>10</x>
          <y>200</y>
-         <width>61</width>
+         <width>71</width>
          <height>21</height>
         </rect>
        </property>
@@ -379,9 +379,9 @@
       <widget class="QComboBox" name="leftColor_comboBox">
        <property name="geometry">
         <rect>
-         <x>70</x>
+         <x>60</x>
          <y>20</y>
-         <width>61</width>
+         <width>71</width>
          <height>21</height>
         </rect>
        </property>
@@ -479,7 +479,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>CONFIRM SETTINGS</string>
+       <string>CONFIRM</string>
       </property>
      </widget>
      <widget class="QLabel" name="inner_label">
@@ -487,7 +487,7 @@
        <rect>
         <x>40</x>
         <y>320</y>
-        <width>51</width>
+        <width>71</width>
         <height>21</height>
        </rect>
       </property>
@@ -500,7 +500,7 @@
        <rect>
         <x>160</x>
         <y>320</y>
-        <width>51</width>
+        <width>81</width>
         <height>21</height>
        </rect>
       </property>
@@ -511,9 +511,9 @@
      <widget class="QSpinBox" name="spinBox">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>20</x>
         <y>340</y>
-        <width>61</width>
+        <width>81</width>
         <height>31</height>
        </rect>
       </property>
@@ -524,9 +524,9 @@
      <widget class="QSpinBox" name="spinBox_2">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>140</x>
         <y>340</y>
-        <width>61</width>
+        <width>81</width>
         <height>31</height>
        </rect>
       </property>
@@ -538,9 +538,9 @@
       <property name="geometry">
        <rect>
         <x>150</x>
-        <y>310</y>
-        <width>71</width>
-        <height>20</height>
+        <y>309</y>
+        <width>91</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="text">
@@ -551,9 +551,9 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>310</y>
-        <width>71</width>
-        <height>20</height>
+        <y>309</y>
+        <width>81</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="text">
@@ -596,7 +596,7 @@
      <rect>
       <x>470</x>
       <y>350</y>
-      <width>91</width>
+      <width>121</width>
       <height>51</height>
      </rect>
     </property>
