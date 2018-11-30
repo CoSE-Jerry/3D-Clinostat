@@ -394,7 +394,7 @@
      <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>210</x>
         <y>320</y>
         <width>61</width>
         <height>61</height>
@@ -611,26 +611,6 @@
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_12">
-     <item>
-      <widget class="QRadioButton" name="Local_Storage">
-       <property name="text">
-        <string>Local Storage</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="Cloud_Sync">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="text">
-        <string>Cloud Sync</string>
-       </property>
-      </widget>
-     </item>
      <item>
       <widget class="QRadioButton" name="JPG">
        <property name="text">
