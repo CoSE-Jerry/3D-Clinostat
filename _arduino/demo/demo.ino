@@ -13,8 +13,8 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRBW + NEO_KHZ800
 
 void setup() {
 
-  pinMode(3, OUTPUT);
-  digitalWrite(3, HIGH);
+  pinMode(2, OUTPUT);
+  digitalWrite(2, HIGH);
   Serial.begin(9600);
 
   strip.setBrightness(BRIGHTNESS);
@@ -59,13 +59,13 @@ void loop() {
   if (serial_CMD == 53)
   { if (!IR_STAT)
     {
-      digitalWrite(3, HIGH);
+      digitalWrite(2, HIGH);
       IR_STAT = true;
       Serial.println("false");
     }
     else
     {
-      digitalWrite(3, LOW);
+      digitalWrite(2, LOW);
       IR_STAT = false;
       Serial.println("true");
     }
