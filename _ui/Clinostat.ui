@@ -270,7 +270,7 @@
         <string>INFRARED:OFF</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="rightColor__comboBox">
+      <widget class="QComboBox" name="rightColor_comboBox">
        <property name="geometry">
         <rect>
          <x>280</x>
