@@ -350,7 +350,7 @@
         </property>
        </item>
       </widget>
-      <widget class="QComboBox" name="rightColor_comboBox_2">
+      <widget class="QComboBox" name="rightColor_comboBox">
        <property name="geometry">
         <rect>
          <x>20</x>
