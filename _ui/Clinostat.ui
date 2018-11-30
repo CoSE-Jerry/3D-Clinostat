@@ -109,7 +109,7 @@
      <widget class="QLabel" name="from_label">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>220</x>
         <y>330</y>
         <width>47</width>
         <height>13</height>
@@ -511,7 +511,7 @@
      <widget class="QSpinBox" name="spinBox">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>20</x>
         <y>340</y>
         <width>81</width>
         <height>31</height>
@@ -524,7 +524,7 @@
      <widget class="QSpinBox" name="spinBox_2">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>140</x>
         <y>340</y>
         <width>81</width>
         <height>31</height>
@@ -544,7 +544,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>OUTER MT</string>
+       <string>OUTER</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
@@ -557,7 +557,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>INNER MT</string>
+       <string>INNER</string>
       </property>
      </widget>
      <widget class="Line" name="line">
@@ -632,7 +632,7 @@
      <rect>
       <x>470</x>
       <y>340</y>
-      <width>91</width>
+      <width>131</width>
       <height>91</height>
      </rect>
     </property>
@@ -676,7 +676,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QCommandLinkButton" name="Start_Schedule">
+   <widget class="QPushButton" name="Start_Schedule">
     <property name="enabled">
      <bool>false</bool>
     </property>
@@ -692,7 +692,7 @@
      <bool>false</bool>
     </property>
     <property name="text">
-     <string>Start Scheduled Imaging</string>
+     <string>    Start Scheduled Imaging</string>
     </property>
     <property name="icon">
      <iconset>
@@ -703,9 +703,6 @@
       <width>35</width>
       <height>35</height>
      </size>
-    </property>
-    <property name="description">
-     <string/>
     </property>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget_5">
