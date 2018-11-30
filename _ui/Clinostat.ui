@@ -488,7 +488,7 @@
        <string>CONFIRM</string>
       </property>
      </widget>
-     <widget class="QSpinBox" name="spinBox">
+     <widget class="QSpinBox" name="inner_spinBox">
       <property name="geometry">
        <rect>
         <x>20</x>
