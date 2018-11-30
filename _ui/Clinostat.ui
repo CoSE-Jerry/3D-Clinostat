@@ -74,7 +74,7 @@
         <x>260</x>
         <y>325</y>
         <width>101</width>
-        <height>22</height>
+        <height>25</height>
        </rect>
       </property>
      </widget>
@@ -115,7 +115,7 @@
         <x>260</x>
         <y>355</y>
         <width>101</width>
-        <height>22</height>
+        <height>25</height>
        </rect>
       </property>
      </widget>
@@ -655,14 +655,36 @@
    <widget class="QCommandLinkButton" name="commandLinkButton">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>400</y>
-      <width>168</width>
-      <height>41</height>
+      <x>620</x>
+      <y>390</y>
+      <width>161</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>CommandLinkButton</string>
+     <string>    START IMAGING</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../Flashlapse_NEO/_image/Start-Scheduler.png</normaloff>../../Flashlapse_NEO/_image/Start-Scheduler.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="description">
+     <string notr="true"/>
     </property>
    </widget>
   </widget>
