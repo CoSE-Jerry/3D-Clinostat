@@ -6,7 +6,6 @@
 
 
 int serial_CMD;
-boolean IR_STAT = false;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRBW + NEO_KHZ800);
 
@@ -21,11 +20,11 @@ void setup() {
   strip.begin();
   strip.show();
 
-  colorWipe(strip.Color(100, 50, 50, 50), 3);
-  colorWipe(strip.Color(50, 100, 50, 50), 3);
-  colorWipe(strip.Color(50, 50, 100, 50), 3);
-  colorWipe(strip.Color(50, 50, 50, 100), 3);
-  colorWipe(strip.Color(0, 0, 0, 0), 1);
+    colorWipe(strip.Color(100, 50, 50, 50), 3);
+    colorWipe(strip.Color(50, 100, 50, 50), 3);
+    colorWipe(strip.Color(50, 50, 100, 50), 3);
+    colorWipe(strip.Color(50, 50, 50, 100), 3);
+    colorWipe(strip.Color(0, 0, 0, 0), 1);
 }
 
 void loop() {
@@ -57,19 +56,15 @@ void loop() {
   }
 
   if (serial_CMD == 53)
-  { if (!IR_STAT)
-    {
-      digitalWrite(2, HIGH);
-      IR_STAT = true;
-      Serial.println("false");
-    }
-    else
-    {
-      digitalWrite(2, LOW);
-      IR_STAT = false;
-      Serial.println("true");
-    }
+  {
+    digitalWrite(2, HIGH);
+    Serial.println("false");
+  }
 
+  if (serial_CMD == 54)
+  {
+    digitalWrite(2, LOW);
+    Serial.println("false");
   }
 }
 
