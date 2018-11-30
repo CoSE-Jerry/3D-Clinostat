@@ -32,7 +32,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def inner_change(self):
         Settings.inner_RPM=self.inner_verticalSlider.sliderPosition()
-        self.inner_spinBox.setValue(Settings.innner_RPM)
+        self.inner_spinBox.setValue(Settings.inner_RPM)
         
  
     def __init__(self):
