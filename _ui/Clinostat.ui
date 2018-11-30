@@ -106,19 +106,6 @@
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="from_label">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>330</y>
-        <width>47</width>
-        <height>13</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>FROM:</string>
-      </property>
-     </widget>
      <widget class="QTimeEdit" name="to_spinBox">
       <property name="enabled">
        <bool>false</bool>
@@ -195,19 +182,6 @@
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QLabel" name="to_label">
-      <property name="geometry">
-       <rect>
-        <x>230</x>
-        <y>360</y>
-        <width>47</width>
-        <height>13</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>TO:</string>
-      </property>
      </widget>
      <widget class="QFrame" name="frame">
       <property name="geometry">
@@ -417,6 +391,32 @@
        </item>
       </widget>
      </widget>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>320</y>
+        <width>61</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="to_label">
+         <property name="text">
+          <string>TO:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="from_label">
+         <property name="text">
+          <string>FROM:</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -511,9 +511,9 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>165</x>
+        <x>160</x>
         <y>300</y>
-        <width>71</width>
+        <width>51</width>
         <height>21</height>
        </rect>
       </property>
@@ -524,9 +524,9 @@
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>45</x>
+        <x>40</x>
         <y>300</y>
-        <width>71</width>
+        <width>51</width>
         <height>21</height>
        </rect>
       </property>
@@ -656,9 +656,9 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>590</x>
       <y>390</y>
-      <width>201</width>
+      <width>181</width>
       <height>51</height>
      </rect>
     </property>
@@ -666,7 +666,7 @@
      <bool>false</bool>
     </property>
     <property name="text">
-     <string>    Start Scheduled Imaging</string>
+     <string>     START IMAGING</string>
     </property>
     <property name="icon">
      <iconset>
@@ -695,7 +695,7 @@
         <bool>true</bool>
        </property>
        <property name="text">
-        <string>Snapshot</string>
+        <string>SNAPSHOT</string>
        </property>
       </widget>
      </item>
