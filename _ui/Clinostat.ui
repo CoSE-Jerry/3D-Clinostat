@@ -25,9 +25,9 @@
     <property name="geometry">
      <rect>
       <x>470</x>
-      <y>40</y>
-      <width>300</width>
-      <height>300</height>
+      <y>29</y>
+      <width>310</width>
+      <height>310</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -630,41 +630,12 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="Start_Schedule">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>390</y>
-      <width>181</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string>     START IMAGING</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>../../Flashlapse_NEO/_image/Start-Scheduler.png</normaloff>../../Flashlapse_NEO/_image/Start-Scheduler.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>35</width>
-      <height>35</height>
-     </size>
-    </property>
-   </widget>
    <widget class="QWidget" name="verticalLayoutWidget_5">
     <property name="geometry">
      <rect>
       <x>630</x>
       <y>350</y>
-      <width>141</width>
+      <width>151</width>
       <height>41</height>
      </rect>
     </property>
@@ -680,6 +651,29 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="startImage_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>400</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>START IMAGING</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../Flashlapse_NEO/_image/Start-Scheduler.png</normaloff>../../Flashlapse_NEO/_image/Start-Scheduler.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>10</width>
+      <height>10</height>
+     </size>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
