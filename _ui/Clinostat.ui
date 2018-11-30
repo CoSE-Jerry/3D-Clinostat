@@ -652,39 +652,17 @@
      </item>
     </layout>
    </widget>
-   <widget class="QCommandLinkButton" name="commandLinkButton">
+   <widget class="QPushButton" name="startImaging_pushButton">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>390</y>
-      <width>161</width>
-      <height>51</height>
+      <x>609</x>
+      <y>400</y>
+      <width>171</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>    START IMAGING</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>../../Flashlapse_NEO/_image/Start-Scheduler.png</normaloff>../../Flashlapse_NEO/_image/Start-Scheduler.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="checkable">
-     <bool>false</bool>
-    </property>
-    <property name="checked">
-     <bool>false</bool>
-    </property>
-    <property name="default">
-     <bool>false</bool>
-    </property>
-    <property name="description">
-     <string notr="true"/>
+     <string>START IMAGING</string>
     </property>
    </widget>
   </widget>
