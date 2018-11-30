@@ -31,10 +31,10 @@ def bottom_color_change(self):
         Settings.ASD.write(bytes('0', 'UTF-8'))
 
 def IR_trigger(self):
-    if(Settings.IR_STAT)
+    if Settings.IR_STAT:
         Settings.ASD.write(bytes('5', 'UTF-8'))
         Settings.IR_STAT=True
-    if not Settings.IR_STAT
+    if not Settings.IR_STAT:
         Settings.ASD.write(bytes('6', 'UTF-8'))
         Settings.IR_STAT=False
 
