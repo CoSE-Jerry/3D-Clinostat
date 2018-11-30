@@ -1,0 +1,1 @@
+pyuic5 Clinostat.ui > ../_python/Clinostat_UI.py
