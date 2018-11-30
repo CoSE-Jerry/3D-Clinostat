@@ -5,6 +5,7 @@ import sys
 #import UI functions
 
 # import settings
+import Settings
 
 # import custom functions
  
@@ -26,6 +27,12 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self) # gets defined in the UI file
+        Settings.init()
+
+        self.topColor_comboBox.currentIndexChanged.connect(lambda: Command.top_color_change(self))
+        self.leftColor_comboBox.currentIndexChanged.connect(lambda: Command.left_color_change(self))
+        self.rightColor_comboBox.currentIndexChanged.connect(lambda: Command.right_color_change(self))
+        self.bottomColor_comboBox.currentIndexChanged.connect(lambda: Command.bottom_color_change(self))
 
 # main function
 def main():
