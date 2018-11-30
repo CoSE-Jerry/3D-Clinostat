@@ -55,11 +55,11 @@
       <x>10</x>
       <y>10</y>
       <width>421</width>
-      <height>441</height>
+      <height>421</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -109,7 +109,7 @@
      <widget class="QLabel" name="from_label">
       <property name="geometry">
        <rect>
-        <x>210</x>
+        <x>200</x>
         <y>330</y>
         <width>47</width>
         <height>13</height>
@@ -199,7 +199,7 @@
      <widget class="QLabel" name="to_label">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>230</x>
         <y>360</y>
         <width>47</width>
         <height>13</height>
@@ -539,7 +539,7 @@
        <rect>
         <x>160</x>
         <y>300</y>
-        <width>51</width>
+        <width>71</width>
         <height>21</height>
        </rect>
       </property>
@@ -552,7 +552,7 @@
        <rect>
         <x>40</x>
         <y>300</y>
-        <width>41</width>
+        <width>71</width>
         <height>21</height>
        </rect>
       </property>
@@ -632,8 +632,8 @@
      <rect>
       <x>470</x>
       <y>340</y>
-      <width>121</width>
-      <height>51</height>
+      <width>91</width>
+      <height>91</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -654,6 +654,23 @@
        </property>
        <property name="text">
         <string>Cloud Sync</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="JPG">
+       <property name="text">
+        <string>JPG</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="PNG">
+       <property name="text">
+        <string>PNG</string>
        </property>
       </widget>
      </item>
@@ -687,35 +704,9 @@
       <height>35</height>
      </size>
     </property>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>390</y>
-      <width>91</width>
-      <height>41</height>
-     </rect>
+    <property name="description">
+     <string/>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_4">
-     <item>
-      <widget class="QRadioButton" name="JPG">
-       <property name="text">
-        <string>JPG</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="PNG">
-       <property name="text">
-        <string>PNG</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget_5">
     <property name="geometry">
