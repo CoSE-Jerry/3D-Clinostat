@@ -47,8 +47,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.IR_pushButton.clicked.connect(lambda: Command.IR_trigger(self))
         self.outer_verticalSlider.valueChanged.connect(lambda: self.outer_change())
         self.inner_verticalSlider.valueChanged.connect(lambda: self.inner_change())
-        //self.outer_spinBox.valueChanged.connect(lambda: self.inner_spin_change())
-        //self.inner_spinBox.valueChanged.connect(lambda: self.inner_spin_hange())
+        #self.outer_spinBox.valueChanged.connect(lambda: self.inner_spin_change())
+        #self.inner_spinBox.valueChanged.connect(lambda: self.inner_spin_hange())
         
 
 # main function
