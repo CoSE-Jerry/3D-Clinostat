@@ -42,6 +42,19 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def brightness_change(self):
         Settings.ASD.write(bytes('2~'+str(self.BRT_spinBox.value()), 'UTF-8'))
+
+    def link(self):
+        if(Settings.LINKED):
+            Settings.LINKED = False
+            icon = QtGui.QIcon()
+            icon.addPixmap(QtGui.QPixmap("../_image/Broken_Link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.pushButton_link.setIcon(icon)
+        else
+            Settings.LINKED = True
+            icon = QtGui.QIcon()
+            icon.addPixmap(QtGui.QPixmap("../_image/Link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.pushButton_link.setIcon(icon)
+        
         
  
     def __init__(self):
@@ -58,6 +71,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.inner_verticalSlider.valueChanged.connect(lambda: self.inner_change())
         #self.outer_spinBox.valueChanged.connect(lambda: self.inner_spin_change())
         #self.inner_spinBox.valueChanged.connect(lambda: self.inner_spin_hange())
+        self.pushButton_link.clicked.connect(lambda: Command.link(self))
 
         self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.G_spinBox.valueChanged.connect(lambda: self.custom_update())
