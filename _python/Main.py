@@ -33,7 +33,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.inner_verticalSlider.setValue(Settings.inner_RPM)
             self.inner_spinBox.setValue(Settings.inner_RPM)
             self.outer_spinBox.setValue(Settings.outer_RPM)
-        else
+        else:
             Settings.outer_RPM=self.outer_verticalSlider.sliderPosition()
             self.outer_spinBox.setValue(Settings.outer_RPM)
 
@@ -45,7 +45,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             
             self.inner_spinBox.setValue(Settings.inner_RPM)
             self.outer_spinBox.setValue(Settings.outer_RPM)
-        else
+        else:
             Settings.inner_RPM=self.inner_verticalSlider.sliderPosition()
             self.inner_spinBox.setValue(Settings.inner_RPM)
 
