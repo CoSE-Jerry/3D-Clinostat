@@ -496,9 +496,9 @@
      <widget class="QSpinBox" name="inner_spinBox">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>340</y>
-        <width>81</width>
+        <width>101</width>
         <height>31</height>
        </rect>
       </property>
@@ -515,9 +515,9 @@
      <widget class="QSpinBox" name="outer_spinBox">
       <property name="geometry">
        <rect>
-        <x>140</x>
+        <x>130</x>
         <y>340</y>
-        <width>81</width>
+        <width>101</width>
         <height>31</height>
        </rect>
       </property>
@@ -638,7 +638,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Current Limit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Power Limit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_7">
@@ -651,16 +651,16 @@
         </rect>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pulse Width&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pulse Width:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_6">
        <property name="geometry">
         <rect>
-         <x>25</x>
+         <x>15</x>
          <y>20</y>
-         <width>91</width>
-         <height>16</height>
+         <width>111</width>
+         <height>21</height>
         </rect>
        </property>
        <property name="text">

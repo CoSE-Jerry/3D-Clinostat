@@ -55,10 +55,11 @@ void loop() {
       digitalWrite(2, LOW);
     else if (commands[0] == 4)
       digitalWrite(2, HIGH);
+    else if (commands[0] == 5)
+      outterSerial.write("1~"+commands[1]);
 
 
-    //    else if (commands[0] == 3)
-    //      speedUpdate();
+
 
 
     newCommand = false;
