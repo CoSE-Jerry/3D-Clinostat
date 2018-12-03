@@ -19,7 +19,7 @@ String serialResponse = "";
 boolean newCommand = false;
 char sz[] = "0~000~000~000~000~000~000";
 
-//SoftwareSerial innerSerial(10, 9); // RX, TX
+SoftwareSerial innerSerial(10, 9); // RX, TX
 SoftwareSerial outterSerial(5, 4); // RX, TX
 
 void setup() {
@@ -30,6 +30,7 @@ void setup() {
   digitalWrite(2, LOW);
 
   outterSerial.begin(19200);
+  innerSerial.begin(38400);
 
   strip.setBrightness(BRIGHTNESS);
   strip.begin();
@@ -56,11 +57,18 @@ void loop() {
     else if (commands[0] == 4)
       digitalWrite(2, HIGH);
     else if (commands[0] == 5)
-    {Serial.println("tset");
-    String temp = String(commands[1]);
-    Serial.println("1~" +temp);
-      outterSerial.print("1~" +temp);
-    
+    {
+      
+      String temp = String(commands[1]);
+      Serial.print("1~" + temp);
+      outterSerial.print("1~" + temp);
+    }
+    else if (commands[0] == 6)
+    {
+      
+      String temp = String(commands[1]);
+      Serial.print("1~" + temp);
+      innerSerial.print("1~" + temp);
     }
 
 

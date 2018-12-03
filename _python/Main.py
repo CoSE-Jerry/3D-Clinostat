@@ -34,6 +34,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.inner_spinBox.setValue(Settings.inner_RPM)
             self.outer_spinBox.setValue(Settings.outer_RPM)
             Settings.ASD.write(bytes("5~"+str(Settings.outer_RPM), 'UTF-8'))
+            Settings.ASD.write(bytes("6~"+str(Settings.inner_RPM), 'UTF-8'))
         else:
             Settings.outer_RPM=self.outer_verticalSlider.sliderPosition()
             self.outer_spinBox.setValue(Settings.outer_RPM)
@@ -46,9 +47,12 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.outer_verticalSlider.setValue(Settings.outer_RPM)
             self.inner_spinBox.setValue(Settings.inner_RPM)
             self.outer_spinBox.setValue(Settings.outer_RPM)
+            Settings.ASD.write(bytes("5~"+str(Settings.outer_RPM), 'UTF-8'))
+            Settings.ASD.write(bytes("6~"+str(Settings.inner_RPM), 'UTF-8'))
         else:
             Settings.inner_RPM=self.inner_verticalSlider.sliderPosition()
             self.inner_spinBox.setValue(Settings.inner_RPM)
+            Settings.ASD.write(bytes("6~"+str(Settings.inner_RPM), 'UTF-8'))
 
     def custom_update(self):
         Settings.custom_R = self.R_spinBox.value()
