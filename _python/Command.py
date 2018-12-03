@@ -4,6 +4,7 @@ from PyQt5.QtCore import QThread
 
 def top_color_change(self):
     temp = self.topColor_comboBox.currentIndex()
+    print("top")
     if temp == 1:
         Settings.ASD.write(bytes("1~0~8~255~0~0~0", 'UTF-8'))
     elif temp == 2:
@@ -19,6 +20,7 @@ def top_color_change(self):
 
 def left_color_change(self):
     temp = self.leftColor_comboBox.currentIndex()
+    print("left")
     if temp == 1:
         Settings.ASD.write(bytes("1~8~15~255~0~0~0", 'UTF-8'))
     elif temp == 2:
@@ -34,6 +36,7 @@ def left_color_change(self):
 
 def right_color_change(self):
     temp = self.rightColor_comboBox.currentIndex()
+    print("right")
     if temp == 1:
         Settings.ASD.write(bytes("1~15~23~255~0~0~0", 'UTF-8'))
     elif temp == 2:
@@ -49,6 +52,7 @@ def right_color_change(self):
 
 def bottom_color_change(self):
     temp = self.bottomColor_comboBox.currentIndex()
+    print("bottom")
     if temp == 1:
         Settings.ASD.write(bytes("1~23~30~255~0~0~0", 'UTF-8'))
     elif temp == 2:
