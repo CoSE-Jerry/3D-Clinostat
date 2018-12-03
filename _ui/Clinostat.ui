@@ -131,7 +131,7 @@
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QComboBox" name="bottomColor_comboBox_2">
+      <widget class="QComboBox" name="bottomColor_comboBox">
        <property name="geometry">
         <rect>
          <x>280</x>
