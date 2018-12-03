@@ -33,6 +33,15 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def inner_change(self):
         Settings.inner_RPM=self.inner_verticalSlider.sliderPosition()
         self.inner_spinBox.setValue(Settings.inner_RPM)
+
+    def custom_update(self):
+        Settings.custom_R = self.R_spinBox.value()
+        Settings.custom_G = self.G_spinBox.value()
+        Settings.custom_B = self.B_spinBox.value()
+        Settings.custom_W = self.W_spinBox.value()
+
+    def brightness_change(self):
+        Settings.ASD.write(bytes('2~'+str(self.brightness_spinBox.value()), 'UTF-8'))
         
  
     def __init__(self):
@@ -49,6 +58,12 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.inner_verticalSlider.valueChanged.connect(lambda: self.inner_change())
         #self.outer_spinBox.valueChanged.connect(lambda: self.inner_spin_change())
         #self.inner_spinBox.valueChanged.connect(lambda: self.inner_spin_hange())
+
+        self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
+        self.G_spinBox.valueChanged.connect(lambda: self.custom_update())
+        self.B_spinBox.valueChanged.connect(lambda: self.custom_update())
+        self.W_spinBox.valueChanged.connect(lambda: self.custom_update())
+        self.BRT_spinBox.valueChanged.connect(lambda: self.brightness_change())
         
 
 # main function

@@ -65,23 +65,23 @@ void setup()
 void loop()
 {
   // Step in the default direction 1000 times.
-  setDirection(1);
+  setDirection(0);
   for (unsigned int x = 0; x < 51200; x++)
   {
     step();
   }
 
-  delay(2000);
-
-  if (Serial.available()) {
-    delay(30);  //delay to allow buffer to fill
-    while (Serial.available() > 0) {
-      char c = Serial.read();  //gets one byte from serial buffer
-      input += c; //makes the string readString
-    }
-    input.trim();
-    Serial.println(input);
-  }
+//  delay(2000);
+//
+//  if (Serial.available()) {
+//    delay(30);  //delay to allow buffer to fill
+//    while (Serial.available() > 0) {
+//      char c = Serial.read();  //gets one byte from serial buffer
+//      input += c; //makes the string readString
+//    }
+//    input.trim();
+//    Serial.println(input);
+  //}
 
 }
 
