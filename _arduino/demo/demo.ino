@@ -8,6 +8,7 @@
 
 
 int serial_CMD;
+boolean IR = false;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRBW + NEO_KHZ800);
 #include <SoftwareSerial.h>
@@ -26,7 +27,7 @@ void setup() {
   Serial.setTimeout(5);
 
   pinMode(2, OUTPUT);
-  digitalWrite(2, HIGH);
+  digitalWrite(2, LOW);
 
   outterSerial.begin(19200);
 
@@ -50,11 +51,15 @@ void loop() {
       stripUpdate();
     else if (commands[0] == 2)
       brightnessUpdate();
-      
+    else if (commands[0] == 3)
+      digitalWrite(2, LOW);
+    else if (commands[0] == 4)
+      digitalWrite(2, HIGH);
+
+
     //    else if (commands[0] == 3)
     //      speedUpdate();
-    //    else if (commands[0] == 4)
-    //      brightnessUpdate();
+
 
     newCommand = false;
 
