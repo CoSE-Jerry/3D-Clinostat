@@ -56,7 +56,13 @@ void loop() {
     else if (commands[0] == 4)
       digitalWrite(2, HIGH);
     else if (commands[0] == 5)
-      outterSerial.write("1~"+commands[1]);
+    {Serial.println("tset");
+    String temp = String(commands[1]);
+    Serial.println("1~" +temp);
+      outterSerial.print("1~" +temp);
+    
+    }
+
 
 
 
