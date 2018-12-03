@@ -28,16 +28,26 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def outer_change(self):
         if(Settings.LINKED):
-            
             Settings.outer_RPM=self.outer_verticalSlider.sliderPosition()
             Settings.inner_RPM=Settings.outer_RPM
             self.inner_verticalSlider.setValue(Settings.inner_RPM)
             self.inner_spinBox.setValue(Settings.inner_RPM)
             self.outer_spinBox.setValue(Settings.outer_RPM)
+        else
+            Settings.outer_RPM=self.outer_verticalSlider.sliderPosition()
+            self.outer_spinBox.setValue(Settings.outer_RPM)
 
     def inner_change(self):
-        Settings.inner_RPM=self.inner_verticalSlider.sliderPosition()
-        self.inner_spinBox.setValue(Settings.inner_RPM)
+        if(Settings.LINKED):
+            Settings.inner_RPM=self.inner_verticalSlider.sliderPosition()
+            Settings.outer_RPM=Settings.inner_RPM            
+            self.outer_verticalSlider.setValue(Settings.outer_RPM)
+            
+            self.inner_spinBox.setValue(Settings.inner_RPM)
+            self.outer_spinBox.setValue(Settings.outer_RPM)
+        else
+            Settings.inner_RPM=self.inner_verticalSlider.sliderPosition()
+            self.inner_spinBox.setValue(Settings.inner_RPM)
 
     def custom_update(self):
         Settings.custom_R = self.R_spinBox.value()
