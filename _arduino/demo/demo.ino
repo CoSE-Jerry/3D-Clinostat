@@ -4,7 +4,7 @@
 #define NUM_LEDS 30
 #define BRIGHTNESS 50
 #define QUARTER NUM_LEDS/4
-#define COMMANDSIZE 6
+#define COMMANDSIZE 7
 
 
 int serial_CMD;

@@ -55,7 +55,7 @@
       <x>10</x>
       <y>10</y>
       <width>421</width>
-      <height>421</height>
+      <height>431</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -131,7 +131,7 @@
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QComboBox" name="topColor_comboBox">
+      <widget class="QComboBox" name="bottomColor_comboBox_2">
        <property name="geometry">
         <rect>
          <x>280</x>
@@ -184,7 +184,7 @@
         <string>INFRARED:OFF</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="leftColor_comboBox">
+      <widget class="QComboBox" name="rightColor_comboBox">
        <property name="geometry">
         <rect>
          <x>280</x>
@@ -224,7 +224,7 @@
         </property>
        </item>
       </widget>
-      <widget class="QComboBox" name="bottomColor_comboBox">
+      <widget class="QComboBox" name="leftColor_comboBox">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -264,7 +264,7 @@
         </property>
        </item>
       </widget>
-      <widget class="QComboBox" name="rightColor_comboBox">
+      <widget class="QComboBox" name="topColor_comboBox">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -308,9 +308,9 @@
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>200</x>
         <y>310</y>
-        <width>71</width>
+        <width>141</width>
         <height>31</height>
        </rect>
       </property>

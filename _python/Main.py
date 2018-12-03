@@ -41,7 +41,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.custom_W = self.W_spinBox.value()
 
     def brightness_change(self):
-        Settings.ASD.write(bytes('2~'+str(self.brightness_spinBox.value()), 'UTF-8'))
+        Settings.ASD.write(bytes('2~'+str(self.BRT_spinBox.value()), 'UTF-8'))
         
  
     def __init__(self):
