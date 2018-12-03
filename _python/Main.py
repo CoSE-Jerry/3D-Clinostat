@@ -49,7 +49,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             icon = QtGui.QIcon()
             icon.addPixmap(QtGui.QPixmap("../_image/Broken_Link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
             self.pushButton_link.setIcon(icon)
-        else
+        else:
             Settings.LINKED = True
             icon = QtGui.QIcon()
             icon.addPixmap(QtGui.QPixmap("../_image/Link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
