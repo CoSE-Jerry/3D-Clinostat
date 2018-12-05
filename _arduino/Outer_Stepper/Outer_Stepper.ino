@@ -138,7 +138,7 @@ void setDirection(bool dir)
 void updates()
 {
   RPM = commands[1];
-  wait = 60 / (0.0512 * RPM);
+  
 }
 
 void updateDir()
