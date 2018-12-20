@@ -293,7 +293,7 @@ class Ui_MainWindow(object):
         self.PNG.setObjectName("PNG")
         self.verticalLayout_12.addWidget(self.PNG)
         self.verticalLayoutWidget_5 = QtWidgets.QWidget(self.centralwidget)
-        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(630, 350, 151, 41))
+        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(630, 350, 151, 43))
         self.verticalLayoutWidget_5.setObjectName("verticalLayoutWidget_5")
         self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_5)
         self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
@@ -302,6 +302,10 @@ class Ui_MainWindow(object):
         self.Snapshot.setEnabled(True)
         self.Snapshot.setObjectName("Snapshot")
         self.verticalLayout_13.addWidget(self.Snapshot)
+        self.Cooling = QtWidgets.QPushButton(self.verticalLayoutWidget_5)
+        self.Cooling.setEnabled(True)
+        self.Cooling.setObjectName("Cooling")
+        self.verticalLayout_13.addWidget(self.Cooling)
         self.startImaging_pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.startImaging_pushButton.setEnabled(False)
         self.startImaging_pushButton.setGeometry(QtCore.QRect(609, 400, 171, 41))
@@ -319,7 +323,7 @@ class Ui_MainWindow(object):
         self.actionCreate_Timelapse.setObjectName("actionCreate_Timelapse")
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -377,6 +381,7 @@ class Ui_MainWindow(object):
         self.JPG.setText(_translate("MainWindow", "JPG"))
         self.PNG.setText(_translate("MainWindow", "PNG"))
         self.Snapshot.setText(_translate("MainWindow", "SNAPSHOT"))
+        self.Cooling.setText(_translate("MainWindow", "COOLING:OFF"))
         self.startImaging_pushButton.setText(_translate("MainWindow", "START IMAGING"))
         self.actionOpen_Directory.setText(_translate("MainWindow", "Open Directory"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))

@@ -30,7 +30,7 @@ void setup() {
   digitalWrite(10, HIGH);
 
   pinMode(9, OUTPUT);
-  digitalWrite(9, HIGH);
+  digitalWrite(9, LOW);
 
   outterSerial.begin(19200);
   innerSerial.begin(38400);
@@ -51,27 +51,35 @@ void loop() {
 
   if (newCommand)
   {
+
+    Serial.print(commands[0]);
     if (commands[0] == 1)
       stripUpdate();
     else if (commands[0] == 2)
       brightnessUpdate();
-      
+
     else if (commands[0] == 3)
       digitalWrite(10, LOW);
-      
+
     else if (commands[0] == 4)
       digitalWrite(10, HIGH);
-      
+
     else if (commands[0] == 5)
+      digitalWrite(9, LOW);
+
+    else if (commands[0] == 6)
+      digitalWrite(9, HIGH);
+
+    else if (commands[0] == 7)
     {
-      
+
       String temp = String(commands[1]);
       Serial.print("1~" + temp);
       outterSerial.print("1~" + temp);
     }
-    else if (commands[0] == 6)
+    else if (commands[0] == 8)
     {
-      
+
       String temp = String(commands[1]);
       Serial.print("1~" + temp);
       innerSerial.print("1~" + temp);

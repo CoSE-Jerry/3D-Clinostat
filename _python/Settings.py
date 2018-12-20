@@ -7,6 +7,9 @@ def init():
     global IR_STAT
     IR_STAT = False
 
+    global CL_STAT
+    CL_STAT = False
+
     global LINKED
     LINKED = True
 

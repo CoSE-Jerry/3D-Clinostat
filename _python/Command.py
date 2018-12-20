@@ -78,6 +78,23 @@ def IR_trigger(self):
         Settings.IR_STAT=False
         self.IR_pushButton.setText("INFRARED:OFF")
 
+def Cooling_trigger(self):
+
+    if not Settings.CL_STAT:
+        Settings.ASD.write(bytes("5~", 'UTF-8'))
+        Settings.CL_STAT=True
+        self.Cooling.setText("COOLING:ON")
+    
+    else:
+        Settings.ASD.write(bytes("6~", 'UTF-8'))
+        Settings.CL_STAT=False
+        self.Cooling.setText("COOLING:OFF")
+
+
+
+
+        
+
 
 
 
