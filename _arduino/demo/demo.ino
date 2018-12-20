@@ -29,8 +29,8 @@ void setup() {
   pinMode(10, OUTPUT);
   digitalWrite(10, HIGH);
 
-  pinMode(10, OUTPUT);
-  digitalWrite(10, HIGH);
+  pinMode(9, OUTPUT);
+  digitalWrite(9, HIGH);
 
   outterSerial.begin(19200);
   innerSerial.begin(38400);
@@ -55,10 +55,13 @@ void loop() {
       stripUpdate();
     else if (commands[0] == 2)
       brightnessUpdate();
+      
     else if (commands[0] == 3)
       digitalWrite(10, LOW);
+      
     else if (commands[0] == 4)
       digitalWrite(10, HIGH);
+      
     else if (commands[0] == 5)
     {
       
