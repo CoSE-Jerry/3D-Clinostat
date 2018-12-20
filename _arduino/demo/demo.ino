@@ -1,6 +1,6 @@
 #include "Arduino.h"
 #include <Adafruit_NeoPixel.h>
-#define PIN 6
+#define PIN 8
 #define NUM_LEDS 30
 #define BRIGHTNESS 50
 #define QUARTER NUM_LEDS/4
@@ -19,15 +19,18 @@ String serialResponse = "";
 boolean newCommand = false;
 char sz[] = "0~000~000~000~000~000~000";
 
-SoftwareSerial innerSerial(10, 9); // RX, TX
-SoftwareSerial outterSerial(5, 4); // RX, TX
+SoftwareSerial innerSerial(4, 5); // RX, TX
+SoftwareSerial outterSerial(6, 7); // RX, TX
 
 void setup() {
   Serial.begin(9600);
   Serial.setTimeout(5);
 
-  pinMode(2, OUTPUT);
-  digitalWrite(2, LOW);
+  pinMode(10, OUTPUT);
+  digitalWrite(10, HIGH);
+
+  pinMode(10, OUTPUT);
+  digitalWrite(10, HIGH);
 
   outterSerial.begin(19200);
   innerSerial.begin(38400);
@@ -53,9 +56,9 @@ void loop() {
     else if (commands[0] == 2)
       brightnessUpdate();
     else if (commands[0] == 3)
-      digitalWrite(2, LOW);
+      digitalWrite(10, LOW);
     else if (commands[0] == 4)
-      digitalWrite(2, HIGH);
+      digitalWrite(10, HIGH);
     else if (commands[0] == 5)
     {
       
@@ -70,12 +73,6 @@ void loop() {
       Serial.print("1~" + temp);
       innerSerial.print("1~" + temp);
     }
-
-
-
-
-
-
     newCommand = false;
 
   }

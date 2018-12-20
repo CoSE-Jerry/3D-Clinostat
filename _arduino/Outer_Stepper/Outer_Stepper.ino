@@ -19,9 +19,9 @@
 #include <AMIS30543.h>
 #define STEPS_PER_OUTPUT_REVOLUTION 128*400
 
-const uint8_t amisDirPin = 2;
-const uint8_t amisStepPin = 3;
-const uint8_t amisSlaveSelect = 4;
+const uint8_t amisDirPin = 6;
+const uint8_t amisStepPin = 5;
+const uint8_t amisSlaveSelect = 7;
 #define COMMANDSIZE 2
 
 boolean Run = false;
@@ -73,10 +73,11 @@ void loop()
 {
   if ( Serial.available()) {
     readInput();
-    if (commands[0] == 1)
-      updates();
-    if (commands[0] == 2)
-      updateDir();
+    Serial.println(commands[1]);
+//    if (commands[0] == 1)
+//      updates();
+//    if (commands[0] == 2)
+//      updateDir();
   }
   step();
 }
@@ -138,7 +139,6 @@ void setDirection(bool dir)
 void updates()
 {
   RPM = commands[1];
-  
 }
 
 void updateDir()
