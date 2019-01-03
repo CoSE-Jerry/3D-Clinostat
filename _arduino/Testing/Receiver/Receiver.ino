@@ -2,7 +2,7 @@ char mystr[10]; //Initialized variable to store recieved data
 
 void setup() {
   // Begin the Serial at 9600 Baud
-  Serial.begin(9600);
+  Serial.begin(19200);
   pinMode(LED_BUILTIN, OUTPUT);
 }
 

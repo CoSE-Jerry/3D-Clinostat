@@ -17,24 +17,27 @@
 
 #include <SPI.h>
 #include <AMIS30543.h>
-#define STEPS_PER_OUTPUT_REVOLUTION 128*400
-
-const uint8_t amisDirPin = 6;
-const uint8_t amisStepPin = 5;
-const uint8_t amisSlaveSelect = 7;
+#define STEPS_PER_OUTPUT_REVOLUTION 400
 #define COMMANDSIZE 2
 
-boolean Run = false;
+const uint8_t amisStepPin = 5;
+const uint8_t amisDirPin = 6;
+const uint8_t amisSlaveSelect = 7;
+
+int micro = 128;
 int RPM = 0;
 int wait = 320;
 int currentLimit = 400;
 int dir = 0;
+int pulseWidth = 2;
+
+boolean sysRunning = false;
 
 int commands[COMMANDSIZE];
 String serialResponse = "";
 
 boolean newCommand = false;
-char sz[] = "0~000";
+char sz[] = "0~000~000~000~000~000";
 AMIS30543 stepper;
 
 void setup()
@@ -53,7 +56,6 @@ void setup()
 
   // Give the driver some time to power up.
   delay(1);
-
   // Reset the driver to its default settings.
   stepper.resetSettings();
 
@@ -63,30 +65,55 @@ void setup()
 
   // Set the number of microsteps that correspond to one full step.
   stepper.setStepMode(128);
-
-  // Enable the motor outputs.
-  stepper.enableDriver();
-  setDirection(dir);
 }
 
 void loop()
 {
-  if ( Serial.available()) {
+
+  if (Serial.available()) {
     readInput();
-    Serial.println(commands[1]);
-//    if (commands[0] == 1)
-//      updates();
-//    if (commands[0] == 2)
-//      updateDir();
+
+    if (commands[0] == 0)
+    {
+      if (!sysRunning)
+      {
+        stepper.enableDriver();
+        setDirection(dir);
+      }
+      else
+        stepper.disableDriver();
+      sysRunning = !sysRunning;
+    }
+
+    if (commands[0] == 1)
+      updateRPM();
+
+    else if (commands[0] == 2)
+      updateDir();
+
+    else if (commands[0] == 3)
+    {
+      stepper.setCurrentMilliamps(currentLimit + commands[1]);
+      pulseWidth = commands[2];
+      wait = commands[3];
+      stepper.setStepMode(commands[4]);
+    }
+
+
+
   }
+
   step();
+
+
 }
 
 void readInput()
 {
+  clearCommands();
   int current = 0;
 
-  clearCommands();
+
   newCommand = true;
   serialResponse = Serial.readStringUntil('\r\n');
 
@@ -102,10 +129,7 @@ void readInput()
     commands[current] = temp;
     current++;
   }
-
 }
-
-
 
 // Sends a pulse on the NXT/STEP pin to tell the driver to take
 // one step, and also delays to control the speed of the motor.
@@ -113,9 +137,9 @@ void step()
 {
   // The NXT/STEP minimum high pulse width is 2 microseconds.
   digitalWrite(amisStepPin, HIGH);
-  delayMicroseconds(2);
+  delayMicroseconds(pulseWidth);
   digitalWrite(amisStepPin, LOW);
-  delayMicroseconds(2);
+  delayMicroseconds(pulseWidth);
 
   // The delay here controls the stepper motor's speed.  You can
   // increase the delay to make the stepper motor go slower.  If
@@ -136,15 +160,15 @@ void setDirection(bool dir)
   delayMicroseconds(1);
 }
 
-void updates()
+void updateRPM()
 {
   RPM = commands[1];
+  wait = int(60 / (0.0004 * micro * RPM));
 }
 
 void updateDir()
 {
-  dir = commands[1];
-  setDirection(dir);
+  setDirection(commands[1]);
 }
 
 void printCommands() {

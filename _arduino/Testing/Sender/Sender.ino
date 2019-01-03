@@ -1,5 +1,5 @@
 #include <SoftwareSerial.h>
-SoftwareSerial mySerial(5, 6);// RX, TX
+SoftwareSerial mySerial(6, 7);// RX, TX
 
 void setup() {
   // Begin the Serial at 9600 Baud

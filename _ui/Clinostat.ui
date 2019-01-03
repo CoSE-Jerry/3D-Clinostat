@@ -59,9 +59,9 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="Lighting_tab">
      <attribute name="title">
       <string>LIGHTING</string>
      </attribute>
@@ -423,42 +423,17 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="Frame_tab">
      <attribute name="title">
-      <string>MOTION</string>
+      <string>FRAME</string>
      </attribute>
-     <widget class="QSlider" name="inner_verticalSlider">
-      <property name="geometry">
-       <rect>
-        <x>49</x>
-        <y>10</y>
-        <width>21</width>
-        <height>291</height>
-       </rect>
-      </property>
-      <property name="minimum">
-       <number>3</number>
-      </property>
-      <property name="maximum">
-       <number>15</number>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="tickPosition">
-       <enum>QSlider::TicksBothSides</enum>
-      </property>
-      <property name="tickInterval">
-       <number>1</number>
-      </property>
-     </widget>
      <widget class="QSlider" name="outer_verticalSlider">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>10</y>
+        <x>85</x>
+        <y>20</y>
         <width>21</width>
-        <height>291</height>
+        <height>311</height>
        </rect>
       </property>
       <property name="minimum">
@@ -480,30 +455,11 @@
        <number>1</number>
       </property>
      </widget>
-     <widget class="QSpinBox" name="inner_spinBox">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>340</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="suffix">
-       <string> RPM</string>
-      </property>
-      <property name="minimum">
-       <number>3</number>
-      </property>
-      <property name="maximum">
-       <number>15</number>
-      </property>
-     </widget>
      <widget class="QSpinBox" name="outer_spinBox">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>340</y>
+        <x>45</x>
+        <y>350</y>
         <width>101</width>
         <height>31</height>
        </rect>
@@ -521,49 +477,23 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>300</y>
-        <width>51</width>
+        <x>45</x>
+        <y>330</y>
+        <width>101</width>
         <height>21</height>
        </rect>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;OUTER&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>300</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;INNER&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="Line" name="line">
-      <property name="geometry">
-       <rect>
-        <x>93</x>
-        <y>190</y>
-        <width>51</width>
-        <height>141</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;FRAME MOTOR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QFrame" name="frame_2">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>20</y>
-        <width>141</width>
-        <height>361</height>
+        <x>200</x>
+        <y>10</y>
+        <width>201</width>
+        <height>321</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -575,9 +505,9 @@
       <widget class="QSpinBox" name="spinBox_3">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>70</y>
-         <width>101</width>
+         <x>40</x>
+         <y>50</y>
+         <width>121</width>
          <height>22</height>
         </rect>
        </property>
@@ -597,9 +527,9 @@
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>50</y>
-         <width>111</width>
+         <x>40</x>
+         <y>30</y>
+         <width>121</width>
          <height>21</height>
         </rect>
        </property>
@@ -610,9 +540,9 @@
       <widget class="QSpinBox" name="spinBox_4">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>120</y>
-         <width>101</width>
+         <x>40</x>
+         <y>100</y>
+         <width>121</width>
          <height>22</height>
         </rect>
        </property>
@@ -623,18 +553,21 @@
         <string/>
        </property>
        <property name="minimum">
-        <number>100</number>
+        <number>2</number>
        </property>
        <property name="maximum">
         <number>1000</number>
+       </property>
+       <property name="value">
+        <number>2</number>
        </property>
       </widget>
       <widget class="QSpinBox" name="spinBox_5">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>170</y>
-         <width>101</width>
+         <x>40</x>
+         <y>150</y>
+         <width>121</width>
          <height>22</height>
         </rect>
        </property>
@@ -642,15 +575,15 @@
         <string> ms</string>
        </property>
        <property name="maximum">
-        <number>500</number>
+        <number>100000</number>
        </property>
       </widget>
       <widget class="QLabel" name="label_5">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>100</y>
-         <width>111</width>
+         <x>40</x>
+         <y>80</y>
+         <width>121</width>
          <height>21</height>
         </rect>
        </property>
@@ -661,22 +594,22 @@
       <widget class="QLabel" name="label_7">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>150</y>
-         <width>111</width>
+         <x>40</x>
+         <y>130</y>
+         <width>121</width>
          <height>21</height>
         </rect>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pause Interval:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pulse Interval:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_6">
        <property name="geometry">
         <rect>
-         <x>15</x>
-         <y>20</y>
-         <width>111</width>
+         <x>40</x>
+         <y>10</y>
+         <width>121</width>
          <height>21</height>
         </rect>
        </property>
@@ -687,61 +620,35 @@
       <widget class="QLabel" name="label_13">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>200</y>
-         <width>111</width>
+         <x>40</x>
+         <y>180</y>
+         <width>121</width>
          <height>21</height>
         </rect>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Set Microstep:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Override Microstep:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>310</y>
-         <width>121</width>
-         <height>41</height>
+         <x>30</x>
+         <y>280</y>
+         <width>141</width>
+         <height>21</height>
         </rect>
        </property>
        <property name="text">
         <string>APPLY</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_14">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>250</y>
-         <width>111</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Manual RPM:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="spinBox_7">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>270</y>
-         <width>101</width>
-         <height>22</height>
-        </rect>
-       </property>
-       <property name="suffix">
-        <string> RPM</string>
-       </property>
-      </widget>
       <widget class="QComboBox" name="comboBox">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>220</y>
-         <width>101</width>
+         <x>40</x>
+         <y>200</y>
+         <width>121</width>
          <height>22</height>
         </rect>
        </property>
@@ -786,12 +693,61 @@
         </property>
        </item>
       </widget>
+      <widget class="QPushButton" name="pushButton_13">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>250</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>RESET</string>
+       </property>
+      </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton_link">
+     <widget class="QPushButton" name="pushButton_15">
       <property name="geometry">
        <rect>
-        <x>102</x>
-        <y>155</y>
+        <x>210</x>
+        <y>350</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ENERGIZE COILS</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_16">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>290</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../_image/Reversal.png</normaloff>../_image/Reversal.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_19">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>355</y>
         <width>30</width>
         <height>30</height>
        </rect>
@@ -810,24 +766,44 @@
        </size>
       </property>
      </widget>
-     <widget class="Line" name="line_2">
+    </widget>
+    <widget class="QWidget" name="Core_tab">
+     <attribute name="title">
+      <string>CORE</string>
+     </attribute>
+     <widget class="QSlider" name="outer_verticalSlider_2">
       <property name="geometry">
        <rect>
-        <x>93</x>
-        <y>10</y>
-        <width>51</width>
-        <height>141</height>
+        <x>85</x>
+        <y>20</y>
+        <width>21</width>
+        <height>311</height>
        </rect>
+      </property>
+      <property name="minimum">
+       <number>3</number>
+      </property>
+      <property name="maximum">
+       <number>15</number>
+      </property>
+      <property name="tracking">
+       <bool>true</bool>
       </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
+      <property name="tickPosition">
+       <enum>QSlider::TicksBothSides</enum>
+      </property>
+      <property name="tickInterval">
+       <number>1</number>
+      </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="pushButton_5">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>265</y>
+        <x>120</x>
+        <y>290</y>
         <width>30</width>
         <height>30</height>
        </rect>
@@ -846,11 +822,279 @@
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QFrame" name="frame_3">
       <property name="geometry">
        <rect>
         <x>200</x>
-        <y>260</y>
+        <y>10</y>
+        <width>201</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QSpinBox" name="spinBox_39">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>50</y>
+         <width>121</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="suffix">
+        <string> ma</string>
+       </property>
+       <property name="prefix">
+        <string/>
+       </property>
+       <property name="minimum">
+        <number>-200</number>
+       </property>
+       <property name="maximum">
+        <number>200</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_62">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>30</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Current Delta:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spinBox_40">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>100</y>
+         <width>121</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="suffix">
+        <string> ms</string>
+       </property>
+       <property name="prefix">
+        <string/>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="value">
+        <number>2</number>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spinBox_41">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>150</y>
+         <width>121</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="suffix">
+        <string> ms</string>
+       </property>
+       <property name="maximum">
+        <number>100000</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_63">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>80</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pulse Width:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_64">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>130</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pulse Interval:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_65">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>10</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Expert Controls&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_66">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>180</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Override Microstep:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_12">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>280</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>APPLY</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_10">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>200</y>
+         <width>121</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>FULL</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1/2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1/4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1/8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1/16</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1/32</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1/64</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1/128</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QPushButton" name="pushButton_14">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>250</y>
+         <width>141</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>RESET</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_68">
+      <property name="geometry">
+       <rect>
+        <x>45</x>
+        <y>330</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;CORE MOTOR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="outer_spinBox_2">
+      <property name="geometry">
+       <rect>
+        <x>45</x>
+        <y>350</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="suffix">
+       <string> RPM</string>
+      </property>
+      <property name="minimum">
+       <number>3</number>
+      </property>
+      <property name="maximum">
+       <number>15</number>
+      </property>
+      <property name="value">
+       <number>3</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_17">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>350</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ENERGIZE COILS</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_18">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>355</y>
         <width>30</width>
         <height>30</height>
        </rect>
@@ -860,7 +1104,7 @@
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../_image/Reversal.png</normaloff>../_image/Reversal.png</iconset>
+        <normaloff>../_image/Link.png</normaloff>../_image/Link.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -870,7 +1114,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_3">
+    <widget class="QWidget" name="IMAGING_tab">
      <attribute name="title">
       <string>IMAGING</string>
      </attribute>

@@ -35,6 +35,7 @@ int counter = 0;
 
 int serial_CMD;
 boolean IR = false;
+boolean FAN = true;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRBW + NEO_KHZ800);
 #include <SoftwareSerial.h>
@@ -96,27 +97,52 @@ void loop() {
       secondSection();
 
     else if (commands[0] == 5)
-      digitalWrite(9, LOW);
+    {
+      if (!IR)
+      {
+        digitalWrite(10, LOW);
+      }
+      else
+      {
+        digitalWrite(10, HIGH);
+      }
+      IR = !IR;
+    }
+
 
     else if (commands[0] == 6)
-      digitalWrite(9, HIGH);
+    {
+      if (!FAN)
+      {
+        digitalWrite(9, LOW);
+      }
+      else
+      {
+        digitalWrite(9, HIGH);
+      }
+      FAN = !FAN;
+    }
+
 
     else if (commands[0] == 7)
     {
-
       String temp = String(commands[1]);
-      Serial.print("1~" + temp);
-      outterSerial.print("1~" + temp);
+      Serial.print(String(commands[1]) + "~" + String(commands[2]) + "~" + String(commands[3]) + "~" + String(commands[4]) + "~" + String(commands[5])+ "~" + String(commands[6]));
+      outterSerial.print(String(commands[1]) + "~" + String(commands[2]) + "~" + String(commands[3]) + "~" + String(commands[4]) + "~" + String(commands[5])+ "~" + String(commands[6]));
     }
     else if (commands[0] == 8)
     {
-
       String temp = String(commands[1]);
-      Serial.print("1~" + temp);
+      
       innerSerial.print("1~" + temp);
     }
     newCommand = false;
 
+  }
+
+
+  if (outterSerial.available()) {
+    Serial.write(outterSerial.read());
   }
 
   //  if (serial_CMD == 53)

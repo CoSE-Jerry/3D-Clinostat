@@ -1,58 +1,118 @@
-#include <Arduino.h>
+/* This example shows basic use of the AMIS-30543 stepper motor
+  driver.
 
-// Motor steps per revolution. Most steppers are 200 steps or 1.8 degrees/step
-#define MOTOR_STEPS 400
+  It shows how to initialize the driver, set the current limit, set
+  the micro-stepping mode, and enable the driver.  It shows how to
+  send pulses to the NXT/STEP pin to get the driver to take steps
+  and how to switch directions using the DIR pin.  The DO pin is
+  not used and does not need to be connected.
+
+  Before using this example, be sure to change the
+  setCurrentMilliamps line to have an appropriate current limit for
+  your system.  Also, see this library's documentation for
+  information about how to connect the driver:
+
+    http://pololu.github.io/amis-30543-arduino/
+*/
+
+#include <SPI.h>
+#include <AMIS30543.h>
+#define STEPS_PER_OUTPUT_REVOLUTION 400
 #define COMMANDSIZE 2
 
-#define DIR 8
-#define STEP 9
-#define ENABLE 13 // optional (just delete ENABLE from everywhere if not used)
+const uint8_t amisStepPin = 5;
+const uint8_t amisDirPin = 6;
+const uint8_t amisSlaveSelect = 7;
 
-#include "DRV8825.h"
-#define MODE0 10
-#define MODE1 11
-#define MODE2 12
-DRV8825 stepper(MOTOR_STEPS, DIR, STEP, ENABLE, MODE0, MODE1, MODE2);
-
+int micro = 128;
 int RPM = 3;
 int wait = 320;
-int dir = 1;
+int currentLimit = 650;
+int dir = 0;
+int pulseWidth = 1;
+
+boolean sysRunning = false;
 
 int commands[COMMANDSIZE];
 String serialResponse = "";
 
 boolean newCommand = false;
-char sz[] = "0~000";
+char sz[] = "0~000~000~000~000~000";
+AMIS30543 stepper;
 
-void setup() {
-
-  Serial.begin(38400);
+void setup()
+{
+  Serial.begin(4800);
   Serial.setTimeout(5);
-  stepper.begin(RPM);
-  stepper.enable();
-  stepper.setMicrostep(32);
+
+  SPI.begin();
+  stepper.init(amisSlaveSelect);
+
+  // Drive the NXT/STEP and DIR pins low initially.
+  digitalWrite(amisStepPin, LOW);
+  pinMode(amisStepPin, OUTPUT);
+  digitalWrite(amisDirPin, LOW);
+  pinMode(amisDirPin, OUTPUT);
+
+  // Give the driver some time to power up.
+  delay(1);
+  // Reset the driver to its default settings.
+  stepper.resetSettings();
+
+  // Set the current limit.  You should change the number here to
+  // an appropriate value for your particular system.
+  stepper.setCurrentMilliamps(currentLimit);
+
+  // Set the number of microsteps that correspond to one full step.
+  stepper.setStepMode(128);
 }
 
-void loop() {
+void loop()
+{
 
-
-
-  if ( Serial.available()) {
+  if (Serial.available()) {
     readInput();
+    Serial.println("reading");
+
+    if (commands[0] == 0)
+    {
+      if (!sysRunning)
+      {
+        stepper.enableDriver();
+        setDirection(dir);
+      }
+      else
+        stepper.disableDriver();
+      sysRunning = !sysRunning;
+    }
+
     if (commands[0] == 1)
-      updates();
-    if (commands[0] == 2)
+      updateRPM();
+
+    else if (commands[0] == 2)
       updateDir();
+
+    else if (commands[0] == 3)
+    {
+      stepper.setCurrentMilliamps(currentLimit + commands[1]);
+      pulseWidth = commands[2];
+      wait = commands[3];
+      stepper.setStepMode(commands[4]);
+    }
   }
-  delayMicroseconds(wait-8);
-  stepper.move(dir*1);
+
+  step();
+
+
+
 }
 
 void readInput()
 {
+  clearCommands();
   int current = 0;
 
-  clearCommands();
+
   newCommand = true;
   serialResponse = Serial.readStringUntil('\r\n');
 
@@ -68,25 +128,46 @@ void readInput()
     commands[current] = temp;
     current++;
   }
-
 }
 
-void updates()
+// Sends a pulse on the NXT/STEP pin to tell the driver to take
+// one step, and also delays to control the speed of the motor.
+void step()
+{
+  // The NXT/STEP minimum high pulse width is 2 microseconds.
+  digitalWrite(amisStepPin, HIGH);
+  delayMicroseconds(pulseWidth);
+  digitalWrite(amisStepPin, LOW);
+  delayMicroseconds(pulseWidth);
+
+  // The delay here controls the stepper motor's speed.  You can
+  // increase the delay to make the stepper motor go slower.  If
+  // you decrease the delay, the stepper motor will go fast, but
+  // there is a limit to how fast it can go before it starts
+  // missing steps.
+  delayMicroseconds(wait - 8);
+}
+
+// Writes a high or low value to the direction pin to specify
+// what direction to turn the motor.
+void setDirection(bool dir)
+{
+  // The NXT/STEP pin must not change for at least 0.5
+  // microseconds before and after changing the DIR pin.
+  delayMicroseconds(1);
+  digitalWrite(amisDirPin, dir);
+  delayMicroseconds(1);
+}
+
+void updateRPM()
 {
   RPM = commands[1];
-  wait = 60 / (0.0512 * RPM);
+  wait = int(60 / (0.0004 * micro * RPM));
 }
 
 void updateDir()
 {
-  dir = commands[1];
-}
-
-void printCommands() {
-  for (int i = 0; i < COMMANDSIZE; i++)
-  {
-    Serial.println(commands[i]);
-  }
+  setDirection(commands[1]);
 }
 
 void clearCommands() {
