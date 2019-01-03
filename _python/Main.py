@@ -69,12 +69,12 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             Settings.LINKED = False
             icon = QtGui.QIcon()
             icon.addPixmap(QtGui.QPixmap("../_image/Broken_Link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-            self.pushButton_link.setIcon(icon)
+            #self.pushButton_link.setIcon(icon)
         else:
             Settings.LINKED = True
             icon = QtGui.QIcon()
             icon.addPixmap(QtGui.QPixmap("../_image/Link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-            self.pushButton_link.setIcon(icon)
+            #self.pushButton_link.setIcon(icon)
         
         
  
@@ -93,7 +93,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         #self.inner_verticalSlider.valueChanged.connect(lambda: self.inner_change())
         #self.outer_spinBox.valueChanged.connect(lambda: self.inner_spin_change())
         #self.inner_spinBox.valueChanged.connect(lambda: self.inner_spin_hange())
-        self.pushButton_link.clicked.connect(lambda: self.link())
+        #self.pushButton_link.clicked.connect(lambda: self.link())
 
         self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.G_spinBox.valueChanged.connect(lambda: self.custom_update())
