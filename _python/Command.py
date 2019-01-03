@@ -69,19 +69,19 @@ def bottom_color_change(self):
 def IR_trigger(self):
 
     if not Settings.IR_STAT:
-        Settings.ASD.write(bytes("3~", 'UTF-8'))
+        Settings.ASD.write(bytes("5~", 'UTF-8'))
         Settings.IR_STAT=True
         self.IR_pushButton.setText("INFRARED:ON")
     
     else:
-        Settings.ASD.write(bytes("4~", 'UTF-8'))
+        Settings.ASD.write(bytes("5~", 'UTF-8'))
         Settings.IR_STAT=False
         self.IR_pushButton.setText("INFRARED:OFF")
 
 def Cooling_trigger(self):
 
     if not Settings.CL_STAT:
-        Settings.ASD.write(bytes("5~", 'UTF-8'))
+        Settings.ASD.write(bytes("6~", 'UTF-8'))
         Settings.CL_STAT=True
         self.Cooling.setText("COOLING:ON")
     
