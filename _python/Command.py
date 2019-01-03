@@ -1,5 +1,6 @@
 import Settings
 from time import sleep
+from PyQt5.QtCore import QThread
 
 def top_color_change(self):
     temp = self.topColor_comboBox.currentIndex()
