@@ -30,7 +30,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         if(Settings.LINKED):
             Settings.outer_RPM=self.outer_verticalSlider.sliderPosition()
             Settings.inner_RPM=Settings.outer_RPM
-            self.inner_verticalSlider.setValue(Settings.inner_RPM)
+            #self.inner_verticalSlider.setValue(Settings.inner_RPM)
             self.inner_spinBox.setValue(Settings.inner_RPM)
             self.outer_spinBox.setValue(Settings.outer_RPM)
             Settings.ASD.write(bytes("5~"+str(Settings.outer_RPM), 'UTF-8'))
@@ -43,7 +43,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def inner_change(self):
         if(Settings.LINKED):
-            Settings.inner_RPM=self.inner_verticalSlider.sliderPosition()
+            #Settings.inner_RPM=self.inner_verticalSlider.sliderPosition()
             Settings.outer_RPM=Settings.inner_RPM            
             self.outer_verticalSlider.setValue(Settings.outer_RPM)
             self.inner_spinBox.setValue(Settings.inner_RPM)
@@ -51,7 +51,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             Settings.ASD.write(bytes("5~"+str(Settings.outer_RPM), 'UTF-8'))
             #Settings.ASD.write(bytes("6~"+str(Settings.inner_RPM), 'UTF-8'))
         else:
-            Settings.inner_RPM=self.inner_verticalSlider.sliderPosition()
+            #Settings.inner_RPM=self.inner_verticalSlider.sliderPosition()
             self.inner_spinBox.setValue(Settings.inner_RPM)
             Settings.ASD.write(bytes("6~"+str(Settings.inner_RPM), 'UTF-8'))
 
@@ -89,8 +89,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.bottomColor_comboBox.currentIndexChanged.connect(lambda: Command.bottom_color_change(self))
         self.IR_pushButton.clicked.connect(lambda: Command.IR_trigger(self))
         self.Cooling.clicked.connect(lambda: Command.Cooling_trigger(self))
-        self.outer_verticalSlider.valueChanged.connect(lambda: self.outer_change())
-        self.inner_verticalSlider.valueChanged.connect(lambda: self.inner_change())
+        #self.outer_verticalSlider.valueChanged.connect(lambda: self.outer_change())
+        #self.inner_verticalSlider.valueChanged.connect(lambda: self.inner_change())
         #self.outer_spinBox.valueChanged.connect(lambda: self.inner_spin_change())
         #self.inner_spinBox.valueChanged.connect(lambda: self.inner_spin_hange())
         self.pushButton_link.clicked.connect(lambda: self.link())
