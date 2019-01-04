@@ -53,7 +53,6 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.frame_spinBox.blockSignals(False)
         
         Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
-        sleep(10);
         Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
 
     def frame_change(self):
@@ -112,7 +111,6 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.frame_verticalSlider.setValue(Settings.frame_RPM)
         
         Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
-        sleep(10);
         Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
 
     def frame_spin_change(self):
@@ -130,6 +128,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.core_RPM=self.core_spinBox.value()
         self.core_verticalSlider.setValue(Settings.core_RPM)
         Settings.ASD.write(bytes("8~1~"+str(Settings.frame_RPM), 'UTF-8'))
+
+    def ergz(self):
+        Settings.ASD.write(bytes("7~0~", 'UTF-8'))
         
         
     def __init__(self):
@@ -149,6 +150,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())
         self.coreLink_pushButton.clicked.connect(lambda: self.link())
         self.frameLink_pushButton.clicked.connect(lambda: self.link())
+        self.frameErgz_pushButton.clicked.connect(lambda: self.ergz())
+
+        
 
         self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.G_spinBox.valueChanged.connect(lambda: self.custom_update())
