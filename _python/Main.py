@@ -147,7 +147,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.core_verticalSlider.valueChanged.connect(lambda: self.core_select())
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
         self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())
-        #self.pushButton_link.clicked.connect(lambda: self.link())
+        self.coreLink_pushButton.clicked.connect(lambda: self.link())
+        self.frameLink_pushButton.clicked.connect(lambda: self.link())
 
         self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.G_spinBox.valueChanged.connect(lambda: self.custom_update())
