@@ -427,7 +427,7 @@
      <attribute name="title">
       <string>FRAME</string>
      </attribute>
-     <widget class="QSlider" name="outer_verticalSlider">
+     <widget class="QSlider" name="frame_verticalSlider">
       <property name="geometry">
        <rect>
         <x>85</x>
@@ -455,7 +455,7 @@
        <number>1</number>
       </property>
      </widget>
-     <widget class="QSpinBox" name="outer_spinBox">
+     <widget class="QSpinBox" name="frame_spinBox">
       <property name="geometry">
        <rect>
         <x>45</x>
@@ -474,7 +474,7 @@
        <number>15</number>
       </property>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="frame_label">
       <property name="geometry">
        <rect>
         <x>45</x>
@@ -484,7 +484,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;FRAME MOTOR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;FRAME&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QFrame" name="frame_2">
@@ -502,7 +502,7 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QSpinBox" name="spinBox_3">
+      <widget class="QSpinBox" name="frameCD_spinBox_2">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -512,7 +512,7 @@
         </rect>
        </property>
        <property name="suffix">
-        <string> ma</string>
+        <string> mA</string>
        </property>
        <property name="prefix">
         <string/>
@@ -537,7 +537,7 @@
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Current Delta:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="spinBox_4">
+      <widget class="QSpinBox" name="framePW_spinBox">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -562,7 +562,7 @@
         <number>2</number>
        </property>
       </widget>
-      <widget class="QSpinBox" name="spinBox_5">
+      <widget class="QSpinBox" name="framePI_spinBox">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -573,6 +573,9 @@
        </property>
        <property name="suffix">
         <string> ms</string>
+       </property>
+       <property name="minimum">
+        <number>390</number>
        </property>
        <property name="maximum">
         <number>100000</number>
@@ -627,10 +630,10 @@
         </rect>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Override Microstep:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Microstepping:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="frameApply_pushButton">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -643,7 +646,7 @@
         <string>APPLY</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="comboBox">
+      <widget class="QComboBox" name="frameMS_comboBox">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -651,6 +654,9 @@
          <width>121</width>
          <height>22</height>
         </rect>
+       </property>
+       <property name="currentIndex">
+        <number>7</number>
        </property>
        <item>
         <property name="text">
@@ -693,7 +699,7 @@
         </property>
        </item>
       </widget>
-      <widget class="QPushButton" name="pushButton_13">
+      <widget class="QPushButton" name="frameReset_pushButton">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -707,7 +713,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton_15">
+     <widget class="QPushButton" name="frameErgz_pushButton">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -720,7 +726,7 @@
        <string>ENERGIZE COILS</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_16">
+     <widget class="QPushButton" name="frameReverse_pushButton">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -743,7 +749,7 @@
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_19">
+     <widget class="QPushButton" name="frameLink_pushButton">
       <property name="geometry">
        <rect>
         <x>360</x>
@@ -771,7 +777,7 @@
      <attribute name="title">
       <string>CORE</string>
      </attribute>
-     <widget class="QSlider" name="outer_verticalSlider_2">
+     <widget class="QSlider" name="core_verticalSlider">
       <property name="geometry">
        <rect>
         <x>85</x>
@@ -799,7 +805,7 @@
        <number>1</number>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="coreReverse_pushButton">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -837,7 +843,7 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QSpinBox" name="spinBox_39">
+      <widget class="QSpinBox" name="coreCD_spinBox">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -847,7 +853,7 @@
         </rect>
        </property>
        <property name="suffix">
-        <string> ma</string>
+        <string> mA</string>
        </property>
        <property name="prefix">
         <string/>
@@ -872,7 +878,7 @@
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Current Delta:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="spinBox_40">
+      <widget class="QSpinBox" name="corePW_spinBox">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -897,7 +903,7 @@
         <number>2</number>
        </property>
       </widget>
-      <widget class="QSpinBox" name="spinBox_41">
+      <widget class="QSpinBox" name="corePI_spinBox">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -908,6 +914,9 @@
        </property>
        <property name="suffix">
         <string> ms</string>
+       </property>
+       <property name="minimum">
+        <number>390</number>
        </property>
        <property name="maximum">
         <number>100000</number>
@@ -962,10 +971,10 @@
         </rect>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Override Microstep:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Microstepping:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_12">
+      <widget class="QPushButton" name="coreApply_pushButton">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -978,7 +987,7 @@
         <string>APPLY</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="comboBox_10">
+      <widget class="QComboBox" name="coreMS_comboBox">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -986,6 +995,9 @@
          <width>121</width>
          <height>22</height>
         </rect>
+       </property>
+       <property name="currentIndex">
+        <number>7</number>
        </property>
        <item>
         <property name="text">
@@ -1028,7 +1040,7 @@
         </property>
        </item>
       </widget>
-      <widget class="QPushButton" name="pushButton_14">
+      <widget class="QPushButton" name="coreReset_pushButton">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -1052,10 +1064,10 @@
        </rect>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;CORE MOTOR&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;CORE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QSpinBox" name="outer_spinBox_2">
+     <widget class="QSpinBox" name="core_spinBox">
       <property name="geometry">
        <rect>
         <x>45</x>
@@ -1077,7 +1089,7 @@
        <number>3</number>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_17">
+     <widget class="QPushButton" name="coreErgz_pushButton">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -1090,7 +1102,7 @@
        <string>ENERGIZE COILS</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_18">
+     <widget class="QPushButton" name="coreLink_pushButton">
       <property name="geometry">
        <rect>
         <x>360</x>
@@ -1251,7 +1263,7 @@
      <rect>
       <x>470</x>
       <y>350</y>
-      <width>131</width>
+      <width>81</width>
       <height>91</height>
      </rect>
     </property>

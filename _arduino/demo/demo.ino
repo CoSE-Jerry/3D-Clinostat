@@ -127,7 +127,6 @@ void loop() {
     else if (commands[0] == 7)
     {
       String temp = String(commands[1]);
-      Serial.print(String(commands[1]) + "~" + String(commands[2]) + "~" + String(commands[3]) + "~" + String(commands[4]) + "~" + String(commands[5])+ "~" + String(commands[6]));
       outterSerial.print(String(commands[1]) + "~" + String(commands[2]) + "~" + String(commands[3]) + "~" + String(commands[4]) + "~" + String(commands[5])+ "~" + String(commands[6]));
     }
     else if (commands[0] == 8)
@@ -138,11 +137,6 @@ void loop() {
     }
     newCommand = false;
 
-  }
-
-
-  if (outterSerial.available()) {
-    Serial.write(outterSerial.read());
   }
 
   //  if (serial_CMD == 53)
