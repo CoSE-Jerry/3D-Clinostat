@@ -44,9 +44,14 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             Settings.core_RPM = self.core_verticalSlider.sliderPosition()
             Settings.frame_RPM=Settings.core_RPM
             self.frame_verticalSlider.setValue(Settings.frame_RPM)
-            
+
+        self.core_spinBox.blockSignals(True)
+        self.frame_spinBox.blockSignals(True)
         self.core_spinBox.setValue(Settings.core_RPM)
         self.frame_spinBox.setValue(Settings.frame_RPM)
+        self.core_spinBox.blockSignals(False)
+        self.frame_spinBox.blockSignals(False)
+        
         Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
         sleep(10);
         Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
