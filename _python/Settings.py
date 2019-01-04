@@ -14,10 +14,10 @@ def init():
     LINKED = True
 
     global core_RPM
-    inner_RPM = 3
+    core_RPM = 3
 
     global frame_RPM
-    outer_RPM = 3
+    frame_RPM = 3
 
     global custom_R
     custom_R=0
