@@ -131,7 +131,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def ergz(self):
         Settings.ASD.write(bytes("7~0~", 'UTF-8'))
-        #Settings.ASD.write(bytes("7~1~3", 'UTF-8'))
+        Settings.ASD.write(bytes("8~0~", 'UTF-8'))
         
         
     def __init__(self):
