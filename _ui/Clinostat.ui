@@ -553,7 +553,7 @@
         <string/>
        </property>
        <property name="minimum">
-        <number>2</number>
+        <number>1</number>
        </property>
        <property name="maximum">
         <number>1000</number>
@@ -575,7 +575,7 @@
         <string> ms</string>
        </property>
        <property name="minimum">
-        <number>390</number>
+        <number>1</number>
        </property>
        <property name="maximum">
         <number>100000</number>
@@ -655,47 +655,50 @@
          <height>22</height>
         </rect>
        </property>
+       <property name="currentText">
+        <string>128</string>
+       </property>
        <property name="currentIndex">
         <number>7</number>
        </property>
        <item>
         <property name="text">
-         <string>FULL</string>
+         <string>1</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/2</string>
+         <string>2</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/4</string>
+         <string>4</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/8</string>
+         <string>8</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/16</string>
+         <string>16</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/32</string>
+         <string>32</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/64</string>
+         <string>64</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/128</string>
+         <string>128</string>
         </property>
        </item>
       </widget>
@@ -916,7 +919,7 @@
         <string> ms</string>
        </property>
        <property name="minimum">
-        <number>390</number>
+        <number>1</number>
        </property>
        <property name="maximum">
         <number>100000</number>
@@ -996,47 +999,50 @@
          <height>22</height>
         </rect>
        </property>
+       <property name="currentText">
+        <string>128</string>
+       </property>
        <property name="currentIndex">
         <number>7</number>
        </property>
        <item>
         <property name="text">
-         <string>FULL</string>
+         <string>1</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/2</string>
+         <string>2</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/4</string>
+         <string>4</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/8</string>
+         <string>8</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/16</string>
+         <string>16</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/32</string>
+         <string>32</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/64</string>
+         <string>64</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>1/128</string>
+         <string>128</string>
         </property>
        </item>
       </widget>

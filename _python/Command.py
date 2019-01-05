@@ -201,8 +201,8 @@ def reverse_core(self):
     Settings.ASD.write(bytes("8~2~"+str(Settings.core_dir), 'UTF-8'))
 
 def frame_apply(self):
-    #Settings.ASD.write(bytes("7~3~"+str(self.frameCD_spinBox.value())+"~"+str(self.framePW_spinBox.value())+"~"+str(self.framePI_spinBox.value())+"~"+self.frameMS_comboBox.currentText(), 'UTF-8'))
-    print("7~3~"+str(self.frameCD_spinBox.value())+"~"+str(self.framePW_spinBox.value())+"~"+str(self.framePI_spinBox.value())+"~"+self.frameMS_comboBox.currentText())
+    Settings.ASD.write(bytes("7~3~"+str(self.frameCD_spinBox.value())+"~"+str(self.framePW_spinBox.value())+"~"+str(self.framePI_spinBox.value())+"~"+self.frameMS_comboBox.currentText(), 'UTF-8'))
+    #print("7~3~"+str(self.frameCD_spinBox.value())+"~"+str(self.framePW_spinBox.value())+"~"+str(self.framePI_spinBox.value())+"~"+self.frameMS_comboBox.currentText())
      
 def frame_reset(self):
     Settings.ASD.write(bytes("7~3~0~2~380~128", 'UTF-8'))
