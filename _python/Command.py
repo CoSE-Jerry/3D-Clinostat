@@ -144,12 +144,16 @@ def linked_spin_change(self):
 
 def frame_spin_change(self):
     Settings.frame_RPM=self.frame_spinBox.value()
+    self.frame_verticalSlider.blockSignals(True)
     self.frame_verticalSlider.setValue(Settings.frame_RPM)
+    self.frame_verticalSlider.blockSignals(False)
     Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM)+"~", 'UTF-8'))
         
 def core_spin_change(self):
     Settings.core_RPM=self.core_spinBox.value()
+    self.core_verticalSlider.blockSignals(True)
     self.core_verticalSlider.setValue(Settings.core_RPM)
+    self.core_verticalSlider.blockSignals(False)
     Settings.ASD.write(bytes("8~1~"+str(Settings.frame_RPM), 'UTF-8'))
 
 def ergz_linked(self):
