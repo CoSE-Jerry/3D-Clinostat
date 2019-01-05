@@ -130,7 +130,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.ASD.write(bytes("8~1~"+str(Settings.frame_RPM), 'UTF-8'))
 
     def ergz(self):
-        Settings.ASD.write(bytes("7~0~", 'UTF-8'))
+        #Settings.ASD.write(bytes("7~0~", 'UTF-8'))
         Settings.ASD.write(bytes("8~0~", 'UTF-8'))
         
         
