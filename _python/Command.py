@@ -203,7 +203,7 @@ def reverse_core(self):
 def linked_apply(self):
     Settings.ASD.write(bytes("7~3~"+str(self.frameCD_spinBox.value())+"~"+str(self.framePW_spinBox.value())+"~"+str(self.framePI_spinBox.value())+"~"+self.frameMS_comboBox.currentText()+"~", 'UTF-8'))
     sleep(Settings.hold)
-    Settings.ASD.write(bytes("8~3~"+str(self.frameCD_spinBox.value())+"~"+str(self.framePW_spinBox.value())+"~"+str(self.framePI_spinBox.value())+"~"+self.frameMS_comboBox.currentText()+"~", 'UTF-8'))
+    Settings.ASD.write(bytes("8~3~"+str(self.coreCD_spinBox.value())+"~"+str(self.corePW_spinBox.value())+"~"+str(self.corePI_spinBox.value())+"~"+self.coreMS_comboBox.currentText()+"~", 'UTF-8'))
 
 def linked_reset(self):
     Settings.ASD.write(bytes("7~3~0~2~380~128~", 'UTF-8'))
@@ -214,7 +214,7 @@ def frame_apply(self):
     Settings.ASD.write(bytes("7~3~"+str(self.frameCD_spinBox.value())+"~"+str(self.framePW_spinBox.value())+"~"+str(self.framePI_spinBox.value())+"~"+self.frameMS_comboBox.currentText()+"~", 'UTF-8'))
 
 def core_apply(self):
-    Settings.ASD.write(bytes("8~3~"+str(self.frameCD_spinBox.value())+"~"+str(self.framePW_spinBox.value())+"~"+str(self.framePI_spinBox.value())+"~"+self.frameMS_comboBox.currentText()+"~", 'UTF-8'))
+    Settings.ASD.write(bytes("8~3~"+str(self.coreCD_spinBox.value())+"~"+str(self.corePW_spinBox.value())+"~"+str(self.corePI_spinBox.value())+"~"+self.coreMS_comboBox.currentText()+"~", 'UTF-8'))
     
 def frame_reset(self):
     Settings.ASD.write(bytes("7~3~0~2~380~128~", 'UTF-8'))
