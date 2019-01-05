@@ -84,6 +84,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def reverse_frame_select(self):
         if(Settings.LINKED):
             Command.reverse_linked(self)
+            if(Settings.frame_dir==0):
+                self.frameReverse_pushButton.setIcon(reverse)
         else:
             Command.reverse_frame(self)
 
