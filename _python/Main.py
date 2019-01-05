@@ -33,15 +33,15 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def frame_select(self):
         if(Settings.LINKED):
-            command.linked_change(self)
+            Command.linked_change(self)
         else:
-            command.frame_change(self)
+            Command.frame_change(self)
 
     def core_select(self):
         if(Settings.LINKED):
-            command.linked_change(self)
+            Command.linked_change(self)
         else:
-            command.core_change(self)
+            Command.core_change(self)
 
     def link(self):
         if(Settings.LINKED):
@@ -59,27 +59,27 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def frame_spin_select(self):
         if(Settings.LINKED):
-            command.linked_spin_change(self)
+            Command.linked_spin_change(self)
         else:
-            command.frame_spin_change(self)
+            Command.frame_spin_change(self)
 
     def core_spin_select(self):
         if(Settings.LINKED):
-            command.linked_spin_change(self)
+            Command.linked_spin_change(self)
         else:
-            command.core_spin_change(self)
+            Command.core_spin_change(self)
 
     def ergz_frame_select(self):
         if(Settings.LINKED):
-            command.ergz_linked(self)
+            Command.ergz_linked(self)
         else:
-            command.ergz_frame(self)
+            Command.ergz_frame(self)
 
     def ergz_core_select(self):
         if(Settings.LINKED):
-            command.ergz_linked(self)
+            Command.ergz_linked(self)
         else:
-            command.ergz_core(self)
+            Command.ergz_core(self)
         
     def __init__(self):
         super(self.__class__, self).__init__()
