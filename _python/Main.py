@@ -82,6 +82,13 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             Command.ergz_core(self)
 
     def reverse_frame_select(self):
+        
+        forward = QtGui.QIcon()
+        forward.addPixmap(QtGui.QPixmap("../_image/forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+
+        reverse = QtGui.QIcon()
+        reverse.addPixmap(QtGui.QPixmap("../_image/Reverse.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+
         if(Settings.LINKED):
             Command.reverse_linked(self)
             if(Settings.frame_dir==0):
@@ -136,12 +143,6 @@ def main():
     app = QApplication(sys.argv)
     form = MainWindow()
     form.show()
-
-    forward = QtGui.QIcon()
-    forward.addPixmap(QtGui.QPixmap("../_image/forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-
-    reverse = QtGui.QIcon()
-    reverse.addPixmap(QtGui.QPixmap("../_image/Reverse.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
     
     # without this, the script exits immediately.
     sys.exit(app.exec_())
