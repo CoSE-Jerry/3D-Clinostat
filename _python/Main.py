@@ -156,6 +156,10 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
         self.frameReverse_pushButton.clicked.connect(lambda: self.reverse_frame_select())
         self.coreReverse_pushButton.clicked.connect(lambda: self.reverse_core_select())
+
+        self.frameApply_pushButton.clicked.connect(lambda: Command.frame_apply(self))
+        self.frameReset_pushButton.clicked.connect(lambda: Command.frame_reset(self))
+        
         
 
         self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
