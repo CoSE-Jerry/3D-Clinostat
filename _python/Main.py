@@ -129,6 +129,30 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
                 self.coreReverse_pushButton.setIcon(reverse)
             else:
                 self.coreReverse_pushButton.setIcon(forward)
+
+    def apply_frame_select(self):
+        if(Settings.LINKED):
+            Command.linked_apply(self)
+        else:
+            Command.frame_apply(self)
+
+    def apply_core_select(self):
+        if(Settings.LINKED):
+            Command.linked_apply(self)
+        else:
+            Command.core_apply(self)
+
+    def reset_frame_select(self):
+        if(Settings.LINKED):
+            Command.linked_reset(self)
+        else:
+            Command.frame_reset(self)
+
+    def reset_core_select(self):
+        if(Settings.LINKED):
+            Command.linked_reset(self)
+        else:
+            Command.core_reset(self)
         
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -157,8 +181,11 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.frameReverse_pushButton.clicked.connect(lambda: self.reverse_frame_select())
         self.coreReverse_pushButton.clicked.connect(lambda: self.reverse_core_select())
 
-        self.frameApply_pushButton.clicked.connect(lambda: Command.frame_apply(self))
-        self.frameReset_pushButton.clicked.connect(lambda: Command.frame_reset(self))
+        self.frameApply_pushButton.clicked.connect(lambda: self.apply_frame_select())
+        self.frameReset_pushButton.clicked.connect(lambda: self.reset_frame_select())
+
+        self.coreApply_pushButton.clicked.connect(lambda: self.apply_core_select())
+        self.coreReset_pushButton.clicked.connect(lambda: self.reset_core_select())
         
         
 
