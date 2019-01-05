@@ -53,7 +53,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.frame_spinBox.blockSignals(False)
         
         Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
-        Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
+        #Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
 
     def frame_change(self):
         Settings.frame_RPM=self.frame_verticalSlider.sliderPosition()
@@ -111,7 +111,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.frame_verticalSlider.setValue(Settings.frame_RPM)
         
         Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
-        Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
+        #Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
 
     def frame_spin_change(self):
         Settings.frame_RPM=self.frame_spinBox.value()
@@ -130,9 +130,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.ASD.write(bytes("8~1~"+str(Settings.frame_RPM), 'UTF-8'))
 
     def ergz(self):
-        println("run")
         Settings.ASD.write(bytes("7~0~", 'UTF-8'))
-        Settings.ASD.write(bytes("7~1~3", 'UTF-8'))
+        #Settings.ASD.write(bytes("7~1~3", 'UTF-8'))
         
         
     def __init__(self):
