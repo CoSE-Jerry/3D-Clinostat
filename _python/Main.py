@@ -130,6 +130,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.ASD.write(bytes("8~1~"+str(Settings.frame_RPM), 'UTF-8'))
 
     def ergz(self):
+        println("run")
         Settings.ASD.write(bytes("7~0~", 'UTF-8'))
         Settings.ASD.write(bytes("7~1~3", 'UTF-8'))
         
@@ -153,7 +154,6 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.frameLink_pushButton.clicked.connect(lambda: self.link())
         self.frameErgz_pushButton.clicked.connect(lambda: self.ergz())
 
-        
 
         self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.G_spinBox.valueChanged.connect(lambda: self.custom_update())
