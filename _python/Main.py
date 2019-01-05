@@ -116,7 +116,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def frame_spin_change(self):
         Settings.frame_RPM=self.frame_spinBox.value()
         self.frame_verticalSlider.setValue(Settings.frame_RPM)
-        Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
+        Settings.ASD.write(bytes("7~1~5~", 'UTF-8'))
 
     def core_spin_select(self):
         if(Settings.LINKED):
