@@ -208,7 +208,7 @@ def linked_apply(self):
 def linked_reset(self):
     Settings.ASD.write(bytes("7~3~0~2~380~128~", 'UTF-8'))
     sleep(Settings.hold)
-    Settings.ASD.write(bytes("7~3~0~2~380~128~", 'UTF-8'))
+    Settings.ASD.write(bytes("8~3~0~2~380~128~", 'UTF-8'))
 
 def frame_apply(self):
     Settings.ASD.write(bytes("7~3~"+str(self.frameCD_spinBox.value())+"~"+str(self.framePW_spinBox.value())+"~"+str(self.framePI_spinBox.value())+"~"+self.frameMS_comboBox.currentText()+"~", 'UTF-8'))
