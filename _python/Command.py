@@ -174,17 +174,17 @@ def ergz_core(self):
 def reverse_linked(self):
     if(Settings.frame_dir==0):
         Settings.frame_dir=1
-        self.frameReverse_pushButton.setIcon(reverse)
+        self.frameReverse_pushButton.setIcon(self.reverse)
     else:
         Settings.frame_dir=0
-        self.frameReverse_pushButton.setIcon(forward)
+        self.frameReverse_pushButton.setIcon(self.forward)
 
     if(Settings.core_dir==0):
         Settings.core_dir=1
-        self.coreReverse_pushButton.setIcon(reverse)
+        self.coreReverse_pushButton.setIcon(self.reverse)
     else:
         Settings.core_dir=0
-        self.coreReverse_pushButton.setIcon(forward)
+        self.coreReverse_pushButton.setIcon(self.forward)
 
     Settings.ASD.write(bytes("7~2~"+str(Settings.frame_dir), 'UTF-8'))
     sleep(Settings.hold)
