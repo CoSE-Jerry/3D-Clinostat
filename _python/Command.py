@@ -114,12 +114,13 @@ def linked_change(self):
 def frame_change(self):
     Settings.frame_RPM=self.frame_verticalSlider.sliderPosition()
     self.frame_spinBox.setValue(Settings.frame_RPM)
-    Settings.ASD.write(bytes("8~1~"+str(Settings.frame_RPM), 'UTF-8'))
+    Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
 
 def core_change(self):
     Settings.core_RPM=self.core_verticalSlider.sliderPosition()
     self.core_spinBox.setValue(Settings.core_RPM)
     Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
+    print(Settings.core_RPM)
 
 def linked_spin_change(self):
     if(self.frame_spinBox.value() != Settings.frame_RPM):
