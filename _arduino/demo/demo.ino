@@ -65,7 +65,7 @@ void setup() {
   digitalWrite(9, LOW);
 
   outterSerial.begin(19200);
-  innerSerial.begin(38400);
+  innerSerial.begin(4800);
 
   strip.setBrightness(BRIGHTNESS);
   strip.begin();

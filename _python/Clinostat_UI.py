@@ -204,7 +204,7 @@ class Ui_MainWindow(object):
         self.frameReverse_pushButton.setGeometry(QtCore.QRect(120, 290, 30, 30))
         self.frameReverse_pushButton.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../_image/Reversal.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("../_image/forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.frameReverse_pushButton.setIcon(icon1)
         self.frameReverse_pushButton.setIconSize(QtCore.QSize(20, 20))
         self.frameReverse_pushButton.setObjectName("frameReverse_pushButton")
@@ -411,7 +411,7 @@ class Ui_MainWindow(object):
         self.actionCreate_Timelapse.setObjectName("actionCreate_Timelapse")
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         self.frameMS_comboBox.setCurrentIndex(7)
         self.coreMS_comboBox.setCurrentIndex(7)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)

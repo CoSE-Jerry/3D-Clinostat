@@ -1,6 +1,13 @@
 import Settings
 from time import sleep
 from PyQt5.QtCore import QThread
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+forward = QtGui.QIcon()
+forward.addPixmap(QtGui.QPixmap("../_image/forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+
+reverse = QtGui.QIcon()
+reverse.addPixmap(QtGui.QPixmap("../_image/Reverse.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
 def top_color_change(self):
     temp = self.topColor_comboBox.currentIndex()
@@ -167,5 +174,43 @@ def ergz_frame(self):
 
 def ergz_core(self):
     Settings.ASD.write(bytes("8~0~", 'UTF-8'))
+
+def reverse_linked(self):
+    if(Settings.frame_dir==0):
+        Settings.frame_dir=1
+        self.frameReverse_pushButton.setIcon(reverse)
+    else:
+        Settings.frame_dir=0
+        self.frameReverse_pushButton.setIcon(forward)
+
+    if(Settings.core_dir==0):
+        Settings.core_dir=1
+        self.coreReverse_pushButton.setIcon(reverse)
+    else:
+        Settings.core_dir=0
+        self.coreReverse_pushButton.setIcon(forward)
+
+    Settings.ASD.write(bytes("7~2~"+str(Settings.frame_dir), 'UTF-8'))
+    sleep(Settings.hold)
+    Settings.ASD.write(bytes("8~2~"+str(Settings.core_dir), 'UTF-8'))
+
+def reverse_frame(self):
+    if(Settings.frame_dir==0):
+        Settings.frame_dir=1
+        self.frameReverse_pushButton.setIcon(reverse)
+    else:
+        Settings.frame_dir=0
+        self.frameReverse_pushButton.setIcon(forward)
+    Settings.ASD.write(bytes("7~2~"+str(Settings.frame_dir), 'UTF-8'))
+
+def reverse_core(self):
+    if(Settings.core_dir==0):
+        Settings.core_dir=1
+        self.coreReverse_pushButton.setIcon(reverse)
+    else:
+        Settings.core_dir=0
+        self.coreReverse_pushButton.setIcon(forward)
+    Settings.ASD.write(bytes("7~2~"+str(Settings.core_dir), 'UTF-8'))
+        
 
 

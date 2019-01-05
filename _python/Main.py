@@ -80,6 +80,18 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             Command.ergz_linked(self)
         else:
             Command.ergz_core(self)
+
+    def reverse_frame_select(self):
+        if(Settings.LINKED):
+            Command.reverse_linked(self)
+        else:
+            Command.reverse_frame(self)
+
+    def reverse_core_select(self):
+        if(Settings.LINKED):
+            Command.reverse_linked(self)
+        else:
+            Command.reverse_core(self)
         
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -98,11 +110,16 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
         self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())
+        
         self.coreLink_pushButton.clicked.connect(lambda: self.link())
         self.frameLink_pushButton.clicked.connect(lambda: self.link())
         
         self.frameErgz_pushButton.clicked.connect(lambda: self.ergz_frame_select())
         self.coreErgz_pushButton.clicked.connect(lambda: self.ergz_core_select())
+
+        self.frameReverse_pushButton.clicked.connect(lambda: self.reverse_frame_select())
+        self.coreReverse_pushButton.clicked.connect(lambda: self.reverse_core_select())
+        
 
         self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.G_spinBox.valueChanged.connect(lambda: self.custom_update())

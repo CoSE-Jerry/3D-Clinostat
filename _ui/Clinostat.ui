@@ -740,7 +740,7 @@
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../_image/Reversal.png</normaloff>../_image/Reversal.png</iconset>
+        <normaloff>../_image/forward.png</normaloff>../_image/forward.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -819,7 +819,7 @@
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../_image/Reversal.png</normaloff>../_image/Reversal.png</iconset>
+        <normaloff>../_image/forward.png</normaloff>../_image/forward.png</iconset>
       </property>
       <property name="iconSize">
        <size>
