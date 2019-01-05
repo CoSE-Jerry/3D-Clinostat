@@ -134,6 +134,12 @@ def main():
     app = QApplication(sys.argv)
     form = MainWindow()
     form.show()
+
+    forward = QtGui.QIcon()
+    forward.addPixmap(QtGui.QPixmap("../_image/forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+
+    reverse = QtGui.QIcon()
+    reverse.addPixmap(QtGui.QPixmap("../_image/Reverse.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
     
     # without this, the script exits immediately.
     sys.exit(app.exec_())

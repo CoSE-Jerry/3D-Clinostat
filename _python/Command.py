@@ -3,11 +3,7 @@ from time import sleep
 from PyQt5.QtCore import QThread
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-forward = QtGui.QIcon()
-forward.addPixmap(QtGui.QPixmap("../_image/forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
-reverse = QtGui.QIcon()
-reverse.addPixmap(QtGui.QPixmap("../_image/Reverse.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
 def top_color_change(self):
     temp = self.topColor_comboBox.currentIndex()
