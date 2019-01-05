@@ -19,11 +19,14 @@ def init():
     global frame_RPM
     frame_RPM = 3
 
-    global core_dir
-    core_dir = 0
+    global 
+    hold = 0.05
 
     global frame_dir
     frame_dir = 0
+
+    global core_dir
+    core_dir = 0
 
     global custom_R
     custom_R=0
