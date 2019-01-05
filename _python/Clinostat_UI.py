@@ -260,7 +260,7 @@ class Ui_MainWindow(object):
         self.corePI_spinBox.setGeometry(QtCore.QRect(40, 150, 121, 22))
         self.corePI_spinBox.setMinimum(1)
         self.corePI_spinBox.setMaximum(100000)
-        self.corePI_spinBox.setProperty("value", 390)
+        self.corePI_spinBox.setProperty("value", 380)
         self.corePI_spinBox.setObjectName("corePI_spinBox")
         self.label_63 = QtWidgets.QLabel(self.frame_3)
         self.label_63.setGeometry(QtCore.QRect(40, 80, 121, 21))
