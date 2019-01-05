@@ -107,10 +107,28 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
                 self.frameReverse_pushButton.setIcon(forward)
 
     def reverse_core_select(self):
+        forward = QtGui.QIcon()
+        forward.addPixmap(QtGui.QPixmap("../_image/forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+
+        reverse = QtGui.QIcon()
+        reverse.addPixmap(QtGui.QPixmap("../_image/Reverse.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+
         if(Settings.LINKED):
             Command.reverse_linked(self)
+            if(Settings.frame_dir==0):
+                self.frameReverse_pushButton.setIcon(reverse)
+            else:
+                self.frameReverse_pushButton.setIcon(forward)
+            if(Settings.core_dir==0):
+                self.coreReverse_pushButton.setIcon(reverse)
+            else:
+                self.coreReverse_pushButton.setIcon(forward)
         else:
             Command.reverse_core(self)
+            if(Settings.core_dir==0):
+                self.coreReverse_pushButton.setIcon(reverse)
+            else:
+                self.coreReverse_pushButton.setIcon(forward)
         
     def __init__(self):
         super(self.__class__, self).__init__()

@@ -198,7 +198,7 @@ def reverse_core(self):
         Settings.core_dir=1
     else:
         Settings.core_dir=0
-    Settings.ASD.write(bytes("7~2~"+str(Settings.core_dir), 'UTF-8'))
+    Settings.ASD.write(bytes("8~2~"+str(Settings.core_dir), 'UTF-8'))
         
 
 
