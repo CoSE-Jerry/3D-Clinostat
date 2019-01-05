@@ -108,7 +108,7 @@ def linked_change(self):
     self.frame_spinBox.blockSignals(False)
         
     Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
-    time.sleep(Settings.hold)
+    sleep(Settings.hold)
     Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
 
 def frame_change(self):
@@ -139,7 +139,7 @@ def linked_spin_change(self):
     self.frame_verticalSlider.blockSignals(False)
         
     Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
-    time.sleep(Settings.hold)
+    sleep(Settings.hold)
     Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
 
 def frame_spin_change(self):
@@ -154,7 +154,7 @@ def core_spin_change(self):
 
 def ergz_linked(self):
     Settings.ASD.write(bytes("7~0~", 'UTF-8'))
-    time.sleep(Settings.hold)
+    sleep(Settings.hold)
     Settings.ASD.write(bytes("8~0~", 'UTF-8'))
 
 def ergz_frame(self):
