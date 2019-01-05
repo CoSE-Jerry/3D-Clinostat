@@ -17,10 +17,6 @@ from PyQt5.QtWidgets import *
  
 # import generated UI
 import Clinostat_UI
-
-# UI variables
-
-# global variables
  
 # create class for Raspberry Pi GUI
 class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
@@ -35,47 +31,17 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def brightness_change(self):
         Settings.ASD.write(bytes('2~'+str(self.BRT_spinBox.value()), 'UTF-8'))
 
-    def linked_change(self):
-        if(Settings.frame_RPM != self.frame_verticalSlider.sliderPosition()):
-            Settings.frame_RPM=self.frame_verticalSlider.sliderPosition()
-            Settings.core_RPM=Settings.frame_RPM
-            self.core_verticalSlider.setValue(Settings.core_RPM)
-        else:
-            Settings.core_RPM = self.core_verticalSlider.sliderPosition()
-            Settings.frame_RPM=Settings.core_RPM
-            self.frame_verticalSlider.setValue(Settings.frame_RPM)
-
-        self.core_spinBox.blockSignals(True)
-        self.frame_spinBox.blockSignals(True)
-        self.core_spinBox.setValue(Settings.core_RPM)
-        self.frame_spinBox.setValue(Settings.frame_RPM)
-        self.core_spinBox.blockSignals(False)
-        self.frame_spinBox.blockSignals(False)
-        
-        Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
-        #Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
-
-    def frame_change(self):
-        Settings.frame_RPM=self.frame_verticalSlider.sliderPosition()
-        self.frame_spinBox.setValue(Settings.frame_RPM)
-        Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
-
-    def core_change(self):
-        Settings.core_RPM=self.core_verticalSlider.sliderPosition()
-        self.core_spinBox.setValue(Settings.core_RPM)
-        Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
-
     def frame_select(self):
         if(Settings.LINKED):
-            self.linked_change()
+            command.linked_change(self)
         else:
-            self.frame_change()
+            command.frame_change(self)
 
     def core_select(self):
         if(Settings.LINKED):
-            self.linked_change()
+            command.linked_change(self)
         else:
-            self.core_change()
+            command.core_change(self)
 
     def link(self):
         if(Settings.LINKED):
@@ -93,47 +59,27 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def frame_spin_select(self):
         if(Settings.LINKED):
-            self.linked_spin_change()
+            command.linked_spin_change(self)
         else:
-            self.frame_spin_change()
-
-    def linked_spin_change(self):
-        if(self.frame_spinBox.value() != Settings.frame_RPM):
-            Settings.frame_RPM=self.frame_spinBox.value()
-            Settings.core_RPM=Settings.frame_RPM
-            self.core_spinBox.setValue(Settings.core_RPM)
-        else:
-            Settings.core_RPM = self.core_spinBox.value()
-            Settings.frame_RPM=Settings.core_RPM
-            self.frame_spinBox.setValue(Settings.frame_RPM)
-
-        self.core_verticalSlider.setValue(Settings.core_RPM)
-        self.frame_verticalSlider.setValue(Settings.frame_RPM)
-        
-        Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
-        #Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
-
-    def frame_spin_change(self):
-        Settings.frame_RPM=self.frame_spinBox.value()
-        self.frame_verticalSlider.setValue(Settings.frame_RPM)
-        Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM)+"~", 'UTF-8'))
+            command.frame_spin_change(self)
 
     def core_spin_select(self):
         if(Settings.LINKED):
-            self.linked_spin_change()
+            command.linked_spin_change(self)
         else:
-            self.core_spin_change()
+            command.core_spin_change(self)
 
-    def core_spin_change(self):
-        Settings.core_RPM=self.core_spinBox.value()
-        self.core_verticalSlider.setValue(Settings.core_RPM)
-        Settings.ASD.write(bytes("8~1~"+str(Settings.frame_RPM), 'UTF-8'))
+    def ergz_frame_select(self):
+        if(Settings.LINKED):
+            command.ergz_linked(self)
+        else:
+            command.ergz_frame(self)
 
-    def ergz(self):
-        Settings.ASD.write(bytes("7~0~", 'UTF-8'))
-        time.sleep(0.05)
-        Settings.ASD.write(bytes("8~0~", 'UTF-8'))
-        
+    def ergz_core_select(self):
+        if(Settings.LINKED):
+            command.ergz_linked(self)
+        else:
+            command.ergz_core(self)
         
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -146,14 +92,17 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.bottomColor_comboBox.currentIndexChanged.connect(lambda: Command.bottom_color_change(self))
         self.IR_pushButton.clicked.connect(lambda: Command.IR_trigger(self))
         self.Cooling.clicked.connect(lambda: Command.Cooling_trigger(self))
+        
         self.frame_verticalSlider.valueChanged.connect(lambda: self.frame_select())
         self.core_verticalSlider.valueChanged.connect(lambda: self.core_select())
+        
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
         self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())
         self.coreLink_pushButton.clicked.connect(lambda: self.link())
         self.frameLink_pushButton.clicked.connect(lambda: self.link())
-        self.frameErgz_pushButton.clicked.connect(lambda: self.ergz())
-
+        
+        self.frameErgz_pushButton.clicked.connect(lambda: self.ergz_frame_select())
+        self.coreErgz_pushButton.clicked.connect(lambda: self.ergz_core_select())
 
         self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.G_spinBox.valueChanged.connect(lambda: self.custom_update())

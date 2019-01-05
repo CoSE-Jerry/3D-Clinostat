@@ -90,11 +90,77 @@ def Cooling_trigger(self):
         Settings.CL_STAT=False
         self.Cooling.setText("COOLING:OFF")
 
+def linked_change(self):
+    if(Settings.frame_RPM != self.frame_verticalSlider.sliderPosition()):
+        Settings.frame_RPM=self.frame_verticalSlider.sliderPosition()
+        Settings.core_RPM=Settings.frame_RPM
+        self.core_verticalSlider.setValue(Settings.core_RPM)
+    else:
+        Settings.core_RPM = self.core_verticalSlider.sliderPosition()
+        Settings.frame_RPM=Settings.core_RPM
+        self.frame_verticalSlider.setValue(Settings.frame_RPM)
 
-
-
+    self.core_spinBox.blockSignals(True)
+    self.frame_spinBox.blockSignals(True)
+    self.core_spinBox.setValue(Settings.core_RPM)
+    self.frame_spinBox.setValue(Settings.frame_RPM)
+    self.core_spinBox.blockSignals(False)
+    self.frame_spinBox.blockSignals(False)
         
+    Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
+    time.sleep(Settings.hold)
+    Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
 
+def frame_change(self):
+    Settings.frame_RPM=self.frame_verticalSlider.sliderPosition()
+    self.frame_spinBox.setValue(Settings.frame_RPM)
+    Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
 
+def core_change(self):
+    Settings.core_RPM=self.core_verticalSlider.sliderPosition()
+    self.core_spinBox.setValue(Settings.core_RPM)
+    Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
+
+def linked_spin_change(self):
+    if(self.frame_spinBox.value() != Settings.frame_RPM):
+        Settings.frame_RPM=self.frame_spinBox.value()
+        Settings.core_RPM=Settings.frame_RPM
+        self.core_spinBox.setValue(Settings.core_RPM)
+    else:
+        Settings.core_RPM = self.core_spinBox.value()
+        Settings.frame_RPM=Settings.core_RPM
+        self.frame_spinBox.setValue(Settings.frame_RPM)
+
+    self.core_verticalSlider.blockSignals(True)
+    self.frame_verticalSlider.blockSignals(True)
+    self.core_verticalSlider.setValue(Settings.core_RPM)
+    self.frame_verticalSlider.setValue(Settings.frame_RPM)
+    self.core_verticalSlider.blockSignals(False)
+    self.frame_verticalSlider.blockSignals(False)
+        
+    Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM), 'UTF-8'))
+    time.sleep(Settings.hold)
+    Settings.ASD.write(bytes("8~1~"+str(Settings.core_RPM), 'UTF-8'))
+
+def frame_spin_change(self):
+    Settings.frame_RPM=self.frame_spinBox.value()
+    self.frame_verticalSlider.setValue(Settings.frame_RPM)
+    Settings.ASD.write(bytes("7~1~"+str(Settings.frame_RPM)+"~", 'UTF-8'))
+        
+def core_spin_change(self):
+    Settings.core_RPM=self.core_spinBox.value()
+    self.core_verticalSlider.setValue(Settings.core_RPM)
+    Settings.ASD.write(bytes("8~1~"+str(Settings.frame_RPM), 'UTF-8'))
+
+def ergz_linked(self):
+    Settings.ASD.write(bytes("7~0~", 'UTF-8'))
+    time.sleep(Settings.hold)
+    Settings.ASD.write(bytes("8~0~", 'UTF-8'))
+
+def ergz_frame(self):
+    Settings.ASD.write(bytes("7~0~", 'UTF-8'))
+
+def ergz_core(self):
+    Settings.ASD.write(bytes("8~0~", 'UTF-8'))
 
 
