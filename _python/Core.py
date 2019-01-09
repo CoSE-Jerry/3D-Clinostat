@@ -50,3 +50,13 @@ class SnapShotProgram:
             camera._set_rotation(180)
             camera.capture(file)
         os.system("/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload " + file + " /3D_Clinostat/Snapshot/")
+
+s = setupServer()
+
+while True:
+    while True:
+        try:
+            conn = setupConnection()
+            dataTransfer(conn)
+        except socket.error as msg:
+            print("disconnect")
