@@ -21,6 +21,7 @@ class Snap(QThread):
             s.connect((HOST,PORT))
             s.send(str.encode("S"))
             s.close
+            print("sent")
         except Exception as e:
             print(e)
         
