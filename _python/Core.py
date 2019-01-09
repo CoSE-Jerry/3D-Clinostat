@@ -28,7 +28,6 @@ def dataTransfer(conn):
     while True:
         data = conn.recv(1024)
         command = data.decode('utf-8')
-        print("waiting")
         if command == 'S':
             print(command)
             SnapShot = SnapShotProgram()
