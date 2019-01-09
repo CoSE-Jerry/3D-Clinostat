@@ -48,7 +48,7 @@ class SnapShotProgram:
             camera.resolution = (310,310)
             camera.capture(file)
         os.system("/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload " + file + " /3D_Clinostat/Snapshot/")
-        
+        print("done")
 s = setupServer()
 
 while True:
