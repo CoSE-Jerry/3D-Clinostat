@@ -21,7 +21,7 @@
     <normaloff>../_image/icon.png</normaloff>../_image/icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="Image_Frame">
     <property name="geometry">
      <rect>
       <x>470</x>
