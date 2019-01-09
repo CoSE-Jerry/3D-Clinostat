@@ -12,6 +12,8 @@ import Threads
 # import custom functions
 import Command
 from time import sleep
+import os
+import sys
  
 # import Qt content
 import PyQt5
