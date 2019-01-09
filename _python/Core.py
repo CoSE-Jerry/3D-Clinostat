@@ -47,7 +47,7 @@ class SnapShotProgram:
         file = "/home/pi/3D-Clinostat/_temp/Snapshot.jpg"
         with PiCamera() as camera:
             sleep(0.8)
-            camera.resolution = (2464,2464)
+            camera.resolution = (800,800)
             camera._set_rotation(180)
             camera.capture(file)
         os.system("/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload " + file + " /3D_Clinostat/Snapshot/")
