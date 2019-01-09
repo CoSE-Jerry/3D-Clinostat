@@ -164,7 +164,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.Snap_Thread = Threads.Snap()
             self.Snap_Thread.start()
             sleep(10)
-            os.system("sudo /home/pi/Dropbox-Uploader/dropbox_uploader.sh download /3D_Clinostat/Snapshot/Snapshot.jpg /home/pi/3D-Clinostat/_temp/")
+            os.system("sudo /home/pi/Dropbox-Uploader/dropbox_uploader.sh download /3D_Clinostat/Snapshot/Snapshot.jpg")
+            self.Image_Frame.setPixmap(QtGui.QPixmap("/home/pi/Snapshot.jpg"))
+            
             
         except Exception as e:
             print(e)
