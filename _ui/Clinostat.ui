@@ -1162,11 +1162,25 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="IST_Editor">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLineEdit" name="title_lineEdit">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="add_Date_pushButton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Add Date</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QLabel" name="Image_Interval">
@@ -1310,7 +1324,7 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_13">
      <item>
-      <widget class="QPushButton" name="Snapshot">
+      <widget class="QPushButton" name="snapshot_pushButton">
        <property name="enabled">
         <bool>true</bool>
        </property>
