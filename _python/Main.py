@@ -7,6 +7,8 @@ import sys
 # import settings
 import Settings
 
+import Threads
+
 # import custom functions
 import Command
  
@@ -157,8 +159,6 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def snapshot(self):
         try:
             self.Snap_Thread = Threads.Snap()
-            self.Snap_Thread.started.connect(lambda: UI_Update_General.snap_disable(self,sch_flip))
-            self.Snap_Thread.finished.connect(lambda: UI_Update_General.snap_enable(self,sch_flip))
             self.Snap_Thread.start()
             
         except Exception as e:
