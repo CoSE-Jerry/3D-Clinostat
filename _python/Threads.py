@@ -1,6 +1,7 @@
 from PyQt5 import QtCore
 from time import sleep
 from PyQt5.QtCore import QThread
+import socket
 
 PORT = 5560
 
