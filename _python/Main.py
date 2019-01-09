@@ -11,6 +11,7 @@ import Threads
 
 # import custom functions
 import Command
+from time import sleep
  
 # import Qt content
 import PyQt5
@@ -160,6 +161,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         try:
             self.Snap_Thread = Threads.Snap()
             self.Snap_Thread.start()
+            sleep(10)
+            os.system("/home/pi/Dropbox-Uploader/dropbox_uploader.sh download /3D_Clinostat/Snapshot/Snapshot.jpg /home/pi/3D-Clinostat/_temp/")
             
         except Exception as e:
             print(e)
