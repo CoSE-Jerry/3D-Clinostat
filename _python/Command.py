@@ -228,7 +228,7 @@ def music(self):
         Settings.ASD.write(bytes("3", 'UTF-8'))
     else:
         Settings.music=0
-        Settings.ASD.write(bytes("3", 'UTF-8'))
+        Settings.ASD.write(bytes("4", 'UTF-8'))
     
 
 
