@@ -16,7 +16,7 @@ class Snap(QThread):
         
     def run(self):
         HOST="192.168.1.130"
-        try
+        try:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((HOST,PORT))
             s.send(str.encode("S"))
