@@ -31,9 +31,7 @@ def dataTransfer(conn):
         if command == 'S':
             print(command)
             SnapShot = SnapShotProgram()
-            #Create Thread
             SnapShotThread = Thread(target=SnapShot.run) 
-            #Start Thread 
             SnapShotThread.start()
 
 class SnapShotProgram:  
@@ -47,11 +45,10 @@ class SnapShotProgram:
         file = "/home/pi/3D-Clinostat/_temp/Snapshot.jpg"
         with PiCamera() as camera:
             sleep(0.8)
-            camera.resolution = (800,800)
-            camera._set_rotation(180)
+            camera.resolution = (310,310)
             camera.capture(file)
         os.system("/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload " + file + " /3D_Clinostat/Snapshot/")
-
+        
 s = setupServer()
 
 while True:
