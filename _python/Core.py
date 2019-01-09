@@ -33,6 +33,7 @@ def dataTransfer(conn):
             SnapShot = SnapShotProgram()
             SnapShotThread = Thread(target=SnapShot.run) 
             SnapShotThread.start()
+        print("waiting")
 
 class SnapShotProgram:  
     def __init__(self):
