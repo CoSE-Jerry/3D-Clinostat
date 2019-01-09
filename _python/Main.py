@@ -153,6 +153,17 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             Command.linked_reset(self)
         else:
             Command.core_reset(self)
+
+    def snapshot(self):
+        try:
+            self.Snap_Thread = Threads.Snap()
+            self.Snap_Thread.started.connect(lambda: UI_Update_General.snap_disable(self,sch_flip))
+            self.Snap_Thread.finished.connect(lambda: UI_Update_General.snap_enable(self,sch_flip))
+            self.Snap_Thread.start()
+            
+        except Exception as e:
+            print(e)
+        
         
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -194,6 +205,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.B_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.W_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.BRT_spinBox.valueChanged.connect(lambda: self.brightness_change())
+
+        self.snapshot_pushButton.clicked.connect(lambda: self.snapshot())
         
 
 # main function

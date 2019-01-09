@@ -62,7 +62,7 @@ void setup() {
   digitalWrite(10, HIGH);
 
   pinMode(9, OUTPUT);
-  digitalWrite(9, LOW);
+  digitalWrite(9, HIGH);
 
   outterSerial.begin(19200);
   innerSerial.begin(4800);
@@ -76,6 +76,8 @@ void setup() {
   colorWipe(strip.Color(50, 50, 100, 50), 3);
   colorWipe(strip.Color(50, 50, 50, 100), 3);
   colorWipe(strip.Color(0, 0, 0, 0), 1);
+  beep(2000, 100);
+  beep(2000, 100);
 }
 
 void loop() {
@@ -83,8 +85,7 @@ void loop() {
 
   if (newCommand)
   {
-
-    Serial.print(commands[0]);
+      beep(1000, 100);
     if (commands[0] == 1)
       stripUpdate();
     else if (commands[0] == 2)
@@ -126,34 +127,18 @@ void loop() {
 
     else if (commands[0] == 7)
     {
-      outterSerial.print(String(commands[1]) + "~" + String(commands[2]) + "~" + String(commands[3]) + "~" + String(commands[4]) + "~" + String(commands[5])+ "~" + String(commands[6]));
+      outterSerial.print(String(commands[1]) + "~" + String(commands[2]) + "~" + String(commands[3]) + "~" + String(commands[4]) + "~" + String(commands[5]) + "~" + String(commands[6]));
+      if (commands[1] == 0)
+      {
+      }
     }
     else if (commands[0] == 8)
     {
-      innerSerial.print(String(commands[1]) + "~" + String(commands[2]) + "~" + String(commands[3]) + "~" + String(commands[4]) + "~" + String(commands[5])+ "~" + String(commands[6]));
+      innerSerial.print(String(commands[1]) + "~" + String(commands[2]) + "~" + String(commands[3]) + "~" + String(commands[4]) + "~" + String(commands[5]) + "~" + String(commands[6]));
     }
     newCommand = false;
 
   }
-
-  //  if (serial_CMD == 53)
-  //  {
-  //    digitalWrite(2, HIGH);
-  //  }
-  //
-  //  if (serial_CMD == 54)
-  //  {
-  //    digitalWrite(2, LOW);
-  //  }
-  //
-  //  if (serial_CMD == 55)
-  //  {
-  //
-  //    Serial.println("sent");
-  //  }
-  //  outterSerial.write("13");
-  //  delay(1000);
-
 }
 
 
