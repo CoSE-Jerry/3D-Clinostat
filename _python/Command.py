@@ -222,4 +222,13 @@ def frame_reset(self):
 def core_reset(self):
     Settings.ASD.write(bytes("8~3~0~2~380~128~", 'UTF-8'))
 
+def music(self):
+    if(Settings.music == 0):
+        Settings.music=1
+        Settings.ASD.write(bytes("3", 'UTF-8'))
+    else:
+        Settings.music=0
+        Settings.ASD.write(bytes("3", 'UTF-8'))
+    
+
 

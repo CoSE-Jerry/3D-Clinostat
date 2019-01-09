@@ -186,9 +186,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
         self.coreApply_pushButton.clicked.connect(lambda: self.apply_core_select())
         self.coreReset_pushButton.clicked.connect(lambda: self.reset_core_select())
-        
-        
 
+        self.music_pushButton.clicked.connect(lambda: Command.music(self))
+        
         self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.G_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.B_spinBox.valueChanged.connect(lambda: self.custom_update())

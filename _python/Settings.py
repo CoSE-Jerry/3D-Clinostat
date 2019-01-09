@@ -28,6 +28,9 @@ def init():
     global core_dir
     core_dir = 0
 
+    global music
+    music = 0
+
     global custom_R
     custom_R=0
     global custom_G
