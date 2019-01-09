@@ -42,19 +42,23 @@ class SnapShotProgram:
         self._running = False  
 
     def run(self):
-        file = "/home/pi/3D-Clinostat/_temp/Snapshot.jpg"
-        with PiCamera() as camera:
-            sleep(0.8)
-            camera.resolution = (310,310)
-            camera.capture(file)
-        os.system("/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload " + file + " /3D_Clinostat/Snapshot/")
-        print("done")
+        try:
+            file = "/home/pi/3D-Clinostat/_temp/Snapshot.jpg"
+            with PiCamera() as camera:
+                sleep(0.8)
+                camera.resolution = (310,310)
+                camera.capture(file)
+            os.system("/home/pi/Dropbox-Uploader/dropbox_uploader.sh upload " + file + " /3D_Clinostat/Snapshot/")
+            print("test")
+        except Exception as e:
+            print(e)
+        
 s = setupServer()
 
+conn = setupConnection()
 while True:
     while True:
         try:
-            conn = setupConnection()
             dataTransfer(conn)
         except socket.error as msg:
             print("disconnect")
