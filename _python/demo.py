@@ -9,7 +9,7 @@ from PyQt5.QtWidgets import *
 import Clinostat_UI
  
 # create class for our Raspberry Pi GUI
-class MainWindow(QMainWindow, mainwindow_auto.Ui_MainWindow):
+class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
  # access variables inside of the UI's file
     def __init__(self):
         super(self.__class__, self).__init__()
