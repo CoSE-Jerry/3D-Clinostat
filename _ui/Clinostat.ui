@@ -430,7 +430,7 @@
      <attribute name="title">
       <string>FRAME</string>
      </attribute>
-     <widget class="QSlider" name="core_verticalSlider">
+     <widget class="QSlider" name="frame_verticalSlider">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -458,7 +458,7 @@
        <number>1</number>
       </property>
      </widget>
-     <widget class="QPushButton" name="coreReverse_pushButton">
+     <widget class="QPushButton" name="frameReverse_pushButton">
       <property name="geometry">
        <rect>
         <x>230</x>
@@ -496,7 +496,7 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QSpinBox" name="coreCD_spinBox">
+      <widget class="QSpinBox" name="frameCD_spinBox">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -518,7 +518,7 @@
         <number>200</number>
        </property>
       </widget>
-      <widget class="QLabel" name="label_62">
+      <widget class="QLabel" name="frameCD_label">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -531,7 +531,7 @@
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Current Offset:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="corePW_spinBox">
+      <widget class="QSpinBox" name="framePW_spinBox">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -556,7 +556,7 @@
         <number>2</number>
        </property>
       </widget>
-      <widget class="QSpinBox" name="corePI_spinBox">
+      <widget class="QSpinBox" name="framePI_spinBox">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -578,7 +578,7 @@
         <number>380</number>
        </property>
       </widget>
-      <widget class="QLabel" name="label_63">
+      <widget class="QLabel" name="framePW_label">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -591,7 +591,7 @@
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pulse Width:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_64">
+      <widget class="QLabel" name="framePI_label">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -604,7 +604,7 @@
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Pulse Interval:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_65">
+      <widget class="QLabel" name="frameEC_label">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -617,7 +617,7 @@
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Expert Controls&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_66">
+      <widget class="QLabel" name="frameMS_label">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -630,7 +630,7 @@
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Microstepping:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="coreApply_pushButton">
+      <widget class="QPushButton" name="frameApply_pushButton">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -643,7 +643,7 @@
         <string>APPLY</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="coreMS_comboBox">
+      <widget class="QComboBox" name="frameMS_comboBox">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -699,7 +699,7 @@
         </property>
        </item>
       </widget>
-      <widget class="QPushButton" name="coreReset_pushButton">
+      <widget class="QPushButton" name="frameReset_pushButton">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -713,7 +713,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QLabel" name="label_68">
+     <widget class="QLabel" name="frame_label">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -726,7 +726,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;CORE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QDoubleSpinBox" name="core_doubleSpinBox">
+     <widget class="QDoubleSpinBox" name="frame_doubleSpinBox">
       <property name="geometry">
        <rect>
         <x>140</x>
@@ -745,7 +745,7 @@
        <double>0.100000000000000</double>
       </property>
      </widget>
-     <widget class="QPushButton" name="coreErgz_pushButton">
+     <widget class="QPushButton" name="frameErgz_pushButton">
       <property name="geometry">
        <rect>
         <x>420</x>
@@ -758,7 +758,7 @@
        <string>ENERGIZE COILS</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="coreLink_pushButton">
+     <widget class="QPushButton" name="frameLink_pushButton">
       <property name="geometry">
        <rect>
         <x>570</x>
