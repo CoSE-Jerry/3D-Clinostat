@@ -36,7 +36,7 @@ while True:
     for i in data_list:
     	#Sends to the Slaves 
         writeNumber(int(ord(i)))
-        time.sleep(.1)
+        time.sleep(0.01)
 
     writeNumber(int(0x0A))
 
