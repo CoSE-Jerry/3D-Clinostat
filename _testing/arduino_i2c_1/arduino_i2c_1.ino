@@ -39,14 +39,8 @@ void loop() {
 void receiveData(int byteCount) {
   int i = 0;
   while (Wire.available()) {
-    char temp;
-    temp = Wire.read();
-    if (temp != NULL)
-    {
-      data[i] = temp;
-      i++;
-    }
-
+    data[i] = Wire.read();
+    i++;
   }
   data[i] = '\0';
   Serial.println(data);
@@ -69,10 +63,9 @@ void processCMD() {
 }
 
 void printCMD() {
-  for (int i = 0; i < 5; i++)
-  {
+  for (int i = 0; i < 4; i++)
+  { 
     Serial.println(commands[i]);
-    commands[i] = 0;
   }
 
 }
