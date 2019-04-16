@@ -1,15 +1,8 @@
-/*
-  I2C Pinouts
-
-  SDA -> A4
-  SCL -> A5
-*/
-
 //Import the library required
 #include <Wire.h>
 
 //Slave Address for the Communication
-#define SLAVE_ADDRESS 0x04
+#define SLAVE_ADDRESS 0x08
 
 char number[50];
 int state = 0;
@@ -31,7 +24,9 @@ void loop() {
 // callback for received data
 void receiveData(int byteCount) {
   int i = 0;
+  Wire.read();
   while (Wire.available()) {
+    
     number[i] = Wire.read();
     i++;
   }
