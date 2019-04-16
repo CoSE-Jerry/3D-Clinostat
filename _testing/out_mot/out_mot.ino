@@ -2,7 +2,7 @@
 #include <Wire.h>
 
 //Slave Address for the Communication
-#define SLAVE_ADDRESS 0x08
+#define SLAVE_ADDRESS 0x09
 #define COMMANDSIZE 5
 
 char data[50];
@@ -34,7 +34,6 @@ void receiveData(int byteCount) {
     data[i] = '\0';
      Serial.println(data);
     processCMD();
-    printCMD();
   }
 }  // end while
 

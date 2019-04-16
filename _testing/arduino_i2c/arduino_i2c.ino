@@ -34,7 +34,6 @@ void receiveData(int byteCount) {
     data[i] = '\0';
      Serial.println(data);
     processCMD();
-    printCMD();
   }
 }  // end while
 
