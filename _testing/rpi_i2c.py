@@ -31,7 +31,7 @@ def readNumber():
     
 while True:
 	#Receives the data from the User
-    data = raw_input("Enter the data to be sent : ")
+    data = input("Enter the data to be sent : ")
     data_list = list(data)
     for i in data_list:
     	#Sends to the Slaves 
