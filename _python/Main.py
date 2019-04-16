@@ -10,17 +10,14 @@ from PyQt5.QtWidgets import *
 import Clinostat_UI
 
 address = 0x09
-i2c_cmd = 0x5E
+
  
 # create class for our Raspberry Pi GUI
 class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
  # access variables inside of the UI's file
 
     def ergz_frame_select(self):
-        converted = []
-        for b in "1~":
-            converted.append(ord(b))
-        Settings.bus.write_i2c_block_data(address, i2c_cmd, converted)
+        Settings.sendCMD(address,"1~")
         print("press")
         
     def __init__(self):
