@@ -12,7 +12,6 @@
 #define SLAVE_ADDRESS 0x08
 
 char number[50];
-int state = 0;
 
 //Code Initialization
 void setup() {
@@ -25,7 +24,8 @@ void setup() {
 }
 
 void loop() {
-  delay(100);
+  delay(1000);
+  Serial.print(number);
 } // end loop
 
 // callback for received data
@@ -36,7 +36,7 @@ void receiveData(int byteCount) {
     i++;
   }
   number[i] = '\0';
-  Serial.print(number);
+
 }  // end while
 
 // callback for sending data

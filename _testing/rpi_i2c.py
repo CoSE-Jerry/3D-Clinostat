@@ -38,7 +38,7 @@ while True:
         writeNumber(int(ord(i)))
         time.sleep(0.01)
 
-    #writeNumber(int(0x0A))
+    writeNumber(int(0x0A))
 
 #End of the Script
 
