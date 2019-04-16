@@ -20,14 +20,17 @@
    <iconset>
     <normaloff>../_image/icon.png</normaloff>../_image/icon.png</iconset>
   </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="Image_Frame">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>29</y>
-      <width>310</width>
-      <height>310</height>
+      <x>659</x>
+      <y>10</y>
+      <width>350</width>
+      <height>350</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -59,7 +62,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Lighting_tab">
      <attribute name="title">
@@ -135,7 +138,7 @@
        <property name="geometry">
         <rect>
          <x>420</x>
-         <y>50</y>
+         <y>40</y>
          <width>91</width>
          <height>21</height>
         </rect>
@@ -188,7 +191,7 @@
        <property name="geometry">
         <rect>
          <x>420</x>
-         <y>280</y>
+         <y>290</y>
          <width>91</width>
          <height>21</height>
         </rect>
@@ -227,8 +230,8 @@
       <widget class="QComboBox" name="leftColor_comboBox">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>270</y>
+         <x>80</x>
+         <y>280</y>
          <width>91</width>
          <height>21</height>
         </rect>
@@ -267,8 +270,8 @@
       <widget class="QComboBox" name="topColor_comboBox">
        <property name="geometry">
         <rect>
-         <x>50</x>
-         <y>60</y>
+         <x>100</x>
+         <y>50</y>
          <width>91</width>
          <height>21</height>
         </rect>
@@ -305,7 +308,7 @@
        </item>
       </widget>
      </widget>
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="custom_label">
       <property name="geometry">
        <rect>
         <x>310</x>
@@ -318,7 +321,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Custom RGBW:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_9">
+     <widget class="QLabel" name="G_label">
       <property name="geometry">
        <rect>
         <x>380</x>
@@ -331,7 +334,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;G:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_10">
+     <widget class="QLabel" name="R_label">
       <property name="geometry">
        <rect>
         <x>280</x>
@@ -357,7 +360,7 @@
        <number>255</number>
       </property>
      </widget>
-     <widget class="QLabel" name="label_11">
+     <widget class="QLabel" name="B_label">
       <property name="geometry">
        <rect>
         <x>280</x>
@@ -396,7 +399,7 @@
        <number>255</number>
       </property>
      </widget>
-     <widget class="QLabel" name="label_12">
+     <widget class="QLabel" name="W_label">
       <property name="geometry">
        <rect>
         <x>380</x>
@@ -423,9 +426,9 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="Core_tab">
+    <widget class="QWidget" name="Frame_tab">
      <attribute name="title">
-      <string>CORE</string>
+      <string>FRAME</string>
      </attribute>
      <widget class="QSlider" name="core_verticalSlider">
       <property name="geometry">
@@ -433,7 +436,7 @@
         <x>160</x>
         <y>40</y>
         <width>61</width>
-        <height>371</height>
+        <height>421</height>
        </rect>
       </property>
       <property name="minimum">
@@ -458,10 +461,10 @@
      <widget class="QPushButton" name="coreReverse_pushButton">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>400</y>
-        <width>30</width>
-        <height>30</height>
+        <x>230</x>
+        <y>420</y>
+        <width>41</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
@@ -484,7 +487,7 @@
         <x>380</x>
         <y>40</y>
         <width>201</width>
-        <height>321</height>
+        <height>361</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -713,9 +716,9 @@
      <widget class="QLabel" name="label_68">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>400</y>
-        <width>101</width>
+        <x>90</x>
+        <y>430</y>
+        <width>71</width>
         <height>21</height>
        </rect>
       </property>
@@ -723,26 +726,23 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;CORE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QSpinBox" name="core_spinBox">
+     <widget class="QDoubleSpinBox" name="core_doubleSpinBox">
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>440</y>
+        <y>480</y>
         <width>101</width>
         <height>31</height>
        </rect>
       </property>
-      <property name="suffix">
-       <string> RPM</string>
-      </property>
-      <property name="minimum">
-       <number>3</number>
+      <property name="decimals">
+       <number>1</number>
       </property>
       <property name="maximum">
-       <number>15</number>
+       <double>50.000000000000000</double>
       </property>
-      <property name="value">
-       <number>3</number>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
       </property>
      </widget>
      <widget class="QPushButton" name="coreErgz_pushButton">
@@ -928,40 +928,11 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_4">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>350</y>
-      <width>81</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_12">
-     <item>
-      <widget class="QRadioButton" name="JPG">
-       <property name="text">
-        <string>JPG</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="PNG">
-       <property name="text">
-        <string>PNG</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QWidget" name="verticalLayoutWidget_5">
     <property name="geometry">
      <rect>
-      <x>810</x>
-      <y>350</y>
+      <x>840</x>
+      <y>390</y>
       <width>161</width>
       <height>91</height>
      </rect>
@@ -995,8 +966,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>460</y>
+      <x>700</x>
+      <y>490</y>
       <width>311</width>
       <height>81</height>
      </rect>
