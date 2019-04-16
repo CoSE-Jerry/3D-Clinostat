@@ -9,12 +9,10 @@
 #include <Wire.h>
 
 //Slave Address for the Communication
-#define SLAVE_ADDRESS 0x08
+#define SLAVE_ADDRESS 0x04
 
-char data[50];
-int commands[5];
-boolean newCommand = false;
-
+char number[50];
+int state = 0;
 
 //Code Initialization
 void setup() {
@@ -28,44 +26,22 @@ void setup() {
 
 void loop() {
   delay(100);
-  if (newCommand)
-  { processCMD();
-    printCMD();
-    newCommand = false;
-  }
 } // end loop
 
 // callback for received data
 void receiveData(int byteCount) {
   int i = 0;
   while (Wire.available()) {
-    data[i] = Wire.read();
+    number[i] = Wire.read();
     i++;
   }
-  data[i] = '\0';
-  Serial.println(data);
-  newCommand = true;
+  number[i] = '\0';
+  Serial.print(number);
+}  // end while
+
+// callback for sending data
+void sendData() {
+  Wire.write(number);
 }
 
-void processCMD() {
-  int current = 0;
-  char *p = data;
-  char *str;
-  while ((str = strtok_r(p, "~", &p)) != NULL)
-  {
-    int temp;
-    temp = atoi(str);
-    commands[current] = temp;
-    current++;
-  }
-
-
-}
-
-void printCMD() {
-  for (int i = 0; i < 4; i++)
-  { 
-    Serial.println(commands[i]);
-  }
-
-}
+//End of the program
