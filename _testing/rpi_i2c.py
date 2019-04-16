@@ -14,7 +14,7 @@ bus = smbus.SMBus(1)
 # This is the address we setup in the Arduino Program
 #Slave Address 1
 address = 0x08
-i2c_cmd = 0x00
+i2c_cmd = 0x20
 
 #Slave Address 2
 #address_2 = 0x05
