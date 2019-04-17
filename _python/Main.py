@@ -18,14 +18,18 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def ergz_frame_select(self):
         Settings.sendCMD(address,"1~")
-        print("press")
+
+    def frame_spin_select(self):
+        Settings.frame_RPM=self.frame_spinBox.value()
+        print(frame_RPM)
+        
         
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self)
         Settings.init()
         self.frameErgz_pushButton.clicked.connect(lambda: self.ergz_frame_select())
- 
+        self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
 # I feel better having one of these
 def main():
  # a new app instance

@@ -2,7 +2,8 @@ import smbus
 i2c_cmd = 0x5E
 
 def init():
-    global bus
+    global frame_RPM
+    frame_RPM = 3
     
 
 def sendCMD(addr,cont):
