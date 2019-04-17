@@ -21,8 +21,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def frame_spin_select(self):
         Settings.frame_RPM=self.frame_spinBox.value()
-        temp = "2~"+60/(Settings.frame_RPM*0.351488)
-        Settings.sendCMD(address,temp)
+        temp = "2~"+int(round(60/(Settings.frame_RPM*0.351488)))
+        print(temp)
+        #Settings.sendCMD(address,temp)
         
     def __init__(self):
         super(self.__class__, self).__init__()
