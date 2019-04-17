@@ -20,7 +20,7 @@ int RPM = 3;
 int wait = 300;
 int currentLimit = 300;
 int dir = 0;
-int pulseWidth = 1;
+int pulseWidth = 2;
 boolean sysRunning = true;
 
 
@@ -149,6 +149,6 @@ void exeCMD() {
 
   if (commands[0] == 2)
   {
-    wait = commands[1];
+    wait = commands[1]-11;
   }
 }
