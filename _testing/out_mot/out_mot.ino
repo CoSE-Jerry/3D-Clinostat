@@ -21,7 +21,7 @@ int wait = 300;
 int currentLimit = 300;
 int dir = 0;
 int pulseWidth = 1;
-boolean sysRunning = false;
+boolean sysRunning = true;
 
 
 //Code Initialization
@@ -51,6 +51,9 @@ void setup() {
 
   // Set the number of microsteps that correspond to one full step.
   stepper.setStepMode(microStep);
+
+  stepper.enableDriver();
+
 }
 
 void loop() {
@@ -142,5 +145,10 @@ void exeCMD() {
     else
       stepper.disableDriver();
     sysRunning = !sysRunning;
+  }
+
+  if (commands[0] == 2)
+  {
+    wait = commands[1];
   }
 }
