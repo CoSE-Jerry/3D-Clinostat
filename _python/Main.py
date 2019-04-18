@@ -37,9 +37,12 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         super(self.__class__, self).__init__()
         self.setupUi(self)
         Settings.init()
-        self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_frame(self))
+        
+        self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_frame(self,Settings.frame_addr))
+        self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_frame(self,Settings.core_addr))
 
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
+        #self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())
 
         self.frame_verticalSlider.valueChanged.connect(lambda: self.frame_slider_select())
 

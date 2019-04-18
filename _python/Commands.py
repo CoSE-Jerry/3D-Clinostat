@@ -3,8 +3,11 @@ import Settings
 #from PyQt5.QtCore import QThread
 #from PyQt5 import QtCore, QtGui, QtWidgets
 
-def ergz_frame(self):
-    Settings.sendCMD(Settings.frame_addr,"1~")
+def ergz_frame(self,addr):
+    Settings.sendCMD(addr,"1~")
+
+def ergz_core(self):
+    Settings.sendCMD(Settings.core_addr,"1~")
 
 def frame_slider_change(self):
     Settings.frame_RPM=self.frame_verticalSlider.sliderPosition()/10
