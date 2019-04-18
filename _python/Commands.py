@@ -19,5 +19,12 @@ def frame_spin_select(self):
     
     CMD = "2~"+Settings.getInterval(Settings.frame_RPM)
     Settings.sendCMD(Settings.frame_addr,CMD)
+
+def reverse_frame_select(self):
+    if(Settings.frame_dir==0):
+        Settings.frame_dir=1
+    else:
+        Settings.frame_dir=0
+    Settings.sendCMD(Settings.frame_addr,"3~"+str(Settings.frame_dir))
     
 

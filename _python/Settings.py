@@ -18,6 +18,12 @@ def init():
     global core_addr
     core_addr = 0x10
 
+    global frame_dir
+    frame_dir = 0
+
+    global core_dir
+    core_dir = 0
+
 
     
 

@@ -127,13 +127,6 @@ void clearCMD() {
   }
 }
 
-void printCMD() {
-  for (int i = 0; i < COMMANDSIZE; i++)
-  {
-    Serial.println(commands[i]);
-  }
-}
-
 void exeCMD() {
   if (commands[0] == 1)
   {
@@ -149,6 +142,12 @@ void exeCMD() {
 
   if (commands[0] == 2)
   {
-    wait = commands[1]-11;
+    wait = commands[1] - 11;
+  }
+
+  if (commands[0] == 3)
+  {
+    dir = commands[1];
+    setDirection(dir);
   }
 }
