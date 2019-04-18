@@ -16,6 +16,16 @@ import Clinostat_UI
 class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
  # access variables inside of the UI's file
 
+     def link(self):
+    if(Settings.LINKED):
+        Settings.LINKED = False
+        self.frameLink_pushButton.setIcon(broken)
+        self.coreLink_pushButton.setIcon(broken)
+    else:
+        Settings.LINKED = True
+        self.frameLink_pushButton.setIcon(linked)
+        self.coreLink_pushButton.setIcon(linked)
+
     def frame_slider_select(self):
         #if(Settings.LINKED):
             #Commands.linked_change(self)
@@ -66,6 +76,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
         self.frameReverse_pushButton.clicked.connect(lambda: self.reverse_frame_select())
         self.coreReverse_pushButton.clicked.connect(lambda: self.reverse_core_select())
+
+        self.frameLink_pushButton.clicked.connect(lambda: self.link())
+        self.coreLink_pushButton.clicked.connect(lambda: self.link())
 
 
 # I feel better having one of these

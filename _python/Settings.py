@@ -36,7 +36,15 @@ def init():
     global reverse
     reverse = QtGui.QIcon()
     reverse.addPixmap(QtGui.QPixmap("../_image/Reverse.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-    
+
+    global linked
+    linked = QtGui.QIcon()
+    linked.addPixmap(QtGui.QPixmap("../_image/Link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        
+    global broken
+    broken = QtGui.QIcon()
+    broken.addPixmap(QtGui.QPixmap("../_image/Broken_Link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        
 
 def sendCMD(addr,cont):
     bus = smbus.SMBus(1)
