@@ -62,7 +62,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Lighting_tab">
      <attribute name="title">
@@ -455,7 +455,7 @@
        <enum>QSlider::TicksBothSides</enum>
       </property>
       <property name="tickInterval">
-       <number>5</number>
+       <number>10</number>
       </property>
      </widget>
      <widget class="QPushButton" name="frameReverse_pushButton">

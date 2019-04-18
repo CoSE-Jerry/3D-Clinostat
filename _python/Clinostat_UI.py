@@ -134,7 +134,7 @@ class Ui_MainWindow(object):
         self.frame_verticalSlider.setTracking(True)
         self.frame_verticalSlider.setOrientation(QtCore.Qt.Vertical)
         self.frame_verticalSlider.setTickPosition(QtWidgets.QSlider.TicksBothSides)
-        self.frame_verticalSlider.setTickInterval(5)
+        self.frame_verticalSlider.setTickInterval(10)
         self.frame_verticalSlider.setObjectName("frame_verticalSlider")
         self.frameReverse_pushButton = QtWidgets.QPushButton(self.Frame_tab)
         self.frameReverse_pushButton.setGeometry(QtCore.QRect(230, 420, 41, 41))
@@ -412,7 +412,7 @@ class Ui_MainWindow(object):
         self.actionCreate_Timelapse.setObjectName("actionCreate_Timelapse")
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(1)
         self.frameMS_comboBox.setCurrentIndex(7)
         self.coreMS_comboBox.setCurrentIndex(7)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
