@@ -15,6 +15,8 @@ def core_slider_change(self):
     self.core_spinBox.setValue(Settings.core_RPM)
 
 def linked_slider_change(self,mot):
+    self.frame_spinBox.blockSignals(True)
+    self.core_spinBox.blockSignals(True)
     if(mot==1):
         Settings.frame_RPM=self.frame_verticalSlider.sliderPosition()/10
         self.frame_spinBox.setValue(Settings.frame_RPM)
@@ -25,8 +27,8 @@ def linked_slider_change(self,mot):
         self.core_spinBox.setValue(Settings.core_RPM)
         Settings.frame_RPM=Settings.core_RPM
         self.core_verticalSlider.setValue(Settings.core_RPM)
-        
-    
+    self.frame_spinBox.blockSignals(False)
+    self.core_spinBox.blockSignals(False)
 
 def frame_spin_select(self):
     Settings.frame_RPM=self.frame_spinBox.value()
