@@ -15,7 +15,7 @@ import Clinostat_UI
 class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
  # access variables inside of the UI's file
 
-    def frame_select(self):
+    def frame_slider_select(self):
         #if(Settings.LINKED):
             #Command.linked_change(self)
         #else:
@@ -33,7 +33,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_frame(self))
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
 
-        self.frame_verticalSlider.valueChanged.connect(lambda: self.frame_SS())
+        self.frame_verticalSlider.valueChanged.connect(lambda: self.frame_slider_select())
 
 
 # I feel better having one of these
