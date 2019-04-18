@@ -3,7 +3,7 @@ i2c_cmd = 0x5E
 
 def init():
     global frame_RPM
-    frame_RPM = 3
+    frame_RPM = 0.3
 
     global lighting_addr
     lighting_addr = 0x08
@@ -21,5 +21,8 @@ def sendCMD(addr,cont):
     for b in cont:
         converted.append(ord(b))
     bus.write_i2c_block_data(addr, i2c_cmd, converted)
+
+def getInterval(RPM):
+    return str(int(round(60/(RPM*0.351488))))
     
 
