@@ -34,7 +34,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def core_slider_select(self):
         if(Settings.LINKED):
-            Commands.linked_change(self,0)
+            Commands.linked_slider_change(self,0)
         else:
             Commands.core_slider_change(self)
 
