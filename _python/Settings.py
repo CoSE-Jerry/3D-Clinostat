@@ -26,9 +26,11 @@ def init():
     global core_dir
     core_dir = 0
 
+    global forward
     forward = QtGui.QIcon()
     forward.addPixmap(QtGui.QPixmap("../_image/forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
+    global reverse
     reverse = QtGui.QIcon()
     reverse.addPixmap(QtGui.QPixmap("../_image/Reverse.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
     
