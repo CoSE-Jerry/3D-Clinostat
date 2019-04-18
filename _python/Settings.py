@@ -7,6 +7,9 @@ def init():
 
     global LINKED
     LINKED = True
+
+    global IR_STAT
+    IR_STAT = False
     
     global frame_RPM
     frame_RPM = 0.3

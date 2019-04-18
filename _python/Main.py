@@ -95,7 +95,10 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.G_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.B_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.W_spinBox.valueChanged.connect(lambda: self.custom_update())
-        self.BRT_spinBox.valueChanged.connect(lambda: self.brightness_change())
+
+        self.IR_pushButton.clicked.connect(lambda: Commands.IR_trigger(self))
+        
+        self.BRT_spinBox.valueChanged.connect(lambda: Commands.brightness_change(self))
 
 
 # I feel better having one of these

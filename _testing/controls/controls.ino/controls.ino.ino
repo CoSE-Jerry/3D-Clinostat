@@ -14,6 +14,7 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRBW + NEO_KHZ800
 
 char data[50];
 int commands[COMMANDSIZE];
+boolean IR = false;
 
 //Code Initialization
 void setup() {
@@ -33,6 +34,9 @@ void setup() {
   colorWipe(strip.Color(50, 50, 100, 50), 3);
   colorWipe(strip.Color(50, 50, 50, 100), 3);
   colorWipe(strip.Color(0, 0, 0, 0), 1);
+  pinMode(7, OUTPUT);
+  digitalWrite(7, LOW);
+
 
 }
 
@@ -92,10 +96,20 @@ void exeCMD() {
 
   if (commands[0] == 2)
   {
+    brightnessUpdate();
   }
 
   if (commands[0] == 3)
   {
+    if (!IR)
+    {
+      digitalWrite(7, LOW);
+    }
+    else
+    {
+      digitalWrite(7, HIGH);
+    }
+    IR = !IR;
   }
 }
 
@@ -114,5 +128,10 @@ void stripUpdate() {
     }
     strip.show();
   }
+}
+
+void brightnessUpdate() {
+  strip.setBrightness(commands[1]);
+  strip.show();
 }
 
