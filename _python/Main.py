@@ -7,6 +7,7 @@ import sys
 # This gets the Qt stuff
 import PyQt5
 from PyQt5.QtWidgets import *
+from PyQt5 import QtGui
  
 # This is our window from QtCreator
 import Clinostat_UI
