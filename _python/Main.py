@@ -22,7 +22,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Commands.frame_slider_change(self)
 
     def frame_spin_select(self):
-        Commands.frame_spin_select(self):
+        Commands.frame_spin_select(self)
         
     def __init__(self):
         super(self.__class__, self).__init__()
