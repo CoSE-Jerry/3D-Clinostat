@@ -2,6 +2,10 @@ import smbus
 i2c_cmd = 0x5E
 
 def init():
+
+    global LINKED
+    LINKED = True
+    
     global frame_RPM
     frame_RPM = 0.3
 
@@ -13,6 +17,8 @@ def init():
 
     global core_addr
     core_addr = 0x10
+
+
     
 
 def sendCMD(addr,cont):

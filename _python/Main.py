@@ -15,6 +15,12 @@ import Clinostat_UI
 class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
  # access variables inside of the UI's file
 
+    def frame_select(self):
+        #if(Settings.LINKED):
+            #Command.linked_change(self)
+        #else:
+        Command.frame_change(self)
+
     def frame_spin_select(self):
         Settings.frame_RPM=self.frame_spinBox.value()
         CMD = "2~"+Settings.getInterval(Settings.frame_RPM)
@@ -26,6 +32,10 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.init()
         self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_frame(self))
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
+
+        self.frame_verticalSlider.valueChanged.connect(lambda: self.frame_SS())
+
+
 # I feel better having one of these
 def main():
  # a new app instance
