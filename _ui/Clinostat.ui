@@ -230,8 +230,8 @@
       <widget class="QComboBox" name="leftColor_comboBox">
        <property name="geometry">
         <rect>
-         <x>90</x>
-         <y>60</y>
+         <x>400</x>
+         <y>50</y>
          <width>91</width>
          <height>21</height>
         </rect>
@@ -270,8 +270,8 @@
       <widget class="QComboBox" name="topColor_comboBox">
        <property name="geometry">
         <rect>
-         <x>410</x>
-         <y>60</y>
+         <x>80</x>
+         <y>70</y>
          <width>91</width>
          <height>21</height>
         </rect>
