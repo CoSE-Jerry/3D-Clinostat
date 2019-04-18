@@ -31,7 +31,7 @@ def core_spin_select(self):
     self.core_verticalSlider.setValue(Settings.core_RPM*10)
     self.core_verticalSlider.blockSignals(False)
     
-    CMD = "2~"+Settings.getInterval(Settings.frame_RPM)
+    CMD = "2~"+Settings.getInterval(Settings.core_RPM)
     Settings.sendCMD(Settings.core_addr,CMD)
 
 def reverse_frame_select(self):
