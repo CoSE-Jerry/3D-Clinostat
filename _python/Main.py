@@ -26,16 +26,11 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Commands.frame_spin_select(self)
 
     def reverse_frame_select(self):
-        forward = QtGui.QIcon()
-        forward.addPixmap(QtGui.QPixmap("../_image/forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-
-        reverse = QtGui.QIcon()
-        reverse.addPixmap(QtGui.QPixmap("../_image/Reverse.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
         if(Settings.frame_dir==0):
-            self.frameReverse_pushButton.setIcon(reverse)
+            self.frameReverse_pushButton.setIcon(Settings.reverse)
         else:
-            self.frameReverse_pushButton.setIcon(forward)
+            self.frameReverse_pushButton.setIcon(Settings.forward)
         Commands.reverse_frame_select(self)
             
     def __init__(self):
