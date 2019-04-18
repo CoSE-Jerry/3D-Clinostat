@@ -3,6 +3,21 @@ import Settings
 #from PyQt5.QtCore import QThread
 #from PyQt5 import QtCore, QtGui, QtWidgets
 
+def top_color_change(self):
+    temp = self.topColor_comboBox.currentIndex()
+    if temp == 1:
+        Settings.sendCMD(Settings.lighting_addr,"1~0~9~255~0~0~0")
+    elif temp == 2:
+        Settings.sendCMD(Settings.lighting_addr,"1~0~9~0~255~0~0")
+    elif temp == 3:
+        Settings.sendCMD(Settings.lighting_addr,"1~0~9~0~0~255~0")
+    elif temp == 4:
+        Settings.sendCMD(Settings.lighting_addr,"1~0~9~0~0~0~255")
+    #elif temp == 5:
+        #Settings.ASD.write(bytes("1~0~8~" + str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W), 'UTF-8'))
+    else:
+        Settings.sendCMD(Settings.lighting_addr,"1~0~9~0~0~0~0")
+
 def ergz_motor(self,addr):
     if(Settings.LINKED):
         Settings.sendCMD(Settings.frame_addr,"1~")

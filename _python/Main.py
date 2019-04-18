@@ -65,6 +65,11 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.setupUi(self)
         Settings.init()
         
+        self.topColor_comboBox.currentIndexChanged.connect(lambda: Commands.top_color_change(self))
+        #self.leftColor_comboBox.currentIndexChanged.connect(lambda: Commands.left_color_change(self))
+        #self.rightColor_comboBox.currentIndexChanged.connect(lambda: Commands.right_color_change(self))
+        #self.bottomColor_comboBox.currentIndexChanged.connect(lambda: Commands.bottom_color_change(self))
+        
         self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.frame_addr))
         self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.core_addr))
 
