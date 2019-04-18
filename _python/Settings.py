@@ -15,10 +15,10 @@ def init():
     lighting_addr = 0x08
     
     global frame_addr
-    frame_addr = 0x09
+    frame_addr = 0x10
 
     global core_addr
-    core_addr = 0x10
+    core_addr = 0x09
 
     global frame_dir
     frame_dir = 0
