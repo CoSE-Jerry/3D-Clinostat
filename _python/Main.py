@@ -1,7 +1,7 @@
 import Settings
 import Commands
 
-always seem to need this
+#always seem to need this
 import sys
  
 # This gets the Qt stuff
