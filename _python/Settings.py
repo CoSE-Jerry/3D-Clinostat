@@ -4,6 +4,15 @@ i2c_cmd = 0x5E
 def init():
     global frame_RPM
     frame_RPM = 3
+
+    global lighting_addr
+    frame_addr = 0x08
+    
+    global frame_addr
+    frame_addr = 0x09
+
+    global core_addr
+    frame_addr = 0x10
     
 
 def sendCMD(addr,cont):
