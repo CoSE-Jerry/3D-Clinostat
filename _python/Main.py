@@ -25,6 +25,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def frame_spin_select(self):
         Commands.frame_spin_select(self)
 
+    def core_spin_select(self):
+        Commands.core_spin_select(self)
+
     def reverse_frame_select(self):
 
         if(Settings.frame_dir==0):
@@ -32,21 +35,31 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         else:
             self.frameReverse_pushButton.setIcon(Settings.forward)
         Commands.reverse_frame_select(self)
+
+    def reverse_core_select(self):
+
+        if(Settings.core_dir==0):
+            self.coreReverse_pushButton.setIcon(Settings.reverse)
+        else:
+            self.coreReverse_pushButton.setIcon(Settings.forward)
+        Commands.reverse_core_select(self)
             
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self)
         Settings.init()
         
-        self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_frame(self,Settings.frame_addr))
-        self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_frame(self,Settings.core_addr))
+        self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.frame_addr))
+        self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.core_addr))
 
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
-        #self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())
+        self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())
 
         self.frame_verticalSlider.valueChanged.connect(lambda: self.frame_slider_select())
+        self.core_verticalSlider.valueChanged.connect(lambda: self.core_slider_select())
 
         self.frameReverse_pushButton.clicked.connect(lambda: self.reverse_frame_select())
+        self.coreReverse_pushButton.clicked.connect(lambda: self.reverse_core_select())
 
 
 # I feel better having one of these

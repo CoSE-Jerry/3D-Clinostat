@@ -11,6 +11,9 @@ def init():
     global frame_RPM
     frame_RPM = 0.3
 
+    global core_RPM
+    core_RPM = 0.3
+
     global lighting_addr
     lighting_addr = 0x08
     
