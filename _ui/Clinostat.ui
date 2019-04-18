@@ -62,7 +62,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Lighting_tab">
      <attribute name="title">
@@ -137,8 +137,8 @@
       <widget class="QComboBox" name="bottomColor_comboBox">
        <property name="geometry">
         <rect>
-         <x>420</x>
-         <y>40</y>
+         <x>80</x>
+         <y>280</y>
          <width>91</width>
          <height>21</height>
         </rect>
@@ -230,8 +230,8 @@
       <widget class="QComboBox" name="leftColor_comboBox">
        <property name="geometry">
         <rect>
-         <x>80</x>
-         <y>280</y>
+         <x>90</x>
+         <y>60</y>
          <width>91</width>
          <height>21</height>
         </rect>
@@ -270,8 +270,8 @@
       <widget class="QComboBox" name="topColor_comboBox">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>50</y>
+         <x>410</x>
+         <y>60</y>
          <width>91</width>
          <height>21</height>
         </rect>

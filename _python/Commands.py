@@ -13,10 +13,55 @@ def top_color_change(self):
         Settings.sendCMD(Settings.lighting_addr,"1~0~9~0~0~255~0")
     elif temp == 4:
         Settings.sendCMD(Settings.lighting_addr,"1~0~9~0~0~0~255")
-    #elif temp == 5:
-        #Settings.ASD.write(bytes("1~0~8~" + str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W), 'UTF-8'))
+    elif temp == 5:
+        Settings.sendCMD(Settings.lighting_addr,"1~0~9~"+ str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W))
     else:
         Settings.sendCMD(Settings.lighting_addr,"1~0~9~0~0~0~0")
+
+def left_color_change(self):
+    temp = self.leftColor_comboBox.currentIndex()
+    if temp == 1:
+        Settings.sendCMD(Settings.lighting_addr,"1~9~18~255~0~0~0")
+    elif temp == 2:
+        Settings.sendCMD(Settings.lighting_addr,"1~9~18~0~255~0~0")
+    elif temp == 3:
+        Settings.sendCMD(Settings.lighting_addr,"1~9~18~0~0~255~0")
+    elif temp == 4:
+        Settings.sendCMD(Settings.lighting_addr,"1~9~18~0~0~0~255")
+    elif temp == 5:
+        Settings.sendCMD(Settings.lighting_addr,"1~9~18~"+ str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W))
+    else:
+        Settings.sendCMD(Settings.lighting_addr,"1~9~18~0~0~0~0")
+
+def right_color_change(self):
+    temp = self.rightColor_comboBox.currentIndex()
+    if temp == 1:
+        Settings.sendCMD(Settings.lighting_addr,"1~18~27~255~0~0~0")
+    elif temp == 2:
+        Settings.sendCMD(Settings.lighting_addr,"1~18~27~0~255~0~0")
+    elif temp == 3:
+        Settings.sendCMD(Settings.lighting_addr,"1~18~27~0~0~255~0")
+    elif temp == 4:
+        Settings.sendCMD(Settings.lighting_addr,"1~18~27~0~0~0~255")
+    elif temp == 5:
+        Settings.sendCMD(Settings.lighting_addr,"1~18~27~"+ str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W))
+    else:
+        Settings.sendCMD(Settings.lighting_addr,"1~18~27~0~0~0~0")
+
+def bottom_color_change(self):
+    temp = self.bottomColor_comboBox.currentIndex()
+    if temp == 1:
+        Settings.sendCMD(Settings.lighting_addr,"1~27~35~255~0~0~0")
+    elif temp == 2:
+        Settings.sendCMD(Settings.lighting_addr,"1~27~35~0~255~0~0")
+    elif temp == 3:
+        Settings.sendCMD(Settings.lighting_addr,"1~27~35~0~0~255~0")
+    elif temp == 4:
+        Settings.sendCMD(Settings.lighting_addr,"1~27~35~0~0~0~255")
+    elif temp == 5:
+        Settings.sendCMD(Settings.lighting_addr,"1~27~35~"+ str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W))
+    else:
+        Settings.sendCMD(Settings.lighting_addr,"1~27~35~0~0~0~0")
 
 def ergz_motor(self,addr):
     if(Settings.LINKED):

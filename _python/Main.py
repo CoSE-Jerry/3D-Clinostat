@@ -16,6 +16,12 @@ import Clinostat_UI
 class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
  # access variables inside of the UI's file
 
+    def custom_update(self):
+        Settings.custom_R = self.R_spinBox.value()
+        Settings.custom_G = self.G_spinBox.value()
+        Settings.custom_B = self.B_spinBox.value()
+        Settings.custom_W = self.W_spinBox.value()
+
     def link(self):
         if(Settings.LINKED):
             Settings.LINKED = False
@@ -66,9 +72,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.init()
         
         self.topColor_comboBox.currentIndexChanged.connect(lambda: Commands.top_color_change(self))
-        #self.leftColor_comboBox.currentIndexChanged.connect(lambda: Commands.left_color_change(self))
-        #self.rightColor_comboBox.currentIndexChanged.connect(lambda: Commands.right_color_change(self))
-        #self.bottomColor_comboBox.currentIndexChanged.connect(lambda: Commands.bottom_color_change(self))
+        self.leftColor_comboBox.currentIndexChanged.connect(lambda: Commands.left_color_change(self))
+        self.rightColor_comboBox.currentIndexChanged.connect(lambda: Commands.right_color_change(self))
+        self.bottomColor_comboBox.currentIndexChanged.connect(lambda: Commands.bottom_color_change(self))
         
         self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.frame_addr))
         self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.core_addr))
@@ -84,6 +90,12 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
         self.frameLink_pushButton.clicked.connect(lambda: self.link())
         self.coreLink_pushButton.clicked.connect(lambda: self.link())
+
+        self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
+        self.G_spinBox.valueChanged.connect(lambda: self.custom_update())
+        self.B_spinBox.valueChanged.connect(lambda: self.custom_update())
+        self.W_spinBox.valueChanged.connect(lambda: self.custom_update())
+        self.BRT_spinBox.valueChanged.connect(lambda: self.brightness_change())
 
 
 # I feel better having one of these
