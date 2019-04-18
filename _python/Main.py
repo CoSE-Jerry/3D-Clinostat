@@ -17,9 +17,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def frame_slider_select(self):
         #if(Settings.LINKED):
-            #Command.linked_change(self)
+            #Commands.linked_change(self)
         #else:
-        Command.frame_change(self)
+        Commands.frame_change(self)
 
     def frame_spin_select(self):
         Settings.frame_RPM=self.frame_spinBox.value()
