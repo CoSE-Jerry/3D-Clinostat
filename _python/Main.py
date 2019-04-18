@@ -22,6 +22,12 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         #else:
         Commands.frame_slider_change(self)
 
+    def core_slider_select(self):
+        #if(Settings.LINKED):
+            #Commands.linked_change(self)
+        #else:
+        Commands.core_slider_change(self)
+
     def frame_spin_select(self):
         Commands.frame_spin_select(self)
 
