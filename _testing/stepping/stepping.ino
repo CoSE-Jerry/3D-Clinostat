@@ -63,9 +63,9 @@ void step()
 {
   // The NXT/STEP minimum high pulse width is 2 microseconds.
   digitalWrite(amisStepPin, HIGH);
-  delayMicroseconds(3);
+  delayMicroseconds(2);
   digitalWrite(amisStepPin, LOW);
-  delayMicroseconds(3);
+  delayMicroseconds(2);
 
   // The delay here controls the stepper motor's speed.  You can
   // increase the delay to make the stepper motor go slower.  If

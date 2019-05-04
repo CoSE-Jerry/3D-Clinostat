@@ -103,11 +103,11 @@ void exeCMD() {
   {
     if (!IR)
     {
-      digitalWrite(7, LOW);
+      digitalWrite(7, HIGH);
     }
     else
     {
-      digitalWrite(7, HIGH);
+      digitalWrite(7, LOW);
     }
     IR = !IR;
   }
