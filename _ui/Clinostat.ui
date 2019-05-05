@@ -62,51 +62,19 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="Lighting_tab">
      <attribute name="title">
       <string>LIGHTING</string>
      </attribute>
-     <widget class="QSpinBox" name="BRT_spinBox">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>480</y>
-        <width>61</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="minimum">
-       <number>1</number>
-      </property>
-      <property name="maximum">
-       <number>255</number>
-      </property>
-      <property name="value">
-       <number>50</number>
-      </property>
-     </widget>
-     <widget class="QLabel" name="BRT_lable">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>450</y>
-        <width>81</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Brightness:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
      <widget class="QFrame" name="frame">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>10</y>
-        <width>581</width>
-        <height>411</height>
+        <x>0</x>
+        <y>20</y>
+        <width>411</width>
+        <height>500</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -118,10 +86,10 @@
       <widget class="QLabel" name="coreImage">
        <property name="geometry">
         <rect>
-         <x>100</x>
-         <y>-20</y>
-         <width>401</width>
-         <height>411</height>
+         <x>55</x>
+         <y>10</y>
+         <width>300</width>
+         <height>300</height>
         </rect>
        </property>
        <property name="text">
@@ -134,295 +102,371 @@
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QComboBox" name="bottomColor_comboBox">
+      <widget class="QFrame" name="frame_5">
        <property name="geometry">
         <rect>
-         <x>80</x>
-         <y>280</y>
-         <width>91</width>
-         <height>21</height>
+         <x>20</x>
+         <y>340</y>
+         <width>361</width>
+         <height>151</height>
         </rect>
        </property>
-       <item>
-        <property name="text">
-         <string>NONE</string>
+       <property name="frameShape">
+        <enum>QFrame::Panel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <widget class="QLabel" name="R_label">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>90</y>
+          <width>21</width>
+          <height>21</height>
+         </rect>
         </property>
-       </item>
-       <item>
         <property name="text">
-         <string>RED</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;R:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
-       </item>
-       <item>
+       </widget>
+       <widget class="QLabel" name="B_label">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>120</y>
+          <width>21</width>
+          <height>21</height>
+         </rect>
+        </property>
         <property name="text">
-         <string>GREEN</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;B:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
-       </item>
-       <item>
+       </widget>
+       <widget class="QLabel" name="G_label">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>90</y>
+          <width>21</width>
+          <height>21</height>
+         </rect>
+        </property>
         <property name="text">
-         <string>BLUE</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;G:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
-       </item>
-       <item>
+       </widget>
+       <widget class="QSpinBox" name="B_spinBox">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>120</y>
+          <width>61</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>255</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="W_label">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>120</y>
+          <width>21</width>
+          <height>21</height>
+         </rect>
+        </property>
         <property name="text">
-         <string>WHITE</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;W:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
-       </item>
-       <item>
+       </widget>
+       <widget class="QLabel" name="Address_label">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>0</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
         <property name="text">
-         <string>CUSTOM</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;LED Address&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
-       </item>
+       </widget>
+       <widget class="QSpinBox" name="W_spinBox">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>120</y>
+          <width>61</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>255</number>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="G_spinBox">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>90</y>
+          <width>61</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>255</number>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="R_spinBox">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>90</y>
+          <width>61</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>255</number>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="Start_spinBox">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>35</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="End_spinBox">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>35</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Start_label">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>40</y>
+          <width>47</width>
+          <height>13</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Start LED:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="end_label">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>40</y>
+          <width>47</width>
+          <height>13</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>End LED:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="color_label">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>60</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Color Setting&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
       </widget>
-      <widget class="QPushButton" name="IR_pushButton">
+      <widget class="QLabel" name="BRT_lable">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>270</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Brightness:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="BRT_spinBox">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>300</y>
+         <width>61</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="value">
+        <number>50</number>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>20</y>
+        <width>191</width>
+        <height>381</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="presets_label">
        <property name="geometry">
         <rect>
          <x>30</x>
-         <y>360</y>
+         <y>20</y>
          <width>141</width>
          <height>31</height>
         </rect>
        </property>
        <property name="text">
-        <string>INFRARED:OFF</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Presets&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="rightColor_comboBox">
+      <widget class="QPushButton" name="rainbow_pushButton">
        <property name="geometry">
         <rect>
-         <x>420</x>
-         <y>290</y>
-         <width>91</width>
+         <x>40</x>
+         <y>60</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Demo</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Demo_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>120</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Rainbow</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>180</y>
+         <width>171</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lightCycle_label">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>200</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Light Cycle&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="BRT_spinBox_2">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>270</y>
+         <width>121</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="suffix">
+        <string> min</string>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>999999999</number>
+       </property>
+       <property name="value">
+        <number>60</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Start_label_2">
+       <property name="geometry">
+        <rect>
+         <x>65</x>
+         <y>240</y>
+         <width>81</width>
          <height>21</height>
         </rect>
        </property>
-       <item>
-        <property name="text">
-         <string>NONE</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>RED</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>GREEN</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>BLUE</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>WHITE</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>CUSTOM</string>
-        </property>
-       </item>
+       <property name="text">
+        <string>Cycle Duration:</string>
+       </property>
       </widget>
-      <widget class="QComboBox" name="leftColor_comboBox">
+      <widget class="QPushButton" name="confirmCycle_pushButton">
        <property name="geometry">
         <rect>
-         <x>400</x>
-         <y>50</y>
-         <width>91</width>
-         <height>21</height>
+         <x>40</x>
+         <y>310</y>
+         <width>121</width>
+         <height>31</height>
         </rect>
        </property>
-       <item>
-        <property name="text">
-         <string>NONE</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>RED</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>GREEN</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>BLUE</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>WHITE</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>CUSTOM</string>
-        </property>
-       </item>
-      </widget>
-      <widget class="QComboBox" name="topColor_comboBox">
-       <property name="geometry">
-        <rect>
-         <x>80</x>
-         <y>70</y>
-         <width>91</width>
-         <height>21</height>
-        </rect>
+       <property name="text">
+        <string>CONFIRM</string>
        </property>
-       <item>
-        <property name="text">
-         <string>NONE</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>RED</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>GREEN</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>BLUE</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>WHITE</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>CUSTOM</string>
-        </property>
-       </item>
       </widget>
      </widget>
-     <widget class="QLabel" name="custom_label">
+     <widget class="QPushButton" name="IR_pushButton">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>430</y>
+        <x>450</x>
+        <y>440</y>
         <width>141</width>
-        <height>31</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Custom RGBW:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="G_label">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>460</y>
-        <width>21</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;G:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="R_label">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>460</y>
-        <width>21</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;R:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="G_spinBox">
-      <property name="geometry">
-       <rect>
-        <x>400</x>
-        <y>460</y>
-        <width>61</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="maximum">
-       <number>255</number>
-      </property>
-     </widget>
-     <widget class="QLabel" name="B_label">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>490</y>
-        <width>21</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;B:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="B_spinBox">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>490</y>
-        <width>61</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="maximum">
-       <number>255</number>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="R_spinBox">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>460</y>
-        <width>61</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="maximum">
-       <number>255</number>
-      </property>
-     </widget>
-     <widget class="QLabel" name="W_label">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>490</y>
-        <width>21</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;W:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="W_spinBox">
-      <property name="geometry">
-       <rect>
-        <x>400</x>
-        <y>490</y>
-        <width>61</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="maximum">
-       <number>255</number>
+       <string>INFRARED:OFF</string>
       </property>
      </widget>
     </widget>
