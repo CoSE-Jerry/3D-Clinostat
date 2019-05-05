@@ -41,6 +41,13 @@ def init():
     global custom_W
     custom_W=0
 
+    global ACC_text
+    ACC_text="offline"
+    global GYRO_text
+    GYRO_text="offline"
+    global MAG_text
+    MAG_text="offine"
+
 
     global forward
     forward = QtGui.QIcon()

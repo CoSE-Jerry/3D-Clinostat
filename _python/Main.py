@@ -82,7 +82,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         try:
             self.Preview_Thread = Threads.Preview()
             '''self.Snap_Thread.started.connect(lambda: UI_Update_Disable.snap_disable(self,sch_flip))'''
-            self.Preview_Thread.finished.connect(lambda: UI_Update.Preview_complete(self))
+            self.Preview_Thread.finished.connect(lambda: UI_Update.preview_complete(self))
             self.Preview_Thread.start()
             
         except Exception as e:
@@ -91,16 +91,11 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def sensor_init(self):
         try:
             self.Sensor_Thread = Threads.Sensor()
-            '''self.Snap_Thread.started.connect(lambda: UI_Update_Disable.snap_disable(self,sch_flip))'''
-            #self.Preview_Thread.finished.connect(lambda: UI_Update.Preview_complete(self))
+            self.Sensor_Thread.update.connect(lambda: UI_Update.sensor_update(self))
             self.Sensor_Thread.start()
             
         except Exception as e:
             print(e)
-            
-
-    
-
             
     def __init__(self):
         super(self.__class__, self).__init__()

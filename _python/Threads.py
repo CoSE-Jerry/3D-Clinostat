@@ -1,5 +1,4 @@
-import PyQt5
-from PyQt5 import QtCore, QtGui, QtWidgets
+import Settings
 import socket
 import board
 import busio
@@ -58,6 +57,7 @@ class Preview(QThread):
         sock.close()
 
 class Sensor(QThread):
+    update = QtCore.pyqtSignal()
 
     def __init__(self):
         QThread.__init__(self)
@@ -68,9 +68,14 @@ class Sensor(QThread):
     def run(self):
         i2c = busio.I2C(board.SCL, board.SDA)
         sensor = adafruit_fxos8700.FXOS8700(i2c)
+
         while True:
             accel_x, accel_y, accel_z = sensor.accelerometer
             mag_x, mag_y, mag_z = sensor.magnetometer
-            self.ACC_label.setText('Acceleration (m/s^2): ({0:0.3f}, {1:0.3f}, {2:0.3f})'.format(accel_x, accel_y, accel_z))
-            sleep(1.0)
+            
+            Settings.ACC_text = 'Acceleration (m/s^2): ({0:0.3f}, {1:0.3f}, {2:0.3f})'.format(accel_x, accel_y, accel_z)
+            Settings.MAG_text = 'Magnetometer (uTesla): ({0:0.3f}, {1:0.3f}, {2:0.3f})'.format(mag_x, mag_y, mag_z)
+            self.update.emit()
+            sleep(0.5)
+            
 
