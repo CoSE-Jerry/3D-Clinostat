@@ -76,7 +76,7 @@ class Sensor(QThread):
 
         while True:
             accel_x, accel_y, accel_z = sensor.accelerometer
-            gyro_x, gyro_y, gyro_z = sensor.gyroscope
+            gyro_x, gyro_y, gyro_z = sensor2.gyroscope
             mag_x, mag_y, mag_z = sensor.magnetometer
 
             Settings.ACC_X_text= "{0:.2f}".format(accel_x)
