@@ -897,7 +897,7 @@
           <string> px</string>
          </property>
          <property name="minimum">
-          <number>1</number>
+          <number>100</number>
          </property>
          <property name="maximum">
           <number>3240</number>
@@ -920,7 +920,7 @@
           <string> px</string>
          </property>
          <property name="minimum">
-          <number>1</number>
+          <number>100</number>
          </property>
          <property name="maximum">
           <number>2464</number>
@@ -1994,6 +1994,19 @@
     </property>
     <property name="text">
      <string>ROTATE IMAGE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>360</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Imaging Core Status: OFFLINE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>
