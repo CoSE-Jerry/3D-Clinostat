@@ -62,7 +62,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Lighting_tab">
      <attribute name="title">
@@ -300,38 +300,6 @@
          </item>
         </layout>
        </widget>
-      </widget>
-      <widget class="QLabel" name="lightCtr_label">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>0</y>
-         <width>111</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;LIGHT CONTOLLER:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="lightCtr_icon_clabel">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>30</y>
-         <width>20</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>../_image/Green_Icon.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
       </widget>
      </widget>
      <widget class="QFrame" name="frame_2">
@@ -692,86 +660,6 @@
        </item>
       </layout>
      </widget>
-     <widget class="QFrame" name="frame_6">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>290</y>
-        <width>191</width>
-        <height>101</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Panel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLabel" name="FrameCtr_icon_label">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>25</y>
-         <width>15</width>
-         <height>15</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>../_image/Green_Icon.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QLabel" name="CoreCtr_icon_label">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>65</y>
-         <width>15</width>
-         <height>15</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>../_image/Green_Icon.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QWidget" name="verticalLayoutWidget_7">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>10</y>
-         <width>121</width>
-         <height>80</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_21">
-        <item>
-         <widget class="QLabel" name="FrameCtr_label">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;FRAME CONTOLLER:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="CoreCtr_label">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;CORE CONTOLLER:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
     </widget>
     <widget class="QWidget" name="Imaging_tab">
      <attribute name="title">
@@ -987,42 +875,10 @@
        </item>
       </layout>
      </widget>
-     <widget class="QLabel" name="coreStat_label">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>5</y>
-        <width>111</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;CORE STATUS:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="coreStat_icon_label">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>10</y>
-        <width>20</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../_image/Green_Icon.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QWidget" name="horizontalLayoutWidget_5">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>390</x>
         <y>380</y>
         <width>231</width>
         <height>61</height>
@@ -1039,6 +895,9 @@
          </property>
          <property name="maximum">
           <number>3240</number>
+         </property>
+         <property name="value">
+          <number>2460</number>
          </property>
         </widget>
        </item>
@@ -1060,6 +919,9 @@
          <property name="maximum">
           <number>2462</number>
          </property>
+         <property name="value">
+          <number>2462</number>
+         </property>
         </widget>
        </item>
       </layout>
@@ -1067,7 +929,7 @@
      <widget class="QLabel" name="resolution_label">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>440</x>
         <y>360</y>
         <width>131</width>
         <height>31</height>
