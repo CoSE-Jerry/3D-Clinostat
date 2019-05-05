@@ -14,7 +14,7 @@ def preview_complete(self):
         preview_img = PyQt5.QtGui.QImage("../_temp/preview.jpg")
         self.Image_Frame.setPixmap(QtGui.QPixmap(preview_img))
         os.system("gpicview ../_temp/preview.jpg")
-    else
+    else:
         preview_img = PyQt5.QtGui.QImage("../_temp/preview.png")
         self.Image_Frame.setPixmap(QtGui.QPixmap(preview_img))
         os.system("gpicview ../_temp/preview.png")
