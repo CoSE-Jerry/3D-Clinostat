@@ -31,7 +31,7 @@ while True:
             
             if(int(CMD[4])):
                 f = open ("out.jpg", "rb")
-            else
+            else:
                 f = open ("out.png", "rb")
             l = f.read(1024)
             while (l):
