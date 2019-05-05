@@ -27,6 +27,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.custom_W = self.W_spinBox.value()
         Settings.LED_start = self.Start_spinBox.value()
         Settings.LED_end = self.End_spinBox.value()
+        Settings.brightness = self.BRT_spinBox.value()
 
         if(Settings.LED_start>=Settings.LED_end):
             self.light_Confirm_pushButton.setEnabled(False)
@@ -37,10 +38,12 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def link(self):
         if(Settings.LINKED):
             Settings.LINKED = False
-            self.link_pushButton.setIcon(Settings.broken)
+            self.frameLink_pushButton.setIcon(Settings.broken)
+            self.coreLink_pushButton.setIcon(Settings.broken)
         else:
             Settings.LINKED = True
-            self.link_pushButton.setIcon(Settings.linked)
+            self.frameLink_pushButton.setIcon(Settings.linked)
+            self.coreLink_pushButton.setIcon(Settings.linked)
 
     def frame_slider_select(self):
         if(Settings.LINKED):
@@ -181,7 +184,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.frameReverse_pushButton.clicked.connect(lambda: self.reverse_frame_select())
         self.coreReverse_pushButton.clicked.connect(lambda: self.reverse_core_select())
 
-        self.link_pushButton.clicked.connect(lambda: self.link())
+        self.frameLink_pushButton.clicked.connect(lambda: self.link())
+        self.coreLink_pushButton.clicked.connect(lambda: self.link())
 
         self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.G_spinBox.valueChanged.connect(lambda: self.custom_update())
@@ -189,11 +193,11 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.W_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.Start_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.End_spinBox.valueChanged.connect(lambda: self.custom_update())
+        self.BRT_spinBox.valueChanged.connect(lambda: self.custom_update())
 
         self.IR_pushButton.clicked.connect(lambda: Commands.IR_trigger(self))
         self.light_Confirm_pushButton.clicked.connect(lambda: Commands.light_confirm(self))
         self.light_Reset_pushButton.clicked.connect(lambda: Commands.light_reset(self))
-        self.BRT_spinBox.valueChanged.connect(lambda: Commands.brightness_change(self))
 
         self.title_lineEdit.textChanged.connect(lambda: self.IST_Edit())
         self.addDate_pushButton.clicked.connect(lambda: self.add_date())

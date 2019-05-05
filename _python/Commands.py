@@ -5,15 +5,18 @@ import Settings
 
 def light_confirm(self):
     Settings.sendCMD(Settings.lighting_addr,"1~"+str(Settings.LED_start)+"~"+str(Settings.LED_end)+"~"+ str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W))
+    Settings.sendCMD(Settings.lighting_addr,"2~"+str(Settings.brightness))
 
 def light_reset(self):
     Settings.sendCMD(Settings.lighting_addr,"1~0~34~0~0~0~0")
+    Settings.sendCMD(Settings.lighting_addr,"2~50")
     Settings.custom_R = 0
     Settings.custom_G = 0
     Settings.custom_B = 0
     Settings.custom_W = 0
     Settings.LED_start = 0
     Settings.LED_end = 1
+    Settings.brightness =50
 
     self.R_spinBox.setValue(0)
     self.G_spinBox.setValue(0) 
@@ -21,6 +24,7 @@ def light_reset(self):
     self.W_spinBox.setValue(0)
     self.Start_spinBox.setValue(0)
     self.End_spinBox.setValue(1)
+    self.BRT_spinBox.setValue(50)
     
 def ergz_motor(self,addr):
     if(Settings.LINKED):
@@ -101,9 +105,6 @@ def reverse_core_select(self):
     else:
         Settings.core_dir=0
     Settings.sendCMD(Settings.core_addr,"3~"+str(Settings.core_dir))
-
-def brightness_change(self):
-    Settings.sendCMD(Settings.lighting_addr,"2~"+str(self.BRT_spinBox.value()))
 
 def IR_trigger(self):
 

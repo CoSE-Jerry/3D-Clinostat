@@ -48,6 +48,8 @@ def init():
     LED_start=0
     global LED_end
     LED_end=1
+    global brightness
+    brightness=50
 
     global ACC_X_text
     ACC_X_text="offline"
