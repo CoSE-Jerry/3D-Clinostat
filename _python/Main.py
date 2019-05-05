@@ -124,7 +124,22 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.full_dir = Settings.default_dir + "/" + Settings.sequence_name
         self.directory_label.setText(Settings.full_dir)
         self.addDate_pushButton.setEnabled(False)
-            
+
+    def ICI_Change(self):
+        Settings.interval = self.ICI_spinBox.value()
+        if(Settings.total>0 and len(Settings.sequence_name)!=0):
+            self.startImaging_pushButton.setEnabled(True)
+        else:
+            self.startImaging_pushButton.setEnabled(False)
+                
+    def ISD_Change(self):
+        Settings.duration = self.ISD_spinBox.value()
+        if(Settings.total>0 and len(Settings.sequence_name)!=0):
+            self.startImaging_pushButton.setEnabled(True)
+        else:
+            self.startImaging_pushButton.setEnabled(False)
+        
+    
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self)
@@ -166,6 +181,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
         self.title_lineEdit.textChanged.connect(lambda: self.IST_Edit())
         self.addDate_pushButton.clicked.connect(lambda: self.add_date())
+
+        self.ICI_spinBox.valueChanged.connect(lambda: self.ICI_Change())
+        self.ISD_spinBox.valueChanged.connect(lambda: self.ISD_Change())
 
 
 # I feel better having one of these

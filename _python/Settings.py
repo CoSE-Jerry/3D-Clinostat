@@ -82,6 +82,15 @@ def init():
     global date
     date = time.strftime('%m_%d_%Y')
 
+    global interval
+    interval = 1
+
+    global duration
+    duration = 1
+
+    global total
+    total = int(duration/interval)
+
     global forward
     forward = QtGui.QIcon()
     forward.addPixmap(QtGui.QPixmap("../_image/forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
