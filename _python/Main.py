@@ -2,6 +2,7 @@ import Settings
 import Commands
 import Threads
 import UI_Update
+import os
 
 #always seem to need this
 import sys
@@ -90,21 +91,21 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             print(e)
 
     def sensor_init(self):
-        try:
-            self.Sensor_Thread = Threads.Sensor()
-            self.Sensor_Thread.update.connect(lambda: UI_Update.sensor_update(self))
-            self.Sensor_Thread.start()
-            
-        except Exception as e:
-            pass
+
+            os.system("i2cdetect -y 1 > ../_temp/output.txt")
+
+            if '1f' in open('../_temp/output.txt').read():
+                self.Sensor_Thread = Threads.Sensor()
+                self.Sensor_Thread.update.connect(lambda: UI_Update.sensor_update(self))
+                self.Sensor_Thread.start()
+
             
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self)
-        try:
-            self.sensor_init()
-        except Exception as e:
-            pass
+
+        self.sensor_init()
+
         
         Settings.init()
         
