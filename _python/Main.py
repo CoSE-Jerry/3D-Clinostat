@@ -1,5 +1,6 @@
 import Settings
 import Commands
+import Threads
 
 #always seem to need this
 import sys
@@ -65,6 +66,19 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         else:
             self.coreReverse_pushButton.setIcon(Settings.forward)
         Commands.reverse_core_select(self)
+
+    def start_snapshot(self):
+        try:
+            self.Snap_Thread = Threads.Snap()
+            '''self.Snap_Thread.started.connect(lambda: UI_Update_Disable.snap_disable(self,sch_flip))
+            self.Snap_Thread.finished.connect(lambda: UI_Update_Enable.snap_enable(self,sch_flip))'''
+            self.Snap_Thread.start()
+            
+        except Exception as e:
+            print(e)
+
+    
+
             
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -73,6 +87,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         
         self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.frame_addr))
         self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.core_addr))
+        
+        self.snapshot_pushButton.clicked.connect(lambda: self.start_snapshot())
 
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
         self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())
