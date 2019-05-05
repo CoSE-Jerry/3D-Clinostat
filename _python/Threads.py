@@ -107,7 +107,7 @@ class Timelapse(QThread):
     def run(self):
         if(not os.path.isdir(Settings.full_dir)):
             os.mkdir(Settings.full_dir)
-        for 1 in range(Settings.total):
+        for i in range(Settings.total):
             Settings.current_image = Settings.full_dir + "/" +Settings.sequence_name + "_%04d.jpg" % i
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             ip_address = "10.0.5.2"
