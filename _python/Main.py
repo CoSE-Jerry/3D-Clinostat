@@ -37,12 +37,10 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def link(self):
         if(Settings.LINKED):
             Settings.LINKED = False
-            self.frameLink_pushButton.setIcon(Settings.broken)
-            self.coreLink_pushButton.setIcon(Settings.broken)
+            self.link_pushButton.setIcon(Settings.broken)
         else:
             Settings.LINKED = True
-            self.frameLink_pushButton.setIcon(Settings.linked)
-            self.coreLink_pushButton.setIcon(Settings.linked)
+            self.link_pushButton.setIcon(Settings.linked)
 
     def frame_slider_select(self):
         if(Settings.LINKED):
@@ -183,8 +181,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.frameReverse_pushButton.clicked.connect(lambda: self.reverse_frame_select())
         self.coreReverse_pushButton.clicked.connect(lambda: self.reverse_core_select())
 
-        self.frameLink_pushButton.clicked.connect(lambda: self.link())
-        self.coreLink_pushButton.clicked.connect(lambda: self.link())
+        self.link_pushButton.clicked.connect(lambda: self.link())
 
         self.R_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.G_spinBox.valueChanged.connect(lambda: self.custom_update())
