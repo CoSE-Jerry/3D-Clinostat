@@ -1,4 +1,5 @@
 import smbus
+import time
 from PyQt5 import QtGui
 
 i2c_cmd = 0x5E
@@ -69,6 +70,17 @@ def init():
     global MAG_Z_text
     MAG_Z_text="offline"
 
+    global sequence_name
+    sequence_name=""
+
+    global default_dir
+    default_dir = "/home/pi/Desktop"
+
+    global full_dir
+    full_dir = ""
+
+    global date
+    date = time.strftime('%m_%d_%Y')
 
     global forward
     forward = QtGui.QIcon()

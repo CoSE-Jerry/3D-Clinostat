@@ -3,6 +3,7 @@ import Commands
 import Threads
 import UI_Update
 import os
+import time
 
 #always seem to need this
 import sys
@@ -107,6 +108,19 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
                 self.Sensor_Thread.update.connect(lambda: UI_Update.sensor_update(self))
                 self.Sensor_Thread.start()
 
+    def IST_Edit(self):
+        Settings.sequence_name = self.IST_Editor.text()
+        Settings.full_dir = default_dir + "/" + Settings.sequence_name
+        
+        self.Directory_Label.setText(Settings.full_dir)
+        
+        Settings.full_dir = default_dir + "/" + Settings.sequence_name
+        self.directory_label.setText(Settings.full_dir)
+        
+        if date not in Settings.sequence_name: 
+            self.addDate_pushButton.setEnabled(True)
+        if(len(Settings.sequence_name) == 0):
+            self.addDate_pushButton.setEnabled(False)
             
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -145,8 +159,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.IR_pushButton.clicked.connect(lambda: Commands.IR_trigger(self))
         self.light_Confirm_pushButton.clicked.connect(lambda: Commands.light_confirm(self))
         self.light_Reset_pushButton.clicked.connect(lambda: Commands.light_reset(self))
-        
         self.BRT_spinBox.valueChanged.connect(lambda: Commands.brightness_change(self))
+
+        self.title_lineEdit.textChanged.connect(lambda: self.IST_Edit())
 
 
 # I feel better having one of these
