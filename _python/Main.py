@@ -166,7 +166,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def update_mode(self):
         if(JPG_radioButton.isChecked()):
             Settings.imaging_mode = 1
-        else
+        else:
             Settings.imaging_mode = 0
     
     def __init__(self):
