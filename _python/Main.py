@@ -111,10 +111,6 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def IST_Edit(self):
         Settings.sequence_name = self.title_lineEdit.text()
         Settings.full_dir = Settings.default_dir + "/" + Settings.sequence_name
-        
-        self.Directory_Label.setText(Settings.full_dir)
-        
-        Settings.full_dir = default_dir + "/" + Settings.sequence_name
         self.directory_label.setText(Settings.full_dir)
         
         if date not in Settings.sequence_name: 
