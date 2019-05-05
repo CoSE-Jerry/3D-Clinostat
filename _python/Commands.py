@@ -7,7 +7,7 @@ def light_confirm(self):
     Settings.sendCMD(Settings.lighting_addr,"1~"+str(Settings.LED_start)+"~"+str(Settings.LED_end)+"~"+ str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W))
 
 def light_reset(self):
-    Settings.sendCMD(Settings.lighting_addr,"1~0~0~0~0~0~0")
+    Settings.sendCMD(Settings.lighting_addr,"1~0~34~0~0~0~0")
     Settings.custom_R = 0
     Settings.custom_G = 0
     Settings.custom_B = 0
