@@ -120,7 +120,7 @@
        <widget class="QLabel" name="R_label">
         <property name="geometry">
          <rect>
-          <x>70</x>
+          <x>20</x>
           <y>90</y>
           <width>21</width>
           <height>21</height>
@@ -133,7 +133,7 @@
        <widget class="QLabel" name="B_label">
         <property name="geometry">
          <rect>
-          <x>70</x>
+          <x>20</x>
           <y>120</y>
           <width>21</width>
           <height>21</height>
@@ -146,7 +146,7 @@
        <widget class="QLabel" name="G_label">
         <property name="geometry">
          <rect>
-          <x>190</x>
+          <x>140</x>
           <y>90</y>
           <width>21</width>
           <height>21</height>
@@ -159,7 +159,7 @@
        <widget class="QSpinBox" name="B_spinBox">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>40</x>
           <y>120</y>
           <width>61</width>
           <height>22</height>
@@ -172,7 +172,7 @@
        <widget class="QLabel" name="W_label">
         <property name="geometry">
          <rect>
-          <x>190</x>
+          <x>140</x>
           <y>120</y>
           <width>21</width>
           <height>21</height>
@@ -198,7 +198,7 @@
        <widget class="QSpinBox" name="W_spinBox">
         <property name="geometry">
          <rect>
-          <x>210</x>
+          <x>160</x>
           <y>120</y>
           <width>61</width>
           <height>22</height>
@@ -211,7 +211,7 @@
        <widget class="QSpinBox" name="G_spinBox">
         <property name="geometry">
          <rect>
-          <x>210</x>
+          <x>160</x>
           <y>90</y>
           <width>61</width>
           <height>22</height>
@@ -224,7 +224,7 @@
        <widget class="QSpinBox" name="R_spinBox">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>40</x>
           <y>90</y>
           <width>61</width>
           <height>22</height>
@@ -243,6 +243,9 @@
           <height>22</height>
          </rect>
         </property>
+        <property name="maximum">
+         <number>33</number>
+        </property>
        </widget>
        <widget class="QSpinBox" name="End_spinBox">
         <property name="geometry">
@@ -252,6 +255,12 @@
           <width>61</width>
           <height>22</height>
          </rect>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>34</number>
         </property>
        </widget>
        <widget class="QLabel" name="Start_label">
@@ -291,6 +300,32 @@
         </property>
         <property name="text">
          <string>End LED:</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="light_Reset_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>90</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>RESET</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="light_Confirm_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>120</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>CONFIRM</string>
         </property>
        </widget>
       </widget>

@@ -43,6 +43,10 @@ def init():
     custom_B=0
     global custom_W
     custom_W=0
+    global LED_start
+    LED_start=0
+    global LED_end
+    LED_end=1
 
     global ACC_X_text
     ACC_X_text="offline"

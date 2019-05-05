@@ -3,66 +3,25 @@ import Settings
 #from PyQt5.QtCore import QThread
 #from PyQt5 import QtCore, QtGui, QtWidgets
 
-def top_color_change(self):
-    temp = self.topColor_comboBox.currentIndex()
-    if temp == 1:
-        Settings.sendCMD(Settings.lighting_addr,"1~0~8~255~0~0~0")
-    elif temp == 2:
-        Settings.sendCMD(Settings.lighting_addr,"1~0~8~0~255~0~0")
-    elif temp == 3:
-        Settings.sendCMD(Settings.lighting_addr,"1~0~8~0~0~255~0")
-    elif temp == 4:
-        Settings.sendCMD(Settings.lighting_addr,"1~0~8~0~0~0~255")
-    elif temp == 5:
-        Settings.sendCMD(Settings.lighting_addr,"1~0~8~"+ str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W))
-    else:
-        Settings.sendCMD(Settings.lighting_addr,"1~0~8~0~0~0~0")
+def light_confirm(self):
+    Settings.sendCMD(Settings.lighting_addr,"1~"+str(Settings.LED_start)+"~"+str(Settings.LED_end)+"~"+ str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W))
 
-def left_color_change(self):
-    temp = self.leftColor_comboBox.currentIndex()
-    if temp == 1:
-        Settings.sendCMD(Settings.lighting_addr,"1~8~17~255~0~0~0")
-    elif temp == 2:
-        Settings.sendCMD(Settings.lighting_addr,"1~8~17~0~255~0~0")
-    elif temp == 3:
-        Settings.sendCMD(Settings.lighting_addr,"1~8~17~0~0~255~0")
-    elif temp == 4:
-        Settings.sendCMD(Settings.lighting_addr,"1~8~17~0~0~0~255")
-    elif temp == 5:
-        Settings.sendCMD(Settings.lighting_addr,"1~8~17~"+ str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W))
-    else:
-        Settings.sendCMD(Settings.lighting_addr,"1~8~17~0~0~0~0")
+def light_reset(self):
+    Settings.sendCMD(Settings.lighting_addr,"1~0~0~0~0~0~0")
+    Settings.custom_R = 0
+    Settings.custom_G = 0
+    Settings.custom_B = 0
+    Settings.custom_W = 0
+    Settings.LED_start = 0
+    Settings.LED_end = 1
 
-def right_color_change(self):
-    temp = self.rightColor_comboBox.currentIndex()
-    if temp == 1:
-        Settings.sendCMD(Settings.lighting_addr,"1~17~26~255~0~0~0")
-    elif temp == 2:
-        Settings.sendCMD(Settings.lighting_addr,"1~17~26~0~255~0~0")
-    elif temp == 3:
-        Settings.sendCMD(Settings.lighting_addr,"1~17~26~0~0~255~0")
-    elif temp == 4:
-        Settings.sendCMD(Settings.lighting_addr,"1~17~26~0~0~0~255")
-    elif temp == 5:
-        Settings.sendCMD(Settings.lighting_addr,"1~17~26~"+ str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W))
-    else:
-        Settings.sendCMD(Settings.lighting_addr,"1~17~26~0~0~0~0")
-
-def bottom_color_change(self):
-    temp = self.bottomColor_comboBox.currentIndex()
-    if temp == 1:
-        Settings.sendCMD(Settings.lighting_addr,"1~26~35~255~0~0~0")
-    elif temp == 2:
-        Settings.sendCMD(Settings.lighting_addr,"1~26~35~0~255~0~0")
-    elif temp == 3:
-        Settings.sendCMD(Settings.lighting_addr,"1~26~35~0~0~255~0")
-    elif temp == 4:
-        Settings.sendCMD(Settings.lighting_addr,"1~26~35~0~0~0~255")
-    elif temp == 5:
-        Settings.sendCMD(Settings.lighting_addr,"1~26~35~"+ str(Settings.custom_R) + "~" + str(Settings.custom_G) + "~" + str(Settings.custom_B) + "~"+str(Settings.custom_W))
-    else:
-        Settings.sendCMD(Settings.lighting_addr,"1~26~35~0~0~0~0")
-
+    self.R_spinBox.setValue(Settings.custom_R)
+    self.G_spinBox.setValue(Settings.custom_G) 
+    self.B_spinBox.setValue(Settings.custom_B)
+    self.W_spinBox.setValue(Settings.custom_W)
+    self.Start_spinBox.setValue(Settings.LED_start)
+    self.End_spinBox.setValue(Settings.LED_end)
+    
 def ergz_motor(self,addr):
     if(Settings.LINKED):
         Settings.sendCMD(Settings.frame_addr,"1~")

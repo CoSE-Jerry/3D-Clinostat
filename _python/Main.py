@@ -24,6 +24,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.custom_G = self.G_spinBox.value()
         Settings.custom_B = self.B_spinBox.value()
         Settings.custom_W = self.W_spinBox.value()
+        Settings.LED_start = self.Start_spinBox.value()
+        Settings.LED_end = self.End_spinBox.value()
 
     def link(self):
         if(Settings.LINKED):
@@ -131,8 +133,12 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.G_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.B_spinBox.valueChanged.connect(lambda: self.custom_update())
         self.W_spinBox.valueChanged.connect(lambda: self.custom_update())
+        self.Start_spinBox.valueChanged.connect(lambda: self.custom_update())
+        self.End_spinBox.valueChanged.connect(lambda: self.custom_update())
 
         self.IR_pushButton.clicked.connect(lambda: Commands.IR_trigger(self))
+        self.light_Confirm_pushButton.clicked.connect(lambda: Commands.light_confirm(self))
+        self.light_Reset_pushButton.clicked.connect(lambda: Commands.light_reset(self))
         
         self.BRT_spinBox.valueChanged.connect(lambda: Commands.brightness_change(self))
 
