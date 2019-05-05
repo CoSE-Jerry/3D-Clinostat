@@ -56,7 +56,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
                 self.frameReverse_pushButton.setIcon(Settings.forward)
             Commands.reverse_core_select(self)
             Commands.reverse_frame_select(self)
-        else
+        else:
             if(Settings.core_dir==0):
                 self.coreReverse_pushButton.setIcon(Settings.reverse)
             else:
