@@ -27,7 +27,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.LED_start = self.Start_spinBox.value()
         Settings.LED_end = self.End_spinBox.value()
 
-        if(Settings.LED_start>Settings.LED_end):
+        if(Settings.LED_start>=Settings.LED_end):
             self.light_Confirm_pushButton.setEnabled(False)
         else:
             self.light_Confirm_pushButton.setEnabled(True)

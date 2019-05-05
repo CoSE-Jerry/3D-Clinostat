@@ -15,12 +15,12 @@ def light_reset(self):
     Settings.LED_start = 0
     Settings.LED_end = 1
 
-    self.R_spinBox.setValue(Settings.custom_R)
-    self.G_spinBox.setValue(Settings.custom_G) 
-    self.B_spinBox.setValue(Settings.custom_B)
-    self.W_spinBox.setValue(Settings.custom_W)
-    self.Start_spinBox.setValue(Settings.LED_start)
-    self.End_spinBox.setValue(Settings.LED_end)
+    self.R_spinBox.setValue(0)
+    self.G_spinBox.setValue(0) 
+    self.B_spinBox.setValue(0)
+    self.W_spinBox.setValue(0)
+    self.Start_spinBox.setValue(0)
+    self.End_spinBox.setValue(1)
     
 def ergz_motor(self,addr):
     if(Settings.LINKED):
