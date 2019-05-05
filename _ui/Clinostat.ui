@@ -1185,7 +1185,7 @@
         <x>10</x>
         <y>20</y>
         <width>611</width>
-        <height>411</height>
+        <height>321</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -1330,7 +1330,7 @@
       <x>700</x>
       <y>490</y>
       <width>311</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -1367,6 +1367,99 @@
     </property>
     <property name="text">
      <string>PREVIEW</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="version_label">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>545</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Firmware:V 1.03 beta</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="Sensor_tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>676</x>
+      <y>370</y>
+      <width>161</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="ACC_tab">
+     <attribute name="title">
+      <string>ACC</string>
+     </attribute>
+     <widget class="QLabel" name="ACC_X_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>offline</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ACC_Y_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>35</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>offline</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ACC_Z_label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>offline</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="GYRO_tab">
+     <attribute name="title">
+      <string>GYRO</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="MAG_tab">
+     <attribute name="title">
+      <string>MAG</string>
+     </attribute>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="axis_label">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>400</y>
+      <width>51</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;X:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Y:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Z:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>
