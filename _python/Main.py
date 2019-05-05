@@ -117,6 +117,13 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.addDate_pushButton.setEnabled(True)
         if(len(Settings.sequence_name) == 0):
             self.addDate_pushButton.setEnabled(False)
+
+    def Add_Date(self):
+        Settings.sequence_name = Settings.sequence_name + "_" + date
+        self.title_lineEdit.setText(Settings.sequence_name)
+        Settings.full_dir = Settings.default_dir + "/" + Settings.sequence_name
+        self.Directory_Label.setText(Settings.full_dir)
+        self.add_Date.setEnabled(False)
             
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -158,6 +165,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.BRT_spinBox.valueChanged.connect(lambda: Commands.brightness_change(self))
 
         self.title_lineEdit.textChanged.connect(lambda: self.IST_Edit())
+        self.addDate_pushButton.clicked.connect(lambda: self.add_date())
 
 
 # I feel better having one of these
