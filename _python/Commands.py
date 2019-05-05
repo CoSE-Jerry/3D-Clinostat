@@ -1,10 +1,11 @@
 import Settings
-#from time import sleep
+from time import sleep
 #from PyQt5.QtCore import QThread
 #from PyQt5 import QtCore, QtGui, QtWidgets
 
 def light_confirm(self):
     Settings.sendCMD(Settings.lighting_addr,"1~"+str(self.Start_spinBox.value())+"~"+str(self.End_spinBox.value())+"~"+ str(self.R_spinBox.value()) + "~" + str(self.G_spinBox.value()) + "~" + str(self.B_spinBox.value()) + "~"+str(self.W_spinBox.value()))
+    sleep(1)
     Settings.sendCMD(Settings.lighting_addr,"2~"+str(self.BRT_spinBox.value()))
 
 def light_reset(self):
