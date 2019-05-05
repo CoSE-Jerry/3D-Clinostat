@@ -25,4 +25,8 @@ def sensor_update(self):
     self.GYRO_X_text_label.setText(Settings.GYRO_X_text)
     self.GYRO_Y_text_label.setText(Settings.GYRO_Y_text)
     self.GYRO_Z_text_label.setText(Settings.GYRO_Z_text)
+
+    self.MAG_X_text_label.setText(Settings.MAG_X_text)
+    self.MAG_Y_text_label.setText(Settings.MAG_Y_text)
+    self.MAG_Z_text_label.setText(Settings.MAG_Z_text)
     

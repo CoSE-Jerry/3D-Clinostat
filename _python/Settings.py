@@ -58,8 +58,12 @@ def init():
     global GYRO_Z_text
     GYRO_Z_text="offline"
     
-    global MAG_text
-    MAG_text="offine"
+    global MAG_X_text
+    MAG_X_text="offline"
+    global MAG_Y_text
+    MAG_Y_text="offline"
+    global MAG_Z_text
+    MAG_Z_text="offline"
 
 
     global forward
