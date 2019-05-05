@@ -462,10 +462,10 @@
      <widget class="QPushButton" name="link_pushButton">
       <property name="geometry">
        <rect>
-        <x>265</x>
-        <y>160</y>
-        <width>80</width>
-        <height>80</height>
+        <x>280</x>
+        <y>180</y>
+        <width>50</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -477,8 +477,8 @@
       </property>
       <property name="iconSize">
        <size>
-        <width>50</width>
-        <height>50</height>
+        <width>30</width>
+        <height>30</height>
        </size>
       </property>
       <property name="checkable">
@@ -607,10 +607,13 @@
       <property name="geometry">
        <rect>
         <x>80</x>
-        <y>430</y>
+        <y>419</y>
         <width>149</width>
-        <height>20</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="suffix">
+       <string> RPM</string>
       </property>
       <property name="decimals">
        <number>1</number>
@@ -629,10 +632,13 @@
       <property name="geometry">
        <rect>
         <x>380</x>
-        <y>430</y>
+        <y>419</y>
         <width>149</width>
-        <height>20</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="suffix">
+       <string> RPM</string>
       </property>
       <property name="decimals">
        <number>1</number>
