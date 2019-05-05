@@ -14,7 +14,6 @@ while True:
 
     while True:
         recieved = connection.recv(1024).decode("utf-8")
-        print (recieved)
 
         CMD = recieved.split('~', 5)
 
@@ -27,7 +26,6 @@ while True:
                     camera.capture("out.jpg")
                 else:
                     camera.capture("out.png")
-            print("imaging done")
             
             if(int(CMD[4])):
                 f = open ("out.jpg", "rb")
@@ -38,24 +36,8 @@ while True:
                 connection.send(l)
                 l = f.read(1024)
             f.close()
-            print("image sent")
             break
 
-
-        elif(CMD=='P'):
-            with PiCamera() as camera:
-                camera.resolution = (2464,2464)
-                sleep(2)
-                camera.capture("out.jpg")
-            print("imaging done")
-            f = open ("out.jpg", "rb")
-            l = f.read(1024)
-            while (l):
-                connection.send(l)
-                l = f.read(1024)
-            f.close()
-            print("image sent")
-            break
     connection.close()
     
 

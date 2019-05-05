@@ -86,6 +86,15 @@ def init():
 
     global rotation
     rotation = 0
+
+    global x_resolution
+    x_resolution=2464
+
+    global y_resolution
+    y_resolution=2464
+
+    global imaging_mode
+    imaging_mode = 1
     
     global forward
     forward = QtGui.QIcon()
@@ -113,5 +122,5 @@ def sendCMD(addr,cont):
 
 def getInterval(RPM):
     return str(int(round(60/(RPM*0.351488))))
-    
+
 

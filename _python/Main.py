@@ -107,10 +107,6 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.rotation += 1
         self.start_snapshot()
 
-
-
-            
-
     def sensor_init(self):
 
             os.system("i2cdetect -y 1 > ../_temp/output.txt")
@@ -162,6 +158,16 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             Settings.full_dir = m_directory +"/"+ Settings.sequence_name
             self.directory_label.setText(Settings.full_dir)
         self.validate_input()
+
+    def update_resolution(self):
+        Settings.x_resolution=x_resolution_spinBox.value()
+        Settings.y_resolution=y_resolution_spinBox.value()
+
+    def update_mode(self):
+        if(JPG_radioButton.isChecked()):
+            Settings.imaging_mode = 1
+        else
+            Settings.imaging_mode = 0
     
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -204,6 +210,10 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.ISD_spinBox.valueChanged.connect(lambda: self.ISD_Change())
         self.directory_pushButton.clicked.connect(lambda: self.select_directory())
 
+        self.x_resolution_spinBox.valueChanged.connect(lambda: self.update_resolution())
+        self.y_resolution_spinBox.valueChanged.connect(lambda: self.update_resolution())
+
+        self.JPG_radioButton.toggled.connect(lambda: self.update_mode())
 
 
 # I feel better having one of these

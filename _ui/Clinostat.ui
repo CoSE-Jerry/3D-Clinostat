@@ -62,7 +62,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="Lighting_tab">
      <attribute name="title">
@@ -897,13 +897,13 @@
           <string> px</string>
          </property>
          <property name="minimum">
-          <number>10</number>
+          <number>1</number>
          </property>
          <property name="maximum">
           <number>3240</number>
          </property>
          <property name="value">
-          <number>2460</number>
+          <number>2464</number>
          </property>
         </widget>
        </item>
@@ -920,13 +920,13 @@
           <string> px</string>
          </property>
          <property name="minimum">
-          <number>10</number>
+          <number>1</number>
          </property>
          <property name="maximum">
-          <number>2462</number>
+          <number>2464</number>
          </property>
          <property name="value">
-          <number>2462</number>
+          <number>2464</number>
          </property>
         </widget>
        </item>

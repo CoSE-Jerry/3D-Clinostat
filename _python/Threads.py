@@ -48,16 +48,28 @@ class Preview(QThread):
         ip_address = "10.0.5.2"
         server_address = (ip_address, 23456)
         sock.connect(server_address)
-        sock.sendall('P'.encode())
 
-        with open('../_temp/preview.jpg', 'wb') as f:
-                print('file opened')
-                while True:
-                    data = sock.recv(1024)
-                    if not data:
-                        break
-                    f.write(data)
-        sock.close()
+        cmd = "A~"+str(Settings.x_resolution)+"~"+str(Settings.y_resolution)+"~"+str(Settings.rotation)+"~"+str(Settings.imaging_mode)
+        
+        sock.sendall(cmd.encode())
+
+        if(Settings.imaging_mode):
+            with open('../_temp/preview.jpg', 'wb') as f:
+                    while True:
+                        data = sock.recv(1024)
+                        if not data:
+                            break
+                        f.write(data)
+            sock.close()
+
+        else:
+            with open('../_temp/preview.png', 'wb') as f:
+                    while True:
+                        data = sock.recv(1024)
+                        if not data:
+                            break
+                        f.write(data)
+            sock.close()
 
 class Sensor(QThread):
     update = QtCore.pyqtSignal()
