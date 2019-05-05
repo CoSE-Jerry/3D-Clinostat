@@ -10,6 +10,9 @@ def init():
 
     global IR_STAT
     IR_STAT = False
+
+    global i2c_open
+    i2c_open =True
     
     global frame_RPM
     frame_RPM = 0.3
