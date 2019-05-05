@@ -38,6 +38,9 @@ while True:
             f.close()
             break
 
+        if(CMD[0]=='P'):
+            break
+
     connection.close()
     
 
