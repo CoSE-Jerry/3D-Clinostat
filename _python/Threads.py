@@ -5,6 +5,7 @@ import busio
 import adafruit_fxos8700
 
 from time import sleep
+from PyQt5 import QtCore
 from PyQt5.QtCore import QThread
 from picamera import PiCamera
 
