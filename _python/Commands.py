@@ -79,7 +79,7 @@ def core_slider_change(self):
     self.core_spinBox.setValue(Settings.core_RPM)
 
 def linked_slider_change(self):
-    Settings.i2c_open = False
+    #Settings.i2c_open = False
     self.core_spinBox.blockSignals(True)
     self.frame_spinBox.blockSignals(True)
     self.core_verticalSlider.blockSignals(True)
