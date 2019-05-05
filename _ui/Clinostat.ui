@@ -1398,43 +1398,33 @@
      <attribute name="title">
       <string>ACC</string>
      </attribute>
-     <widget class="QLabel" name="ACC_X_label">
+     <widget class="QLabel" name="lightCycle_label_2">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>10</y>
-        <width>71</width>
-        <height>16</height>
+        <y>0</y>
+        <width>141</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string>offline</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Accelerometer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QLabel" name="ACC_Y_label">
+     <widget class="QLabel" name="ACC_label">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>35</y>
-        <width>71</width>
-        <height>16</height>
+        <x>20</x>
+        <y>29</y>
+        <width>121</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="text">
        <string>offline</string>
       </property>
-     </widget>
-     <widget class="QLabel" name="ACC_Z_label">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>60</y>
-        <width>71</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>offline</string>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -1448,19 +1438,6 @@
       <string>MAG</string>
      </attribute>
     </widget>
-   </widget>
-   <widget class="QLabel" name="axis_label">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>400</y>
-      <width>51</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;X:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Y:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Z:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
