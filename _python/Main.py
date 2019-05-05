@@ -78,7 +78,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         except Exception as e:
             print(e)
 
-    def start_snapshot(self):
+    def start_preview(self):
         try:
             self.Preview_Thread = Threads.Preview()
             '''self.Snap_Thread.started.connect(lambda: UI_Update_Disable.snap_disable(self,sch_flip))'''
