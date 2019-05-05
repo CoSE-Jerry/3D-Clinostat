@@ -107,7 +107,7 @@ def linked_slider_change(self):
     self.frame_spinBox.blockSignals(False)
     self.core_verticalSlider.blockSignals(False)
     self.frame_verticalSlider.blockSignals(False)
-    #Settings.i2c_open = True
+    Settings.i2c_open = True
 
 
 def frame_spin_select(self):
