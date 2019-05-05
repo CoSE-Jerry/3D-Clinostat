@@ -68,13 +68,14 @@ class Sensor(QThread):
         self._running = False
 
     def run(self):
-        i2c = busio.I2C(board.SCL, board.SDA)
-        sensor = adafruit_fxos8700.FXOS8700(i2c)
 
-        i2c2 = busio.I2C(board.SCL, board.SDA)
-        sensor2 = adafruit_fxas21002c.FXAS21002C(i2c2)
 
         while True:
+            i2c = busio.I2C(board.SCL, board.SDA)
+            sensor = adafruit_fxos8700.FXOS8700(i2c)
+
+            i2c2 = busio.I2C(board.SCL, board.SDA)
+            sensor2 = adafruit_fxas21002c.FXAS21002C(i2c2)
             if(Settings.i2c_open):
                 accel_x, accel_y, accel_z = sensor.accelerometer
                 gyro_x, gyro_y, gyro_z = sensor2.gyroscope
