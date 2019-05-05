@@ -81,6 +81,9 @@ def init():
     global total
     total = 1
 
+    global current
+    current = 0
+    
     global forward
     forward = QtGui.QIcon()
     forward.addPixmap(QtGui.QPixmap("../_image/forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)

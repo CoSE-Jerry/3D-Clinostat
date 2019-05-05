@@ -145,6 +145,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.startImaging_pushButton.setEnabled(True)
         else:
             self.startImaging_pushButton.setEnabled(False)
+        self.Progress_Label.setText("Progress: "+str(Settings.current) + "/" + str(Settings.total))
+        
 
     def select_directory(self):
         m_directory = str(QFileDialog.getExistingDirectory(self, "Select Directory",'/media/pi'))
