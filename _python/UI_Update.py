@@ -10,9 +10,14 @@ def snap_complete(self):
     #self.Snapshot.setEnabled(True)
 
 def preview_complete(self):
-    preview_img = PyQt5.QtGui.QImage("../_temp/preview.jpg")
-    self.Image_Frame.setPixmap(QtGui.QPixmap(preview_img))
-    os.system("gpicview ../_temp/preview.jpg")
+    if(Settings.imaging_mode==1):
+        preview_img = PyQt5.QtGui.QImage("../_temp/preview.jpg")
+        self.Image_Frame.setPixmap(QtGui.QPixmap(preview_img))
+        os.system("gpicview ../_temp/preview.jpg")
+    else
+        preview_img = PyQt5.QtGui.QImage("../_temp/preview.png")
+        self.Image_Frame.setPixmap(QtGui.QPixmap(preview_img))
+        os.system("gpicview ../_temp/preview.png")
     
     #self.Snapshot.setText("Snapshot")
     #self.Snapshot.setEnabled(True)

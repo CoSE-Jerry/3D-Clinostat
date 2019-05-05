@@ -53,7 +53,7 @@ class Preview(QThread):
         
         sock.sendall(cmd.encode())
 
-        if(Settings.imaging_mode):
+        if(Settings.imaging_mode==1):
             with open('../_temp/preview.jpg', 'wb') as f:
                     while True:
                         data = sock.recv(1024)
