@@ -175,7 +175,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
         Settings.init()
         self.sensor_init()
-        self.Commands.probe_core()
+        Commands.probe_core(self)
         self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.frame_addr))
         self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.core_addr))
         
