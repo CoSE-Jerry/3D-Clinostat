@@ -99,6 +99,16 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         except Exception as e:
             print(e)
 
+    def start_timelapse(self):
+        try:
+            self.Timelapse_Thread = Threads.Timelapse()
+            '''self.Snap_Thread.started.connect(lambda: UI_Update_Disable.snap_disable(self,sch_flip))'''
+            self.Timelapse_Thread.captured.connect(lambda: UI_Update.image_update(self))
+            self.Timelapse_Thread.start()
+            
+        except Exception as e:
+            print(e)
+
     def sensor_init(self):
 
             os.system("i2cdetect -y 1 > ../_temp/output.txt")
@@ -162,6 +172,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         
         self.snapshot_pushButton.clicked.connect(lambda: self.start_snapshot())
         self.preview_pushButton.clicked.connect(lambda: self.start_preview())
+        self.startImaging_pushButton.clicked.connect(lambda: self.start_timelapse())
 
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
         self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())

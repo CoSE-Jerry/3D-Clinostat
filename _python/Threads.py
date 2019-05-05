@@ -4,6 +4,7 @@ import board
 import busio
 import adafruit_fxos8700
 import adafruit_fxas21002c
+import os
 
 from time import sleep
 from PyQt5 import QtCore
@@ -93,5 +94,38 @@ class Sensor(QThread):
             
             self.update.emit()
             sleep(0.1)
+
+class Timelapse(QThread):
+    captured = QtCore.pyqtSignal()
+
+    def __init__(self):
+        QThread.__init__(self)
+
+    def __del__(self):
+        self._running = False
+
+    def run(self):
+        if(not os.path.isdir(Settings.full_dir)):
+            os.mkdir(Settings.full_dir)
+        for 1 in range(Settings.total):
+            Settings.current_image = Settings.full_dir + "/" +Settings.sequence_name + "_%04d.jpg" % i
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            ip_address = "10.0.5.2"
+            server_address = (ip_address, 23456)
+            sock.connect(server_address)
+            sock.sendall('P'.encode())
+
+            with open(Settings.current_image, 'wb') as f:
+                print('file opened')
+                while True:
+                    data = sock.recv(1024)
+                    if not data:
+                        break
+                    f.write(data)
+            sock.close()
+        
+            self.captured.emit()
+            sleep(Settings.iterval)
+
             
 

@@ -17,6 +17,13 @@ def preview_complete(self):
     #self.Snapshot.setText("Snapshot")
     #self.Snapshot.setEnabled(True)
 
+def image_update(self):
+    capture_img = PyQt5.QtGui.QImage(Settings,current_image)
+    self.Image_Frame.setPixmap(QtGui.QPixmap(capture_img))
+    
+    #self.Snapshot.setText("Snapshot")
+    #self.Snapshot.setEnabled(True)
+
 def sensor_update(self):
     self.ACC_X_text_label.setText(Settings.ACC_X_text)
     self.ACC_Y_text_label.setText(Settings.ACC_Y_text)
@@ -29,4 +36,3 @@ def sensor_update(self):
     self.MAG_X_text_label.setText(Settings.MAG_X_text)
     self.MAG_Y_text_label.setText(Settings.MAG_Y_text)
     self.MAG_Z_text_label.setText(Settings.MAG_Z_text)
-    

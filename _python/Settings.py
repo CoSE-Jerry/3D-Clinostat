@@ -73,6 +73,9 @@ def init():
     global sequence_name
     sequence_name=""
 
+    global current_image
+    current_image=""
+
     global default_dir
     default_dir = "/home/pi/Desktop"
 
