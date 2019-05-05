@@ -716,7 +716,7 @@ class Ui_MainWindow(object):
         self.Expert_tab.setCurrentIndex(1)
         self.frameMS_comboBox.setCurrentIndex(7)
         self.coreMS_comboBox.setCurrentIndex(7)
-        self.Sensor_tabWidget.setCurrentIndex(0)
+        self.Sensor_tabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -829,9 +829,9 @@ class Ui_MainWindow(object):
         self.GYRO_X_text_label.setText(_translate("MainWindow", "offline"))
         self.GYRO_Y_text_label.setText(_translate("MainWindow", "offline"))
         self.GYRO_Z_text_label.setText(_translate("MainWindow", "offline"))
-        self.GYRO_X_Unit_label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">rad/s</span></p></body></html>"))
-        self.GYRO_Y_Unit_label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">rad/s</span></p></body></html>"))
-        self.GYRO_Z_Unit_label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">rad/s</span></p></body></html>"))
+        self.GYRO_X_Unit_label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">deg/s</span></p></body></html>"))
+        self.GYRO_Y_Unit_label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">deg/s</span></p></body></html>"))
+        self.GYRO_Z_Unit_label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">deg/s</span></p></body></html>"))
         self.GYRO_label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Gyroscope</span></p></body></html>"))
         self.Sensor_tabWidget.setTabText(self.Sensor_tabWidget.indexOf(self.GYRO_tab), _translate("MainWindow", "GYRO"))
         self.MAG_X_label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">X:</span></p></body></html>"))
