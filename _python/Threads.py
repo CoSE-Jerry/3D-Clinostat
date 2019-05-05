@@ -125,7 +125,7 @@ class Timelapse(QThread):
             sock.close()
         
             self.captured.emit()
-            sleep(Settings.iterval)
+            sleep(Settings.interval)
 
             
 
