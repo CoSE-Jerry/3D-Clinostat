@@ -40,11 +40,21 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Commands.core_spin_select(self)
 
     def reverse_frame_select(self):
-        if(Settings.frame_dir==0):
-            self.frameReverse_pushButton.setIcon(Settings.reverse)
+        if(Settings.LINKED):
+            if(Settings.core_dir==0):
+                self.coreReverse_pushButton.setIcon(Settings.reverse)
+                self.frameReverse_pushButton.setIcon(Settings.reverse)
+            else:
+                self.coreReverse_pushButton.setIcon(Settings.forward)
+                self.frameReverse_pushButton.setIcon(Settings.forward)
+            Commands.reverse_core_select(self)
+            Commands.reverse_frame_select(self)
         else:
-            self.frameReverse_pushButton.setIcon(Settings.forward)
-        Commands.reverse_frame_select(self)
+            if(Settings.frame_dir==0):
+                self.frameReverse_pushButton.setIcon(Settings.reverse)
+            else:
+                self.frameReverse_pushButton.setIcon(Settings.forward)
+            Commands.reverse_frame_select(self)
 
     def reverse_core_select(self):
         if(Settings.LINKED):
