@@ -1289,7 +1289,7 @@
             <number>1</number>
            </property>
            <property name="maximum">
-            <number>9999999</number>
+            <number>99999999</number>
            </property>
           </widget>
          </item>
@@ -1316,7 +1316,7 @@
             <number>1</number>
            </property>
            <property name="maximum">
-            <number>9999999</number>
+            <number>99999999</number>
            </property>
           </widget>
          </item>
@@ -1355,7 +1355,7 @@
             <enum>QFrame::Raised</enum>
            </property>
            <property name="text">
-            <string>Storage Directory Not Selected</string>
+            <string>Sequence Title Required</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -1468,7 +1468,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Firmware: V1.03 beta</string>
+     <string>Firmware: V 1.03 beta</string>
     </property>
    </widget>
    <widget class="QTabWidget" name="Sensor_tabWidget">

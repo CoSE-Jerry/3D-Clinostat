@@ -141,7 +141,13 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.startImaging_pushButton.setEnabled(True)
         else:
             self.startImaging_pushButton.setEnabled(False)
-        
+
+    def select_directory(self):
+        m_directory = str(QFileDialog.getExistingDirectory(self, "Select Directory",'/home/pi/Desktop'))
+        if(len(m_directory)!=0):
+            Settings.full_dir = m_directory +"/"+ Settings.sequence_name
+            self.directory_label.setText(Settings.full_dir)
+        self.validate_input()
     
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -186,6 +192,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
         self.ICI_spinBox.valueChanged.connect(lambda: self.ICI_Change())
         self.ISD_spinBox.valueChanged.connect(lambda: self.ISD_Change())
+        self.directory_pushButton.clicked.connect(lambda: self.select_directory())
 
 
 # I feel better having one of these
