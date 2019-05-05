@@ -29,6 +29,7 @@ while True:
                 l = f.read(1024)
             f.close()
             print("image sent")
+            break
     connection.close()
     
 
