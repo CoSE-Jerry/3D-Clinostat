@@ -16,7 +16,7 @@ while True:
         recieved = connection.recv(1024).decode("utf-8")
         print (recieved)
 
-        CMD = data.split('~', 5)
+        CMD = recieved.split('~', 5)
 
         if(CMD[0]=='A'):
             with PiCamera() as camera:
