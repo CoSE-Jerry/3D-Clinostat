@@ -36,3 +36,17 @@ def sensor_update(self):
     self.MAG_X_text_label.setText(Settings.MAG_X_text)
     self.MAG_Y_text_label.setText(Settings.MAG_Y_text)
     self.MAG_Z_text_label.setText(Settings.MAG_Z_text)
+
+def LED_validate(self):
+    if(Settings.LED_start>=Settings.LED_end):
+        self.light_Confirm_pushButton.setEnabled(False)
+    else:
+        self.light_Confirm_pushButton.setEnabled(True)
+
+def link(self):
+    if(Settings.LINKED):
+        Settings.LINKED = False
+        self.link_pushButton.setIcon(Settings.broken)
+    else:
+        Settings.LINKED = True
+        self.link_pushButton.setIcon(Settings.linked)

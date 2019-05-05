@@ -36,21 +36,6 @@ def init():
     global core_dir
     core_dir = 0
 
-    global custom_R
-    custom_R=0
-    global custom_G
-    custom_G=0
-    global custom_B
-    custom_B=0
-    global custom_W
-    custom_W=0
-    global LED_start
-    LED_start=0
-    global LED_end
-    LED_end=1
-    global brightness
-    brightness=50
-
     global ACC_X_text
     ACC_X_text="offline"
     global ACC_Y_text
