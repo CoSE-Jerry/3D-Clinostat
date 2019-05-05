@@ -82,14 +82,14 @@ class Sensor(QThread):
             Settings.ACC_X_text= "{0:.2f}".format(accel_x)
             Settings.ACC_Y_text= "{0:.2f}".format(accel_y)
             Settings.ACC_Z_text= "{0:.2f}".format(accel_z)
-
-            Settings.MAG_X_text= "{0:.2f}".format(accel_x)
-            Settings.MAG_Y_text= "{0:.2f}".format(accel_y)
-            Settings.MAG_Z_text= "{0:.2f}".format(accel_z)
             
-            Settings.GYRO_X_text= "{0:.2f}".format(mag_x)
-            Settings.GYRO_Y_text= "{0:.2f}".format(mag_y)
-            Settings.GYRO_Z_text= "{0:.2f}".format(mag_z)
+            Settings.GYRO_X_text= "{0:.2f}".format(gyro_x)
+            Settings.GYRO_Y_text= "{0:.2f}".format(gyro_y)
+            Settings.GYRO_Z_text= "{0:.2f}".format(gyro_z)
+
+            Settings.MAG_X_text= "{0:.2f}".format(mag_x)
+            Settings.MAG_Y_text= "{0:.2f}".format(mag_y)
+            Settings.MAG_Z_text= "{0:.2f}".format(mag_z)
             
             self.update.emit()
             sleep(0.1)
