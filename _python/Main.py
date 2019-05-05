@@ -164,7 +164,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.y_resolution=self.y_resolution_spinBox.value()
 
     def update_mode(self):
-        if(JPG_radioButton.isChecked()):
+        if(self.JPG_radioButton.isChecked()):
             Settings.imaging_mode = 1
         else:
             Settings.imaging_mode = 0
@@ -175,7 +175,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
         Settings.init()
         self.sensor_init()
-        Commands.probe_core(self)
+        
         self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.frame_addr))
         self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.core_addr))
         
