@@ -119,11 +119,11 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.addDate_pushButton.setEnabled(False)
 
     def add_date(self):
-        Settings.sequence_name = Settings.sequence_name + "_" + date
+        Settings.sequence_name = Settings.sequence_name + "_" + Settings.date
         self.title_lineEdit.setText(Settings.sequence_name)
         Settings.full_dir = Settings.default_dir + "/" + Settings.sequence_name
-        self.Directory_Label.setText(Settings.full_dir)
-        self.add_Date.setEnabled(False)
+        self.directory_label.setText(Settings.full_dir)
+        self.addDate_pushButton.setEnabled(False)
             
     def __init__(self):
         super(self.__class__, self).__init__()
