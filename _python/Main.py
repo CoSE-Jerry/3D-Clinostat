@@ -113,7 +113,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.full_dir = Settings.default_dir + "/" + Settings.sequence_name
         self.directory_label.setText(Settings.full_dir)
         
-        if date not in Settings.sequence_name: 
+        if Settings.date not in Settings.sequence_name: 
             self.addDate_pushButton.setEnabled(True)
         if(len(Settings.sequence_name) == 0):
             self.addDate_pushButton.setEnabled(False)
