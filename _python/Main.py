@@ -78,6 +78,16 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         except Exception as e:
             print(e)
 
+    def start_snapshot(self):
+        try:
+            self.Preview_Thread = Threads.Preview()
+            '''self.Snap_Thread.started.connect(lambda: UI_Update_Disable.snap_disable(self,sch_flip))'''
+            self.Preview_Thread.finished.connect(lambda: UI_Update.Preview_complete(self))
+            self.Preview_Thread.start()
+            
+        except Exception as e:
+            print(e)
+
     
 
             
@@ -90,6 +100,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.core_addr))
         
         self.snapshot_pushButton.clicked.connect(lambda: self.start_snapshot())
+        self.preview_pushButton.clicked.connect(lambda: self.start_preview())
 
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
         self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())

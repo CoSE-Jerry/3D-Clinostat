@@ -30,6 +30,22 @@ while True:
             f.close()
             print("image sent")
             break
+
+
+        elif(CMD=='P'):
+            with PiCamera() as camera:
+                camera.resolution = (2464,2464)
+                sleep(2)
+                camera.capture("out.jpg")
+            print("imaging done")
+            f = open ("out.jpg", "rb")
+            l = f.read(1024)
+            while (l):
+                connection.send(l)
+                l = f.read(1024)
+            f.close()
+            print("image sent")
+            break
     connection.close()
     
 
