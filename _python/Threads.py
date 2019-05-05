@@ -74,9 +74,9 @@ class Sensor(QThread):
             accel_x, accel_y, accel_z = sensor.accelerometer
             mag_x, mag_y, mag_z = sensor.magnetometer
 
-            Settings.ACC_X_text= str(round(accel_x,2))
-            Settings.ACC_Y_text= str(round(accel_y,2))
-            Settings.ACC_Z_text= str(round(accel_z,2))
+            Settings.ACC_X_text= "{0:.2f}".format(accel_x)
+            Settings.ACC_Y_text= "{0:.2f}".format(accel_y)
+            Settings.ACC_Z_text= "{0:.2f}".format(accel_z)
             
             Settings.MAG_text = 'Magnetometer (uTesla): ({0:0.3f}, {1:0.3f}, {2:0.3f})'.format(mag_x, mag_y, mag_z)
             self.update.emit()
