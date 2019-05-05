@@ -88,12 +88,24 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         except Exception as e:
             print(e)
 
+    def sensor_init(self):
+        try:
+            self.Sensor_Thread = Threads.Sensor()
+            '''self.Snap_Thread.started.connect(lambda: UI_Update_Disable.snap_disable(self,sch_flip))'''
+            #self.Preview_Thread.finished.connect(lambda: UI_Update.Preview_complete(self))
+            self.Sensor_Thread.start()
+            
+        except Exception as e:
+            print(e)
+            
+
     
 
             
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self)
+        self.sensor_init()
         Settings.init()
         
         self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.frame_addr))
