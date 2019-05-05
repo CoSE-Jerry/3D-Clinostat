@@ -143,7 +143,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.startImaging_pushButton.setEnabled(False)
 
     def select_directory(self):
-        m_directory = str(QFileDialog.getExistingDirectory(self, "Select Directory",'/home/pi/Desktop'))
+        m_directory = str(QFileDialog.getExistingDirectory(self, "Select Directory",'/media/pi'))
         if(len(m_directory)!=0):
             Settings.full_dir = m_directory +"/"+ Settings.sequence_name
             self.directory_label.setText(Settings.full_dir)
