@@ -89,7 +89,7 @@ def init():
     duration = 1
 
     global total
-    total = int(duration/interval)
+    total = 1
 
     global forward
     forward = QtGui.QIcon()

@@ -117,6 +117,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.addDate_pushButton.setEnabled(True)
         if(len(Settings.sequence_name) == 0):
             self.addDate_pushButton.setEnabled(False)
+        self.validate_input()
 
     def add_date(self):
         Settings.sequence_name = Settings.sequence_name + "_" + Settings.date
@@ -127,13 +128,15 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def ICI_Change(self):
         Settings.interval = self.ICI_spinBox.value()
-        if(Settings.total>0 and len(Settings.sequence_name)!=0):
-            self.startImaging_pushButton.setEnabled(True)
-        else:
-            self.startImaging_pushButton.setEnabled(False)
+        self.validate_input()
                 
     def ISD_Change(self):
         Settings.duration = self.ISD_spinBox.value()
+        self.validate_input()
+
+            
+    def validate_input(self):
+        Settings.total = int(Settings.duration/Settings.interval)
         if(Settings.total>0 and len(Settings.sequence_name)!=0):
             self.startImaging_pushButton.setEnabled(True)
         else:
@@ -146,7 +149,6 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
         self.sensor_init()
 
-        
         Settings.init()
         
         self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.frame_addr))
