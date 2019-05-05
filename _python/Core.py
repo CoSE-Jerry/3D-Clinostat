@@ -22,7 +22,7 @@ while True:
                 sleep(2)
                 camera.capture("out.jpg")
             print("imaging done")
-            f = open ("foo.jpg", "rb")
+            f = open ("out.jpg", "rb")
             l = f.read(1024)
             while (l):
                 connection.send(l)
