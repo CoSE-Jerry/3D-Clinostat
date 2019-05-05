@@ -20,7 +20,7 @@ class Snap(QThread):
         sock.connect(server_address)
         sock.sendall('A'.encode())
 
-        with open('recv.jpg', 'wb') as f:
+        with open('../_temp/snapshot.jpg', 'wb') as f:
                 print('file opened')
                 while True:
                     data = sock.recv(1024)
@@ -28,4 +28,3 @@ class Snap(QThread):
                         break
                     f.write(data)
         sock.close()
-        
