@@ -96,12 +96,16 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.Sensor_Thread.start()
             
         except Exception as e:
-            print(e)
+            pass
             
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self)
-        self.sensor_init()
+        try:
+            self.sensor_init()
+        except Exception as e:
+            pass
+        
         Settings.init()
         
         self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.frame_addr))
