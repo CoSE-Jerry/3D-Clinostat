@@ -22,12 +22,12 @@ while True:
                 camera.resolution = (int(CMD[1]),int(CMD[2]))
                 camera._set_rotation(90*int(CMD[3]))
                 sleep(2)
-                if(int(CMD[4])):
+                if(int(CMD[4])==1):
                     camera.capture("out.jpg")
                 else:
                     camera.capture("out.png")
             
-            if(int(CMD[4])):
+            if(int(CMD[4])==1):
                 f = open ("out.jpg", "rb")
             else:
                 f = open ("out.png", "rb")
