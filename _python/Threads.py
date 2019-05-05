@@ -24,7 +24,7 @@ class Snap(QThread):
         ip_address = "10.0.5.2"
         server_address = (ip_address, 23456)
         sock.connect(server_address)
-        sock.sendall('A~'+str(350)+"~"+str(350)+"~"+str(Settings.rotation)+"~1".encode())
+        sock.sendall("A~"+str(350)+"~"+str(350)+"~"+str(Settings.rotation)+"~1".encode())
 
         with open('../_temp/snapshot.jpg', 'wb') as f:
                 while True:
