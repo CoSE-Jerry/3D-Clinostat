@@ -1,4 +1,7 @@
 import socket
+import board
+import busio
+import adafruit_fxos8700
 
 from time import sleep
 from PyQt5.QtCore import QThread
@@ -51,3 +54,25 @@ class Preview(QThread):
                         break
                     f.write(data)
         sock.close()
+
+class Sensor(QThread):
+
+    def __init__(self):
+        QThread.__init__(self)
+
+    def __del__(self):
+        self._running = False
+
+    def run(self):
+        i2c = busio.I2C(board.SCL, board.SDA)
+        sensor = adafruit_fxos8700.FXOS8700(i2c)
+        while True:
+            # Read acceleration & magnetometer.
+            accel_x, accel_y, accel_z = sensor.accelerometer
+            mag_x, mag_y, mag_z = sensor.magnetometer
+            # Print values.
+            print('Acceleration (m/s^2): ({0:0.3f}, {1:0.3f}, {2:0.3f})'.format(accel_x, accel_y, accel_z))
+            print('Magnetometer (uTesla): ({0:0.3f}, {1:0.3f}, {2:0.3f})'.format(mag_x, mag_y, mag_z))
+            # Delay for a second.
+            time.sleep(1.0)
+
