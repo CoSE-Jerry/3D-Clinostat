@@ -79,35 +79,38 @@ def core_slider_change(self):
     self.core_spinBox.setValue(Settings.core_RPM)
 
 def linked_slider_change(self):
-    #Settings.i2c_open = False
-    self.core_spinBox.blockSignals(True)
-    self.frame_spinBox.blockSignals(True)
-    self.core_verticalSlider.blockSignals(True)
-    self.frame_verticalSlider.blockSignals(True)
-    
-    if(Settings.frame_RPM != self.frame_verticalSlider.sliderPosition()/10):
-        Settings.frame_RPM=self.frame_verticalSlider.sliderPosition()/10
-        Settings.core_RPM=Settings.frame_RPM
-        self.core_verticalSlider.setValue(Settings.core_RPM*10)
-        self.core_spinBox.setValue(Settings.core_RPM)
-        self.frame_spinBox.setValue(Settings.frame_RPM)
-    else:
-        Settings.core_RPM=self.core_verticalSlider.sliderPosition()/10
-        Settings.frame_RPM=Settings.core_RPM
-        self.frame_verticalSlider.setValue(Settings.frame_RPM*10)
-        self.core_spinBox.setValue(Settings.core_RPM)
-        self.frame_spinBox.setValue(Settings.frame_RPM)
+    try:
+        #Settings.i2c_open = False
+        self.core_spinBox.blockSignals(True)
+        self.frame_spinBox.blockSignals(True)
+        self.core_verticalSlider.blockSignals(True)
+        self.frame_verticalSlider.blockSignals(True)
+        
+        if(Settings.frame_RPM != self.frame_verticalSlider.sliderPosition()/10):
+            Settings.frame_RPM=self.frame_verticalSlider.sliderPosition()/10
+            Settings.core_RPM=Settings.frame_RPM
+            self.core_verticalSlider.setValue(Settings.core_RPM*10)
+            self.core_spinBox.setValue(Settings.core_RPM)
+            self.frame_spinBox.setValue(Settings.frame_RPM)
+        else:
+            Settings.core_RPM=self.core_verticalSlider.sliderPosition()/10
+            Settings.frame_RPM=Settings.core_RPM
+            self.frame_verticalSlider.setValue(Settings.frame_RPM*10)
+            self.core_spinBox.setValue(Settings.core_RPM)
+            self.frame_spinBox.setValue(Settings.frame_RPM)
 
-    CMD = "2~"+Settings.getInterval(Settings.frame_RPM)
-    Settings.sendCMD(Settings.frame_addr,CMD)
-    CMD = "2~"+Settings.getInterval(Settings.core_RPM)
-    Settings.sendCMD(Settings.core_addr,CMD)
-    
-    self.core_spinBox.blockSignals(False)
-    self.frame_spinBox.blockSignals(False)
-    self.core_verticalSlider.blockSignals(False)
-    self.frame_verticalSlider.blockSignals(False)
-    #Settings.i2c_open = True
+        CMD = "2~"+Settings.getInterval(Settings.frame_RPM)
+        Settings.sendCMD(Settings.frame_addr,CMD)
+        CMD = "2~"+Settings.getInterval(Settings.core_RPM)
+        Settings.sendCMD(Settings.core_addr,CMD)
+        
+        self.core_spinBox.blockSignals(False)
+        self.frame_spinBox.blockSignals(False)
+        self.core_verticalSlider.blockSignals(False)
+        self.frame_verticalSlider.blockSignals(False)
+        #Settings.i2c_open = True
+    except Exception as e:
+        print(e)
 
 
 def frame_spin_select(self):

@@ -35,13 +35,11 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.coreLink_pushButton.setIcon(Settings.linked)
 
     def frame_slider_select(self):
-        try:
-            if(Settings.LINKED):
-                Commands.linked_slider_change(self)
-            else:
-                Commands.frame_slider_change(self)
-        except Exception as e:
-            print(e)
+        if(Settings.LINKED):
+            Commands.linked_slider_change(self)
+        else:
+            Commands.frame_slider_change(self)
+
 
     def core_slider_select(self):
         if(Settings.LINKED):
