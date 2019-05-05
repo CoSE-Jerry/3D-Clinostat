@@ -18,7 +18,7 @@ def preview_complete(self):
     #self.Snapshot.setEnabled(True)
 
 def image_update(self):
-    capture_img = PyQt5.QtGui.QImage(Settings,current_image)
+    capture_img = PyQt5.QtGui.QImage(Settings.current_image)
     self.Image_Frame.setPixmap(QtGui.QPixmap(capture_img))
     
     #self.Snapshot.setText("Snapshot")
