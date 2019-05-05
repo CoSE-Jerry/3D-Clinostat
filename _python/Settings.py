@@ -83,6 +83,9 @@ def init():
 
     global current
     current = 0
+
+    global rotation
+    rotation = 0
     
     global forward
     forward = QtGui.QIcon()

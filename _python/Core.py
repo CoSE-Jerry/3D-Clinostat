@@ -10,19 +10,29 @@ sock.bind(server_address)
 sock.listen(1)
 
 while True:
-    print ('waiting for a connection')
     connection, client_address = sock.accept()
 
     while True:
-        CMD = connection.recv(1024).decode("utf-8")
+        recieved = connection.recv(1024).decode("utf-8")
+        print (recieved)
 
-        if(CMD=='A'):
+        CMD = data.split('~', 5)
+
+        if(CMD[0]=='A'):
             with PiCamera() as camera:
-                camera.resolution = (350,350)
+                camera.resolution = (int(CMD[1]),int(CMD[2]))
+                camera._set_rotation(90*int(CMD[3]))
                 sleep(2)
-                camera.capture("out.jpg")
+                if(int(CMD[4])):
+                    camera.capture("out.jpg")
+                else:
+                    camera.capture("out.png")
             print("imaging done")
-            f = open ("out.jpg", "rb")
+            
+            if(int(CMD[4])):
+                f = open ("out.jpg", "rb")
+            else
+                f = open ("out.png", "rb")
             l = f.read(1024)
             while (l):
                 connection.send(l)

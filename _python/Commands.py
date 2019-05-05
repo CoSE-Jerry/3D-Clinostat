@@ -57,6 +57,7 @@ def linked_slider_change(self):
 
     CMD = "2~"+Settings.getInterval(Settings.frame_RPM)
     Settings.sendCMD(Settings.frame_addr,CMD)
+    sleep(0.05)
     CMD = "2~"+Settings.getInterval(Settings.core_RPM)
     Settings.sendCMD(Settings.core_addr,CMD)
     

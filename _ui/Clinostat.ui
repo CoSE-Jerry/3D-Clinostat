@@ -865,7 +865,7 @@
        <item alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="Progress_Label">
          <property name="text">
-          <string>Progress: 0 / 0</string>
+          <string>Progress: 0 / 1</string>
          </property>
         </widget>
        </item>
@@ -1980,7 +1980,7 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QPushButton" name="preview_pushButton_2">
+   <widget class="QPushButton" name="rotate_pushButton">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -1993,7 +1993,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>ROTATE</string>
+     <string>ROTATE IMAGE</string>
     </property>
    </widget>
   </widget>

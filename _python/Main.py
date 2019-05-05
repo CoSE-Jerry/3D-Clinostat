@@ -103,6 +103,14 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         except Exception as e:
             print(e)
 
+    def rotate_image(self):
+        Settings.rotation += 1
+        self.start_snapshot()
+
+
+
+            
+
     def sensor_init(self):
 
             os.system("i2cdetect -y 1 > ../_temp/output.txt")
@@ -169,6 +177,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.snapshot_pushButton.clicked.connect(lambda: self.start_snapshot())
         self.preview_pushButton.clicked.connect(lambda: self.start_preview())
         self.startImaging_pushButton.clicked.connect(lambda: self.start_timelapse())
+        self.rotate_pushButton.clicked.connect(lambda: self.rotate_image())
 
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
         self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())
@@ -194,6 +203,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.ICI_spinBox.valueChanged.connect(lambda: self.ICI_Change())
         self.ISD_spinBox.valueChanged.connect(lambda: self.ISD_Change())
         self.directory_pushButton.clicked.connect(lambda: self.select_directory())
+
 
 
 # I feel better having one of these
