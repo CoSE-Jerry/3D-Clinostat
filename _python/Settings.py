@@ -47,9 +47,14 @@ def init():
     ACC_Y_text="offline"
     global ACC_Z_text
     ACC_Z_text="offline"
+
+    global GYRO_X_text
+    GYRO_X_text="offline"
+    global GYRO_Y_text
+    GYRO_Y_text="offline"
+    global GYRO_Z_text
+    GYRO_Z_text="offline"
     
-    global GYRO_text
-    GYRO_text="offline"
     global MAG_text
     MAG_text="offine"
 
