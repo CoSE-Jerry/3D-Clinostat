@@ -1,5 +1,6 @@
 import Settings
 from time import sleep
+import socket
 #from PyQt5.QtCore import QThread
 #from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -112,6 +113,19 @@ def IR_trigger(self):
     else:
         Settings.IR_STAT=False
         self.IR_pushButton.setText("INFRARED:OFF")
+
+def probe_core(self):
+    try
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        ip_address = "10.0.5.2"
+        server_address = (ip_address, 23456)
+        sock.connect(server_address)
+        sock.sendall('P'.encode())
+        sock.close()
+
+        self.core_status_label.setText("Imaging Core Status: IDLE")
+    except: 
+        self.core_status_label.setText("Imaging Core Status: OFFLINE")
 
     
 
