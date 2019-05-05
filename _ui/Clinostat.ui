@@ -62,7 +62,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Lighting_tab">
      <attribute name="title">
@@ -508,76 +508,6 @@
        </size>
       </property>
      </widget>
-     <widget class="QWidget" name="verticalLayoutWidget_4">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>430</y>
-        <width>151</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_18">
-       <item>
-        <widget class="QDoubleSpinBox" name="frame_spinBox">
-         <property name="decimals">
-          <number>1</number>
-         </property>
-         <property name="minimum">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="maximum">
-          <double>15.000000000000000</double>
-         </property>
-         <property name="singleStep">
-          <double>0.100000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="frameErgz_pushButton">
-         <property name="text">
-          <string>ENERGIZE COILS</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="verticalLayoutWidget_5">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>430</y>
-        <width>151</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_19">
-       <item>
-        <widget class="QDoubleSpinBox" name="core_spinBox">
-         <property name="decimals">
-          <number>1</number>
-         </property>
-         <property name="minimum">
-          <double>0.300000000000000</double>
-         </property>
-         <property name="maximum">
-          <double>15.000000000000000</double>
-         </property>
-         <property name="singleStep">
-          <double>0.100000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="coreErgz_pushButton">
-         <property name="text">
-          <string>ENERGIZE COILS</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
      <widget class="QWidget" name="verticalLayoutWidget_6">
       <property name="geometry">
        <rect>
@@ -659,6 +589,76 @@
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QPushButton" name="frameErgz_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>462</y>
+        <width>149</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ENERGIZE COILS</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="frame_spinBox">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>430</y>
+        <width>149</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="decimals">
+       <number>1</number>
+      </property>
+      <property name="minimum">
+       <double>0.300000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>15.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="core_spinBox">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>430</y>
+        <width>149</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="decimals">
+       <number>1</number>
+      </property>
+      <property name="minimum">
+       <double>0.300000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>15.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="coreErgz_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>462</y>
+        <width>149</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ENERGIZE COILS</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="Imaging_tab">
