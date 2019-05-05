@@ -75,24 +75,22 @@ class Sensor(QThread):
         sensor2 = adafruit_fxas21002c.FXAS21002C(i2c2)
 
         while True:
-            if(Settings.i2c_open):
-                accel_x, accel_y, accel_z = sensor.accelerometer
-                gyro_x, gyro_y, gyro_z = sensor2.gyroscope
-                mag_x, mag_y, mag_z = sensor.magnetometer
+            accel_x, accel_y, accel_z = sensor.accelerometer
+            gyro_x, gyro_y, gyro_z = sensor2.gyroscope
+            mag_x, mag_y, mag_z = sensor.magnetometer
+            Settings.ACC_X_text= "{0:.2f}".format(accel_x)
+            Settings.ACC_Y_text= "{0:.2f}".format(accel_y)
+            Settings.ACC_Z_text= "{0:.2f}".format(accel_z)
 
-                Settings.ACC_X_text= "{0:.2f}".format(accel_x)
-                Settings.ACC_Y_text= "{0:.2f}".format(accel_y)
-                Settings.ACC_Z_text= "{0:.2f}".format(accel_z)
+            #sleep(0.5)
+            
+            Settings.GYRO_X_text= "{0:.2f}".format(gyro_x)
+            Settings.GYRO_Y_text= "{0:.2f}".format(gyro_y)
+            Settings.GYRO_Z_text= "{0:.2f}".format(gyro_z)
+            
+            Settings.MAG_text = 'Magnetometer (uTesla): ({0:0.3f}, {1:0.3f}, {2:0.3f})'.format(mag_x, mag_y, mag_z)
 
-                sleep(0.25)
-
-                Settings.GYRO_X_text= "{0:.2f}".format(gyro_x)
-                Settings.GYRO_Y_text= "{0:.2f}".format(gyro_y)
-                Settings.GYRO_Z_text= "{0:.2f}".format(gyro_z)
-                
-                Settings.MAG_text = 'Magnetometer (uTesla): ({0:0.3f}, {1:0.3f}, {2:0.3f})'.format(mag_x, mag_y, mag_z)
-
-                self.update.emit()
-                sleep(0.25)
+            self.update.emit()
+            sleep(0.1)
             
 
