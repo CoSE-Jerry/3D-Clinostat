@@ -38,7 +38,7 @@ def sensor_update(self):
     self.MAG_Z_text_label.setText(Settings.MAG_Z_text)
 
 def LED_validate(self):
-    if(Settings.LED_start>=Settings.LED_end):
+    if(self.Start_spinBox.value()>=self.End_spinBox.value()):
         self.light_Confirm_pushButton.setEnabled(False)
     else:
         self.light_Confirm_pushButton.setEnabled(True)
