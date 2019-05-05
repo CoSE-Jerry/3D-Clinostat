@@ -41,8 +41,13 @@ def init():
     global custom_W
     custom_W=0
 
-    global ACC_text
-    ACC_text="offline"
+    global ACC_X_text
+    ACC_X_text="offline"
+    global ACC_Y_text
+    ACC_Y_text="offline"
+    global ACC_Z_text
+    ACC_Z_text="offline"
+    
     global GYRO_text
     GYRO_text="offline"
     global MAG_text

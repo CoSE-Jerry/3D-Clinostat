@@ -18,5 +18,7 @@ def preview_complete(self):
     #self.Snapshot.setEnabled(True)
 
 def sensor_update(self):
-    self.ACC_label.setText(Settings.ACC_text)
+    self.ACC_X_text_label.setText(Settings.ACC_X_text)
+    self.ACC_Y_text_label.setText(Settings.ACC_Y_text)
+    self.ACC_Z_text_label.setText(Settings.ACC_Z_text)
     
