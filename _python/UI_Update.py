@@ -38,7 +38,7 @@ def image_captured(self):
     self.Image_Frame.setPixmap(QtGui.QPixmap(capture_img))
     Settings.trasmitted = 0
     self.core_status_label.setText("Imaging Core Status: IDLE")
-    self.Progress_Label.setText("Progress: "+str(Settings.current) + "/" + str(Settings.total))
+    self.Progress_Label.setText("Progress: "+str(Settings.current+1) + "/" + str(Settings.total))
     self.Progress_Bar.setValue(Settings.current)
 
 
