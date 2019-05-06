@@ -186,6 +186,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.startImaging_pushButton.clicked.connect(lambda: self.start_timelapse())
         self.rotate_pushButton.clicked.connect(lambda: self.rotate_image())
 
+        self.rainbow_pushButton.clicked.connect(lambda: Commands.rainbow())
+
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
         self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())
 
@@ -215,6 +217,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.y_resolution_spinBox.valueChanged.connect(lambda: self.update_resolution())
 
         self.JPG_radioButton.toggled.connect(lambda: self.update_mode())
+
 
 
 def main():

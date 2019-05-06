@@ -21,6 +21,9 @@ def light_reset(self):
     self.Start_spinBox.setValue(0)
     self.End_spinBox.setValue(1)
     self.BRT_spinBox.setValue(50)
+
+def rainbow():
+    Settings.sendCMD(Settings.lighting_addr,"4~")
     
 def ergz_motor(self,addr):
     if(Settings.LINKED):
