@@ -727,7 +727,7 @@ class Ui_MainWindow(object):
         self.Expert_tab.setCurrentIndex(1)
         self.frameMS_comboBox.setCurrentIndex(7)
         self.coreMS_comboBox.setCurrentIndex(7)
-        self.Sensor_tabWidget.setCurrentIndex(1)
+        self.Sensor_tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
