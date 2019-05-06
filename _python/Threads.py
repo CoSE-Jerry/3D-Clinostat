@@ -129,7 +129,7 @@ class Timelapse(QThread):
         for i in range(Settings.total):
             if(Settings.imaging_mode==1):
                 Settings.current_image = Settings.full_dir + "/" +Settings.sequence_name + "_%04d.jpg" % i
-            else
+            else:
                 Settings.current_image = Settings.full_dir + "/" +Settings.sequence_name + "_%04d.png" % i
 
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
