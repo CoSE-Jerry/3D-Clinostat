@@ -13,7 +13,7 @@ def init():
     IR_STAT = False
 
     global imaging 
-    imaging =True
+    imaging =False
     
     global frame_RPM
     frame_RPM = 0.3
