@@ -11,7 +11,6 @@ def cycle_start(self):
 
 def cycle_END(self):
     self.confirmCycle_pushButton.setText("CONFIRM")
-    Settings.cycle_running = False
 
 def imaging_start(self):
     self.core_status_label.setText("Imaging Core Status: IMAGING")
