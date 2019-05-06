@@ -117,6 +117,7 @@ class Sensor(QThread):
 class Timelapse(QThread):
     captured = QtCore.pyqtSignal()
     transmit = QtCore.pyqtSignal()
+    transmitstart = QtCore.pyqtSignal()
 
     def __init__(self):
         QThread.__init__(self)
@@ -147,6 +148,7 @@ class Timelapse(QThread):
             sock.sendall(cmd.encode())
 
             with open(Settings.current_image, 'wb') as f:
+                self.transmitstart.emit()
                 while True:
                     data = sock.recv(1024)
                     if not data:

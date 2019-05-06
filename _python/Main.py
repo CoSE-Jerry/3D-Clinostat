@@ -99,6 +99,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
                 self.Timelapse_Thread.started.connect(lambda: UI_Update.timelapse_start(self))
                 self.Timelapse_Thread.captured.connect(lambda: UI_Update.image_captured(self))
+                self.Timelapse_Thread.transmitstart.connect(lambda: UI_Update.transmitst(self))
                 self.Timelapse_Thread.finished.connect(lambda: UI_Update.timelapse_end(self))
 
                 self.Timelapse_Thread.start()
