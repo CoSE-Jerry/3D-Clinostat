@@ -27,7 +27,7 @@ def light_reset(self):
     self.BRT_spinBox.setValue(50)
     Settings.commands_list.clear()
 
-def clear_lights(self)
+def clear_lights(self):
     Settings.sendCMD(Settings.lighting_addr,"1~0~34~0~0~0~0")
     
 def ergz_motor(self,addr):
