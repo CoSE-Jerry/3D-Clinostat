@@ -95,7 +95,7 @@ def update_imaging(self):
 
 def transmit_update(self):
     Settings.trasmitted += 1
-    self.core_status_label.setText("Transmitting Packet" + str(Settings.trasmitted))
+    self.core_status_label.setText("Core Transmitting Packets " + str(Settings.trasmitted))
     
 
         
