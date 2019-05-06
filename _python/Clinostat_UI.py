@@ -723,7 +723,7 @@ class Ui_MainWindow(object):
         self.actionCreate_Timelapse.setObjectName("actionCreate_Timelapse")
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         self.Expert_tab.setCurrentIndex(1)
         self.frameMS_comboBox.setCurrentIndex(7)
         self.coreMS_comboBox.setCurrentIndex(7)

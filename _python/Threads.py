@@ -114,6 +114,7 @@ class Sensor(QThread):
 
 class Timelapse(QThread):
     captured = QtCore.pyqtSignal()
+    transmit = QtCore.pyqtSignal()
 
     def __init__(self):
         QThread.__init__(self)
@@ -124,13 +125,22 @@ class Timelapse(QThread):
     def run(self):
         if(not os.path.isdir(Settings.full_dir)):
             os.mkdir(Settings.full_dir)
+            
         for i in range(Settings.total):
-            Settings.current_image = Settings.full_dir + "/" +Settings.sequence_name + "_%04d.jpg" % i
+            if(Settings.imaging_mode==1):
+                Settings.current_image = Settings.full_dir + "/" +Settings.sequence_name + "_%04d.jpg" % i
+            else
+                Settings.current_image = Settings.full_dir + "/" +Settings.sequence_name + "_%04d.png" % i
+
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             ip_address = "10.0.5.2"
             server_address = (ip_address, 23456)
             sock.connect(server_address)
-            sock.sendall('P'.encode())
+
+            cmd = "A~"+str(Settings.x_resolution)+"~"+str(Settings.y_resolution)+"~"+str(Settings.rotation)+"~"+str(Settings.imaging_mode)
+
+            
+            sock.sendall(cmd.encode())
 
             with open(Settings.current_image, 'wb') as f:
                 print('file opened')
@@ -139,10 +149,12 @@ class Timelapse(QThread):
                     if not data:
                         break
                     f.write(data)
+                    self.transmit.emit()
+                    
             sock.close()
         
             self.captured.emit()
-            sleep(Settings.interval)
+            sleep(Settings.interval*60)
 
             
 

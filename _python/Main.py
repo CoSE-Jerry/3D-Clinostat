@@ -94,8 +94,12 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def start_timelapse(self):
         try:
             self.Timelapse_Thread = Threads.Timelapse()
-            '''self.Snap_Thread.started.connect(lambda: UI_Update_Disable.snap_disable(self,sch_flip))'''
+            self.Timelapse_Thread.transmit.connect(lambda: UI_Update.transmit_update(self))
+
+            self.Timelapse_Thread.started.connect(lambda: UI_Update.timelapse_start(self))
             self.Timelapse_Thread.captured.connect(lambda: UI_Update.image_update(self))
+            self.Timelapse_Thread.finished.connect(lambda: UI_Update.timelapse_end(self))
+
             self.Timelapse_Thread.start()
             
         except Exception as e:

@@ -88,7 +88,20 @@ def update_imaging(self):
 
 def transmit_update(self):
     Settings.trasmitted += 1
-    self.core_status_label.setText("Core Transmitting Packets " + str(Settings.trasmitted))
-    
+    self.core_status_label.setText("Recieving Packets: " + str(Settings.trasmitted))
+
+def timelapse_start(self):
+    self.snapshot_pushButton.setEnabled(False)
+    self.preview_pushButton.setEnabled(False)     
+    self.rotate_pushButton.setEnabled(False)
+
+    self.core_status_label.setText("Imaging Core Status: IMAGING")
+
+def timelapse_end(self):
+    self.snapshot_pushButton.setEnabled(True)
+    self.preview_pushButton.setEnabled(True)     
+    self.rotate_pushButton.setEnabled(True)
+
+    self.core_status_label.setText("Imaging Core Status: IDLE")    
 
         
