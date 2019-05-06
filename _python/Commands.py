@@ -116,15 +116,16 @@ def IR_trigger(self):
         self.IR_pushButton.setText("INFRARED:OFF")
 
 def sensor_check():
-
     try:
         h = pi.i2c_open(1,31)
         pi.i2c_read_byte(h)
         pi.i2c_close(h)
         Settings.sensor_attached = True
+        print(Settings.sensor_attached)
         
     except:
         Settings.sensor_attached = False
+        print(Settings.sensor_attached)
         pass
 
 
