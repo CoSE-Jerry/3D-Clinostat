@@ -16,6 +16,7 @@ def snap_complete(self):
     snap_img = PyQt5.QtGui.QImage("../_temp/snapshot.jpg")
     self.Image_Frame.setPixmap(QtGui.QPixmap(snap_img))
     Settings.imaging = False
+    Settings.trasmitted =0
     #update_imaging(self)
 
 def preview_complete(self):
