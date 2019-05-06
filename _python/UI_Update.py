@@ -110,6 +110,6 @@ def timelapse_end(self):
     self.preview_pushButton.setEnabled(True)     
     self.rotate_pushButton.setEnabled(True)
 
-    self.core_status_label.setText("Imaging Core Status: IDLE")    
+    self.core_status_label.setText("Imaging Core Status: IDLE")
 
         

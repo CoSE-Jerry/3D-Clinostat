@@ -1,8 +1,7 @@
 import Settings
 from time import sleep
 import socket
-#from PyQt5.QtCore import QThread
-#from PyQt5 import QtCore, QtGui, QtWidgets
+import pigpio
 
 def light_confirm(self):
     Settings.sendCMD(Settings.lighting_addr,"1~"+str(self.Start_spinBox.value())+"~"+str(self.End_spinBox.value())+"~"+ str(self.R_spinBox.value()) + "~" + str(self.G_spinBox.value()) + "~" + str(self.B_spinBox.value()) + "~"+str(self.W_spinBox.value()))
@@ -113,6 +112,16 @@ def IR_trigger(self):
     else:
         Settings.IR_STAT=False
         self.IR_pushButton.setText("INFRARED:OFF")
+
+def sensor_check():
+    pi = pigpio.pi()
+    h = pi.i2c_open(1,31)
+
+    try:
+        pi.i2c_read_byte(h)
+        Settings.sensor_attached = True
+    except:
+        Settings.sensor_attached = False
 
     
 
