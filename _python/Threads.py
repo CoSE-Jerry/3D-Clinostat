@@ -1,5 +1,5 @@
 import Settings
-
+import Commands
 
 import socket
 import board
