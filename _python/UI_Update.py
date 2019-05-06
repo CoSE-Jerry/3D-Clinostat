@@ -91,7 +91,7 @@ def update_imaging(self):
         self.rotate_pushButton.setEnabled(True)
         self.rotate_pushButton.setText("ROTATE IMAGE")
 
-        self.validate_input
+        validate_input(self)
 
 def transmit_update(self):
     Settings.trasmitted += 1
