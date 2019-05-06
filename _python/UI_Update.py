@@ -8,7 +8,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 def snap_start(self):
     self.core_status_label.setText("Imaging Core Status: IMAGING")
     Settings.imaging = True
-    #update_imaging(self)
+    update_imaging(self)
     
 def snap_complete(self):
     self.core_status_label.setText("Imaging Core Status: IDLE")
@@ -17,7 +17,7 @@ def snap_complete(self):
     self.Image_Frame.setPixmap(QtGui.QPixmap(snap_img))
     Settings.imaging = False
     Settings.trasmitted =0
-    #update_imaging(self)
+    update_imaging(self)
 
 def preview_complete(self):
     if(Settings.imaging_mode==1):
