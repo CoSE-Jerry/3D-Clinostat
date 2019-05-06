@@ -71,7 +71,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         try:
             self.Snap_Thread = Threads.Snap()
             self.Snap_Thread.transmit.connect(lambda: UI_Update.transmit_update(self))
-            self.Snap_Thread.started.connect(lambda: UI_Update.snap_start(self))
+            self.Snap_Thread.started.connect(lambda: UI_Update.imaging_start(self))
             self.Snap_Thread.finished.connect(lambda: UI_Update.snap_complete(self))
             
             self.Snap_Thread.start()
@@ -82,8 +82,10 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def start_preview(self):
         try:
             self.Preview_Thread = Threads.Preview()
-            '''self.Snap_Thread.started.connect(lambda: UI_Update_Disable.snap_disable(self,sch_flip))'''
+            self.Preview_Thread.transmit.connect(lambda: UI_Update.transmit_update(self))
+            self.Preview_Thread.started.connect(lambda: UI_Update.imaging_start(self))
             self.Preview_Thread.finished.connect(lambda: UI_Update.preview_complete(self))
+
             self.Preview_Thread.start()
             
         except Exception as e:

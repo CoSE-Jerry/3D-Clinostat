@@ -38,6 +38,7 @@ class Snap(QThread):
         sock.close()
 
 class Preview(QThread):
+    transmit = QtCore.pyqtSignal()
 
     def __init__(self):
         QThread.__init__(self)
@@ -62,6 +63,7 @@ class Preview(QThread):
                         if not data:
                             break
                         f.write(data)
+                        self.transmit.emit()
             sock.close()
 
         else:
@@ -71,6 +73,7 @@ class Preview(QThread):
                         if not data:
                             break
                         f.write(data)
+                        self.transmit.emit()
             sock.close()
 
 class Sensor(QThread):

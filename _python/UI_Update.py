@@ -5,7 +5,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 
-def snap_start(self):
+def imaging_start(self):
     self.core_status_label.setText("Imaging Core Status: IMAGING")
     Settings.imaging = True
     update_imaging(self)
@@ -20,6 +20,7 @@ def snap_complete(self):
     update_imaging(self)
 
 def preview_complete(self):
+    self.core_status_label.setText("Imaging Core Status: IDLE")
     if(Settings.imaging_mode==1):
         preview_img = PyQt5.QtGui.QImage("../_temp/preview.jpg")
         self.Image_Frame.setPixmap(QtGui.QPixmap(preview_img))
@@ -28,6 +29,9 @@ def preview_complete(self):
         preview_img = PyQt5.QtGui.QImage("../_temp/preview.png")
         self.Image_Frame.setPixmap(QtGui.QPixmap(preview_img))
         os.system("gpicview ../_temp/preview.png")
+    Settings.imaging = False
+    Settings.trasmitted =0
+    update_imaging(self)
 
 def image_update(self):
     capture_img = PyQt5.QtGui.QImage(Settings.current_image)
