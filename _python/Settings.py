@@ -108,6 +108,9 @@ def init():
     global timelapse_running
     timelapse_running =False
 
+    global cycle_running
+    cycle_running =False
+
     global cycle_time
     cycle_time=60
     

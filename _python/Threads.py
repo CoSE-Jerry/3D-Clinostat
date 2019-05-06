@@ -29,9 +29,33 @@ class Cycle(QThread):
             sleep(0.1)
         Commands.clear_lights(self)
         sleep(1)
-        for x in Settings.commands_list:
+        for i in Settings.commands_list:
             Settings.sendCMD(Settings.lighting_addr,x)    
             sleep(0.1)
+            
+        while True:
+            for x in range(Settings.cycle_time):
+                sleep(1)
+                if not Settings.cycle_running:
+                    break
+                
+            Commands.clear_lights(self)
+
+            if not Settings.cycle_running:
+                break
+
+            for x in range(Settings.cycle_time):
+                sleep(1)
+                if not Settings.cycle_running:
+                    break
+
+            for i in Settings.commands_list:
+                Settings.sendCMD(Settings.lighting_addr,x)    
+                sleep(0.1)
+            if not Settings.cycle_running:
+                break
+            
+            
         
 
 class Snap(QThread):

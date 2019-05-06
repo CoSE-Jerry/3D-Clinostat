@@ -83,6 +83,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def start_cycle(self):
         try:
             self.Cycle_Thread = Threads.Cycle()
+            self.Cycle_Thread.started.connect(lambda: UI_Update.cycle_start(self))
+            self.Cycle_Thread.finished.connect(lambda: UI_Update.cycle_end(self))
+
             self.Cycle_Thread.start()
             
         except Exception as e:
@@ -199,8 +202,6 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
         self.confirmCycle_pushButton.clicked.connect(lambda: self.start_cycle())
         self.powerCycle_spinBox.valueChanged.connect(lambda: self.Cycle_Change())
-
-        
 
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
         self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())
