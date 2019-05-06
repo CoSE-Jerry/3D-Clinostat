@@ -121,7 +121,6 @@ def sensor_check():
         pi.i2c_read_byte(h)
         pi.i2c_close(h)
         Settings.sensor_attached = True
-        print(Settings.sensor_attached)
         
     except Exception as e:
         print(e)
