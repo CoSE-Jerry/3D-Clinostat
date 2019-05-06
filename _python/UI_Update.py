@@ -63,7 +63,7 @@ def validate_input(self):
         self.startImaging_pushButton.setEnabled(False)
     self.Progress_Label.setText("Progress: "+str(Settings.current) + "/" + str(Settings.total))
 
-def update_imaging(self)
+def update_imaging(self):
     if(Settings.imaging):
         self.snapshot_pushButton.setEnabled(False)
         self.snapshot_pushButton.setText("PROCESSING...")
@@ -88,7 +88,7 @@ def update_imaging(self)
 
         self.validate_input
 
-def trasmit_update(self)
+def trasmit_update(self):
     Settings.trasmitted += 1
     self.core_status_label.setText("Transmitting Packet" + str(Settings.trasmitted))
     
