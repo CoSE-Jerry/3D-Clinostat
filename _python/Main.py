@@ -93,7 +93,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def start_timelapse(self):
         try:
-            if not timelapse_running
+            if not timelapse_running:
                 self.Timelapse_Thread = Threads.Timelapse()
                 self.Timelapse_Thread.transmit.connect(lambda: UI_Update.transmit_update(self))
 
@@ -103,7 +103,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
                 self.Timelapse_Thread.start()
             
-            else
+            else:
                 Settings.timelapse_running = False
         except Exception as e:
             print(e)
