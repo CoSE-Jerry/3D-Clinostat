@@ -112,9 +112,8 @@ def reverse_core_select(self):
     Settings.sendCMD(Settings.core_addr,"3~"+str(Settings.core_dir))
 
 def IR_trigger(self):
-
     Settings.sendCMD(Settings.lighting_addr,"3~")
-        Settings.commands_list.append("3~")
+    Settings.commands_list.append("3~")
     if not Settings.IR_STAT:
         Settings.IR_STAT=True
         self.IR_pushButton.setText("INFRARED:ON")
