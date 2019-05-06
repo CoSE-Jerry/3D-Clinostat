@@ -9,7 +9,7 @@ def cycle_start(self):
     self.confirmCycle_pushButton.setText("TERMINATE CYCLE")
     Settings.cycle_running = True
 
-def cycle_END(self):
+def cycle_end(self):
     self.confirmCycle_pushButton.setText("CONFIRM")
 
 def imaging_start(self):

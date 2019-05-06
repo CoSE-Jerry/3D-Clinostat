@@ -32,6 +32,7 @@ class Cycle(QThread):
         while True:
             for x in range(Settings.cycle_time):
                 sleep(1)
+                
                 if not Settings.cycle_running:
                     on = False
                     break
@@ -43,6 +44,7 @@ class Cycle(QThread):
                 for i in Settings.commands_list:
                     Settings.sendCMD(Settings.lighting_addr,i)    
                     sleep(0.1)
+                    on = True
             if not Settings.cycle_running:
                 break
             
