@@ -116,11 +116,11 @@ def IR_trigger(self):
 def sensor_check():
 
     try:
-        pi = pigpio.pi()
-        h = pi.i2c_open(1,31)
-        pi.i2c_read_byte(h)
-        pi.i2c_close(h)
-        pi.stop
+        pi2 = pigpio.pi()
+        h3 = pi.i2c_open(1,31)
+        pi.i2c_read_byte(h3)
+        pi.i2c_close(h3)
+        pi2.stop
         Settings.sensor_attached = True
     except:
         Settings.sensor_attached = False
