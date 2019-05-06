@@ -123,7 +123,6 @@ def sensor_check():
     except:
         Settings.sensor_attached = False
     pi.i2c_close(h)
-    pi.stop
 
     
 
