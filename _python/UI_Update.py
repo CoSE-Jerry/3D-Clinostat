@@ -33,11 +33,14 @@ def preview_complete(self):
     Settings.trasmitted =0
     update_imaging(self)
 
-def image_update(self):
+def image_captured(self):
     capture_img = PyQt5.QtGui.QImage(Settings.current_image)
     self.Image_Frame.setPixmap(QtGui.QPixmap(capture_img))
     Settings.trasmitted = 0
-    self.core_status_label.setText("Imaging Core Status: IDLE")    
+    self.core_status_label.setText("Imaging Core Status: IDLE")
+    self.Progress_Label.setText("Progress: "+str(Settings.current) + "/" + str(Settings.total))
+    self.Progress_Bar.setValue(Settings.current)
+
 
 
 def sensor_update(self):
@@ -104,6 +107,8 @@ def timelapse_start(self):
     self.rotate_pushButton.setEnabled(False)
 
     self.core_status_label.setText("Imaging Core Status: IMAGING")
+    self.Progress_Bar.setMaximum(Settings.total)
+    self.Progress_Bar.setMaximum(0)
 
 def timelapse_end(self):
     self.snapshot_pushButton.setEnabled(True)
