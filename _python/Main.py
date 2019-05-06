@@ -110,8 +110,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.start_snapshot()
 
     def sensor_init(self):
-        Commands.sensor_check()
-        if(Settings.sensor_attached):
+        if(Commands.sensor_check()):
             self.Sensor_Thread = Threads.Sensor()
             self.Sensor_Thread.update.connect(lambda: UI_Update.sensor_update(self))
             self.Sensor_Thread.start()
