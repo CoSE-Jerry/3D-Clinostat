@@ -132,13 +132,11 @@ class Sensor(QThread):
                 
             Commands.sensor_check()'''
         while True:
-            
-            i2c = busio.I2C(board.SCL, board.SDA)
-            sensor = adafruit_fxos8700.FXOS8700(i2c)
-
-            i2c2 = busio.I2C(board.SCL, board.SDA)
-            sensor2 = adafruit_fxas21002c.FXAS21002C(i2c2)
             while(Commands.sensor_check()):
+                i2c = busio.I2C(board.SCL, board.SDA)
+                sensor = adafruit_fxos8700.FXOS8700(i2c)
+                i2c2 = busio.I2C(board.SCL, board.SDA)
+                sensor2 = adafruit_fxas21002c.FXAS21002C(i2c2)
                 if(Settings.tag_index == 0):
                     accel_x, accel_y, accel_z = sensor.accelerometer
                     Settings.ACC_X_text= "{0:.2f}".format(accel_x)
