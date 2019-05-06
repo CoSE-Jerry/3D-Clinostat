@@ -137,7 +137,7 @@ class Sensor(QThread):
                 
             Commands.sensor_check()'''
         while True:
-            while(Commands.sensor_check())
+            while(Commands.sensor_check()):
                 if(Settings.tag_index == 0):
                     accel_x, accel_y, accel_z = sensor.accelerometer
                     Settings.ACC_X_text= "{0:.2f}".format(accel_x)
