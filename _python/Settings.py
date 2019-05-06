@@ -117,8 +117,7 @@ def init():
     global broken
     broken = QtGui.QIcon()
     broken.addPixmap(QtGui.QPixmap("../_image/Broken_Link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        
-
+    
 def sendCMD(addr,cont):
     bus = smbus.SMBus(1)
     converted = []

@@ -5,6 +5,7 @@ import busio
 import adafruit_fxos8700
 import adafruit_fxas21002c
 import os
+import timeit
 
 from time import sleep
 from PyQt5 import QtCore
@@ -128,6 +129,7 @@ class Timelapse(QThread):
             os.mkdir(Settings.full_dir)
             
         for i in range(Settings.total):
+            start_time=timeit.default_timer()
             Settings.current = i
             if(Settings.imaging_mode==1):
                 Settings.current_image = Settings.full_dir + "/" +Settings.sequence_name + "_%04d.jpg" % i
@@ -156,7 +158,11 @@ class Timelapse(QThread):
             sock.close()
         
             self.captured.emit()
-            sleep(Settings.interval*60)
+            elapsed = timeit.default_timer() - start_time
+            print(Settings.interval*60-elapsed)
+            if(elapsed<Settings.interval*60)
+                sleep(Settings.interval*60-elapsed)
+            
 
             
 
