@@ -95,7 +95,7 @@ class Sensor(QThread):
         sensor2 = adafruit_fxas21002c.FXAS21002C(i2c2)
 
         while True:
-            if(sensor_attached)
+            if(sensor_attached):
                 if(Settings.tag_index == 0):
                     accel_x, accel_y, accel_z = sensor.accelerometer
                     Settings.ACC_X_text= "{0:.2f}".format(accel_x)
