@@ -39,7 +39,6 @@ def image_captured(self):
     Settings.trasmitted = 0
     self.core_status_label.setText("Imaging Core Status: IDLE")
     self.Progress_Label.setText("Progress: "+str(Settings.current+1) + "/" + str(Settings.total))
-    self.Progress_Bar.setValue(Settings.current+1)
     self.startImaging_pushButton.setEnabled(True)
 
 
@@ -143,7 +142,6 @@ def timelapse_end(self):
     self.PNG_radioButton.setEnabled(True)
     self.JPG_radioButton.setEnabled(True)
     self.startImaging_pushButton.setText("START TIMELAPSE")
-    self.Progress_Bar.reset
 
     self.core_status_label.setText("Imaging Core Status: IDLE")    
 

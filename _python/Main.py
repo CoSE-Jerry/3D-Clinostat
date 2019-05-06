@@ -92,6 +92,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             print(e)
 
     def start_timelapse(self):
+        print(Settings.timelapse_running)
         try:
             if not Settings.timelapse_running:
                 self.Timelapse_Thread = Threads.Timelapse()
@@ -106,6 +107,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             
             else:
                 Settings.timelapse_running = False
+                self.Progress_Bar.setValue(Settings.current+1)
         except Exception as e:
             print(e)
 
