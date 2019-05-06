@@ -14,11 +14,6 @@ from PyQt5.QtCore import QThread
 from picamera import PiCamera
 
 
-i2c = busio.I2C(board.SCL, board.SDA)
-sensor = adafruit_fxos8700.FXOS8700(i2c)
-
-i2c2 = busio.I2C(board.SCL, board.SDA)
-sensor2 = adafruit_fxas21002c.FXAS21002C(i2c2)
 
 class Snap(QThread):
     transmit = QtCore.pyqtSignal()
