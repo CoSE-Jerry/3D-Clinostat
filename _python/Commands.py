@@ -123,9 +123,9 @@ def sensor_check():
         Settings.sensor_attached = True
         print(Settings.sensor_attached)
         
-    except:
+    except Exception as e:
+        print(e)
         Settings.sensor_attached = False
-        print(Settings.sensor_attached)
         pass
 
 
