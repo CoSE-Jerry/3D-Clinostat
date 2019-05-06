@@ -162,7 +162,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             Settings.imaging_mode = 0
 
     def printci(self):
-        print(self.Sensor_tabWidget.currentIndex())
+        Settings.tag_index=self.Sensor_tabWidget.currentIndex()
     
     def __init__(self):
         super(self.__class__, self).__init__()

@@ -36,6 +36,9 @@ def init():
     global core_dir
     core_dir = 0
 
+    global tag_index
+    tag_index = 0
+
     global ACC_X_text
     ACC_X_text="offline"
     global ACC_Y_text
