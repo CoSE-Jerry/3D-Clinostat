@@ -38,8 +38,6 @@ def image_captured(self):
     self.Image_Frame.setPixmap(QtGui.QPixmap(capture_img))
     Settings.trasmitted = 0
     self.core_status_label.setText("Imaging Core Status: IDLE")
-    print("Progress: "+str(Settings.current+1) + "/" + str(Settings.total))
-    print(Settings.current+1)
     self.Progress_Label.setText("Progress: "+str(Settings.current+1) + "/" + str(Settings.total))
     self.Progress_Bar.setValue(Settings.current+1)
 
@@ -104,18 +102,43 @@ def transmit_update(self):
     self.core_status_label.setText("Recieving Packets: " + str(Settings.trasmitted))
 
 def timelapse_start(self):
+    Settings.timelapse_running = True
     self.snapshot_pushButton.setEnabled(False)
     self.preview_pushButton.setEnabled(False)     
     self.rotate_pushButton.setEnabled(False)
+
+    self.title_lineEdit.setEnabled(False)
+    self.addDate_pushButton.setEnabled(False)
+    self.ICI_spinBox.setEnabled(False)
+    self.ISD_spinBox.setEnabled(False)
+    self.directory_pushButton.setEnabled(False)
+    self.x_resolution_spinBox.setEnabled(False)
+    self.y_resolution_spinBox.setEnabled(False)
+    self.PNG_radioButton.setEnabled(False)
+    self.JPG_radioButton.setEnabled(False)
+
+    self.startImaging_pushButton.setText("TERMINATE TIMELAPSE")
 
     self.core_status_label.setText("Imaging Core Status: IMAGING")
     self.Progress_Bar.setMaximum(Settings.total)
     self.Progress_Bar.setMinimum(0)
 
 def timelapse_end(self):
+    Settings.timelapse_running = True
     self.snapshot_pushButton.setEnabled(True)
     self.preview_pushButton.setEnabled(True)     
     self.rotate_pushButton.setEnabled(True)
+
+    self.title_lineEdit.setEnabled(True)
+    self.addDate_pushButton.setEnabled(True)
+    self.ICI_spinBox.setEnabled(True)
+    self.ISD_spinBox.setEnabled(True)
+    self.directory_pushButton.setEnabled(True)
+    self.x_resolution_spinBox.setEnabled(True)
+    self.y_resolution_spinBox.setEnabled(True)
+    self.PNG_radioButton.setEnabled(True)
+    self.JPG_radioButton.setEnabled(True)
+    self.startImaging_pushButton.setText("START TIMELAPSE")
 
     self.core_status_label.setText("Imaging Core Status: IDLE")    
 

@@ -101,6 +101,9 @@ def init():
 
     global trasmitted
     trasmitted = 0
+
+    global timelapse_running
+    timelapse_running =False
     
     global forward
     forward = QtGui.QIcon()
