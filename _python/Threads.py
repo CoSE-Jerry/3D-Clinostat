@@ -12,6 +12,7 @@ from PyQt5.QtCore import QThread
 from picamera import PiCamera
 
 class Snap(QThread):
+    transmit = QtCore.pyqtSignal()
 
     def __init__(self):
         QThread.__init__(self)
@@ -33,6 +34,7 @@ class Snap(QThread):
                     if not data:
                         break
                     f.write(data)
+                    self.transmit.emit
         sock.close()
 
 class Preview(QThread):

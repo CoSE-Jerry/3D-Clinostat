@@ -5,20 +5,14 @@ import UI_Update
 import os
 import time
 
-#always seem to need this
 import sys
- 
-# This gets the Qt stuff
+
 import PyQt5
 from PyQt5.QtWidgets import *
 from PyQt5 import QtGui
- 
-# This is our window from QtCreator
 import Clinostat_UI
 
-# create class for our Raspberry Pi GUI
 class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
- # access variables inside of the UI's file
 
     def frame_slider_select(self):
         if(Settings.LINKED):
@@ -76,7 +70,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def start_snapshot(self):
         try:
             self.Snap_Thread = Threads.Snap()
-            '''self.Snap_Thread.started.connect(lambda: UI_Update_Disable.snap_disable(self,sch_flip))'''
+
+            self.Snap_Thread.transmit.connect(lambda: UI_Update.trasmit_update(self))
+            self.Snap_Thread.started.connect(lambda: UI_Update.snap_start(self))
             self.Snap_Thread.finished.connect(lambda: UI_Update.snap_complete(self))
             self.Snap_Thread.start()
             
@@ -125,7 +121,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.addDate_pushButton.setEnabled(True)
         if(len(Settings.sequence_name) == 0):
             self.addDate_pushButton.setEnabled(False)
-        self.validate_input()
+        UI_Update.validate_input(self)
 
     def add_date(self):
         Settings.sequence_name = Settings.sequence_name + "_" + Settings.date
@@ -136,28 +132,18 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def ICI_Change(self):
         Settings.interval = self.ICI_spinBox.value()
-        self.validate_input()
+        UI_Update.validate_input(self)
                 
     def ISD_Change(self):
         Settings.duration = self.ISD_spinBox.value()
-        self.validate_input()
-
-            
-    def validate_input(self):
-        Settings.total = int(Settings.duration/Settings.interval)
-        if(Settings.total>0 and len(Settings.sequence_name)!=0):
-            self.startImaging_pushButton.setEnabled(True)
-        else:
-            self.startImaging_pushButton.setEnabled(False)
-        self.Progress_Label.setText("Progress: "+str(Settings.current) + "/" + str(Settings.total))
-        
+        UI_Update.validate_input(self)
 
     def select_directory(self):
         m_directory = str(QFileDialog.getExistingDirectory(self, "Select Directory",'/media/pi'))
         if(len(m_directory)!=0):
             Settings.full_dir = m_directory +"/"+ Settings.sequence_name
             self.directory_label.setText(Settings.full_dir)
-        self.validate_input()
+        UI_Update.validate_input(self)
 
     def update_resolution(self):
         Settings.x_resolution=self.x_resolution_spinBox.value()
@@ -215,15 +201,11 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.JPG_radioButton.toggled.connect(lambda: self.update_mode())
 
 
-# I feel better having one of these
 def main():
- # a new app instance
     app = QApplication(sys.argv)
     form = MainWindow()
     form.show()
- # without this, the script exits immediately.
     sys.exit(app.exec_())
  
-# python bit to figure how who started This
 if __name__ == "__main__":
     main()

@@ -3,11 +3,16 @@ import os
 import Settings
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
+
+def snap_start(self):
+    self.core_status_label.setText(<html><head/><body><p>Imaging Core Status: <span style=" color:#ffff00;">IMAGING</span></p></body></html>)
+    
 def snap_complete(self):
+    self.core_status_label.setText(<html><head/><body><p>Imaging Core Status: <span style=" color:#00aa00;">IDLE</span></p></body></html>)
+    
     snap_img = PyQt5.QtGui.QImage("../_temp/snapshot.jpg")
     self.Image_Frame.setPixmap(QtGui.QPixmap(snap_img))
-    #self.Snapshot.setText("Snapshot")
-    #self.Snapshot.setEnabled(True)
 
 def preview_complete(self):
     if(Settings.imaging_mode==1):
@@ -18,16 +23,10 @@ def preview_complete(self):
         preview_img = PyQt5.QtGui.QImage("../_temp/preview.png")
         self.Image_Frame.setPixmap(QtGui.QPixmap(preview_img))
         os.system("gpicview ../_temp/preview.png")
-    
-    #self.Snapshot.setText("Snapshot")
-    #self.Snapshot.setEnabled(True)
 
 def image_update(self):
     capture_img = PyQt5.QtGui.QImage(Settings.current_image)
     self.Image_Frame.setPixmap(QtGui.QPixmap(capture_img))
-    
-    #self.Snapshot.setText("Snapshot")
-    #self.Snapshot.setEnabled(True)
 
 def sensor_update(self):
     self.ACC_X_text_label.setText(Settings.ACC_X_text)
@@ -55,3 +54,43 @@ def link(self):
     else:
         Settings.LINKED = True
         self.link_pushButton.setIcon(Settings.linked)
+
+def validate_input(self):
+    Settings.total = int(Settings.duration/Settings.interval)
+    if(Settings.total>0 and len(Settings.sequence_name)!=0):
+        self.startImaging_pushButton.setEnabled(True)
+    else:
+        self.startImaging_pushButton.setEnabled(False)
+    self.Progress_Label.setText("Progress: "+str(Settings.current) + "/" + str(Settings.total))
+
+def update_imaging(self)
+    if(Settings.imaging):
+        self.snapshot_pushButton.setEnabled(False)
+        self.snapshot_pushButton.setText("PROCESSING...")
+        
+        self.preview_pushButton.setEnabled(False)
+        self.preview_pushButton.setText("PROCESSING...")
+        
+        self.rotate_pushButton.setEnabled(False)
+        self.rotate_pushButton.setText("PROCESSING...")
+
+        self.startImaging_pushButton.setEnabled(False)
+        
+    else:
+        self.snapshot_pushButton.setEnabled(True)
+        self.snapshot_pushButton.setText("SNAPSHOT")
+        
+        self.preview_pushButton.setEnabled(True)
+        self.preview_pushButton.setText("PREVIEW")
+        
+        self.rotate_pushButton.setEnabled(True)
+        self.rotate_pushButton.setText("ROTATE IMAGE")
+
+        self.validate_input
+
+def trasmit_update(self)
+    Settings.trasmitted += 1
+    self.core_status_label.setText("Transmitting Packet" + str(Settings.trasmitted))
+    
+
+        

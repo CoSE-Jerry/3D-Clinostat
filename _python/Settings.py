@@ -12,8 +12,8 @@ def init():
     global IR_STAT
     IR_STAT = False
 
-    global i2c_open
-    i2c_open =True
+    global imaging 
+    imaging =True
     
     global frame_RPM
     frame_RPM = 0.3
@@ -95,6 +95,9 @@ def init():
 
     global imaging_mode
     imaging_mode = 1
+
+    global trasmitted
+    trasmitted = 0
     
     global forward
     forward = QtGui.QIcon()
