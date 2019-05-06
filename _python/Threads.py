@@ -155,6 +155,8 @@ class Sensor(QThread):
                     Settings.MAG_Y_text= "{0:.2f}".format(mag_y)
                     Settings.MAG_Z_text= "{0:.2f}".format(mag_z)
                 Commands.sensor_check()
+                self.update.emit()
+                sleep(0.1)
                 
             Settings.ACC_X_text= "OFFLINE"
             Settings.ACC_Y_text= "OFFLINE"
