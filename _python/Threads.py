@@ -147,7 +147,6 @@ class Timelapse(QThread):
             sock.sendall(cmd.encode())
 
             with open(Settings.current_image, 'wb') as f:
-                print('file opened')
                 while True:
                     data = sock.recv(1024)
                     if not data:
@@ -160,7 +159,7 @@ class Timelapse(QThread):
             self.captured.emit()
             elapsed = timeit.default_timer() - start_time
             print(Settings.interval*60-elapsed)
-            if(elapsed<Settings.interval*60)
+            if(elapsed<Settings.interval*60):
                 sleep(Settings.interval*60-elapsed)
             
 
