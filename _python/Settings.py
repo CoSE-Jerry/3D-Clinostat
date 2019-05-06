@@ -102,8 +102,14 @@ def init():
     global trasmitted
     trasmitted = 0
 
+    global commands_list
+    commands_list = []
+
     global timelapse_running
     timelapse_running =False
+
+    global cycle_time
+    cycle_time=60
     
     global forward
     forward = QtGui.QIcon()

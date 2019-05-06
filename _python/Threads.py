@@ -12,6 +12,27 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import QThread
 from picamera import PiCamera
 
+class Cycle(QThread):
+
+    def __init__(self):
+        QThread.__init__(self)
+
+    def __del__(self):
+        self._running = False
+
+    def run(self):
+        Commands.clear_lights(self)
+        sleep(1)
+        for x in Settings.commands_list
+            Settings.sendCMD(Settings.lighting_addr,x)    
+            sleep(0.1)
+        Commands.clear_lights(self)
+        sleep(1)
+        for x in Settings.commands_list
+            Settings.sendCMD(Settings.lighting_addr,x)    
+            sleep(0.1)
+        
+
 class Snap(QThread):
     transmit = QtCore.pyqtSignal()
 

@@ -79,6 +79,15 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         except Exception as e:
             print(e)
 
+
+    def start_cycle(self):
+        try:
+            self.Cycle_Thread = Threads.Cycle()
+            self.Cycle_Thread.start()
+            
+        except Exception as e:
+            print(e)
+
     def start_preview(self):
         try:
             self.Preview_Thread = Threads.Preview()
@@ -92,7 +101,6 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             print(e)
 
     def start_timelapse(self):
-        print(Settings.timelapse_running)
         try:
             if not Settings.timelapse_running:
                 self.Timelapse_Thread = Threads.Timelapse()
@@ -145,6 +153,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
     def ICI_Change(self):
         Settings.interval = self.ICI_spinBox.value()
         UI_Update.validate_input(self)
+
+    def Cycle_Change(self):
+        Settings.cycle_time = self.powerCycle_spinBox.value()
                 
     def ISD_Change(self):
         Settings.duration = self.ISD_spinBox.value()
@@ -186,7 +197,10 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.startImaging_pushButton.clicked.connect(lambda: self.start_timelapse())
         self.rotate_pushButton.clicked.connect(lambda: self.rotate_image())
 
-        self.rainbow_pushButton.clicked.connect(lambda: Commands.rainbow())
+        self.confirmCycle_pushButton.clicked.connect(lambda: self.start_cycle())
+        self.powerCycle_spinBox.valueChanged.connect(lambda: self.Cycle_Change())
+
+        
 
         self.frame_spinBox.valueChanged.connect(lambda: self.frame_spin_select())
         self.core_spinBox.valueChanged.connect(lambda: self.core_spin_select())
