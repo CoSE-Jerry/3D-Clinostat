@@ -71,7 +71,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         try:
             self.Snap_Thread = Threads.Snap()
 
-            self.Snap_Thread.transmit.connect(lambda: UI_Update.trasmit_update(self))
+            self.Snap_Thread.transmit.connect(lambda: UI_Update.transmit_update(self))
             self.Snap_Thread.started.connect(lambda: UI_Update.snap_start(self))
             self.Snap_Thread.finished.connect(lambda: UI_Update.snap_complete(self))
             self.Snap_Thread.start()

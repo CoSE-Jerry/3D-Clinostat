@@ -2033,7 +2033,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Imaging Core Status: &lt;span style=&quot; color:#00aa00;&quot;&gt;IDLE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>Imaging Core Status: IDLE</string>
     </property>
    </widget>
   </widget>

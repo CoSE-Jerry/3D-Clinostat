@@ -34,7 +34,7 @@ class Snap(QThread):
                     if not data:
                         break
                     f.write(data)
-                    self.transmit.emit
+                    self.transmit.emit()
         sock.close()
 
 class Preview(QThread):

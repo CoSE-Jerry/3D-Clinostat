@@ -860,7 +860,7 @@ class Ui_MainWindow(object):
         self.MAG_label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Magnetometer</span></p></body></html>"))
         self.Sensor_tabWidget.setTabText(self.Sensor_tabWidget.indexOf(self.MAG_tab), _translate("MainWindow", "MAG"))
         self.rotate_pushButton.setText(_translate("MainWindow", "ROTATE IMAGE"))
-        self.core_status_label.setText(_translate("MainWindow", "<html><head/><body><p>Imaging Core Status: <span style=\" color:#00aa00;\">IDLE</span></p></body></html>"))
+        self.core_status_label.setText(_translate("MainWindow", "Imaging Core Status: IDLE"))
         self.actionOpen_Directory.setText(_translate("MainWindow", "Open Directory"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
         self.actionCreate_Timelapse.setText(_translate("MainWindow", "Create Timelapse"))
