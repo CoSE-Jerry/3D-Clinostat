@@ -6,6 +6,7 @@ import adafruit_fxos8700
 import adafruit_fxas21002c
 import os
 import timeit
+import Commands
 
 from time import sleep
 from PyQt5 import QtCore
