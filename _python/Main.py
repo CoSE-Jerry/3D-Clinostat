@@ -160,6 +160,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             Settings.imaging_mode = 1
         else:
             Settings.imaging_mode = 0
+
+    def printci(self):
+        print(Sensor_tabWidget.currentIndex())
     
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -167,7 +170,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
         Settings.init()
         self.sensor_init()
-        
+
+        self.Sensor_tabWidget.currentChanged.connect(lambda: self.printci())
         self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.frame_addr))
         self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.core_addr))
         
