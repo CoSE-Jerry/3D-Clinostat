@@ -110,11 +110,13 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.start_snapshot()
 
     def sensor_init(self):
-        Commands.sensor_check()
-        if(Settings.sensor_attached):
-            self.Sensor_Thread = Threads.Sensor()
-            self.Sensor_Thread.update.connect(lambda: UI_Update.sensor_update(self))
-            self.Sensor_Thread.start()
+
+            os.system("i2cdetect -y 1 > ../_temp/output.txt")
+
+            if '1f' in open('../_temp/output.txt').read():
+                self.Sensor_Thread = Threads.Sensor()
+                self.Sensor_Thread.update.connect(lambda: UI_Update.sensor_update(self))
+                self.Sensor_Thread.start()
 
     def IST_Edit(self):
         Settings.sequence_name = self.title_lineEdit.text()
@@ -159,7 +161,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         else:
             Settings.imaging_mode = 0
 
-    def tabChange(self):
+    def printci(self):
         Settings.tag_index=self.Sensor_tabWidget.currentIndex()
     
     def __init__(self):
@@ -167,10 +169,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.setupUi(self)
 
         Settings.init()
-        
         self.sensor_init()
 
-        self.Sensor_tabWidget.currentChanged.connect(lambda: self.tabChange())
+        self.Sensor_tabWidget.currentChanged.connect(lambda: self.printci())
         self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.frame_addr))
         self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.core_addr))
         
