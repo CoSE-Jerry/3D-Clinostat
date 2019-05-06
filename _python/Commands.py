@@ -118,11 +118,11 @@ def IR_trigger(self):
 def sensor_check():
 
     try:
-        
         h = pi.i2c_open(1,31)
         pi.i2c_read_byte(h)
         pi.i2c_close(h)
         Settings.sensor_attached = True
+        
     except:
         Settings.sensor_attached = False
         pass
