@@ -159,7 +159,7 @@ class Timelapse(QThread):
             self.captured.emit()
             elapsed = int(timeit.default_timer() - start_time)
             
-            elif(elapsed<Settings.interval*60):
+            if(elapsed<Settings.interval*60):
                 for x in range(Settings.interval*60-elapsed):
                     sleep(1)
                     if not Settings.timelapse_running:
