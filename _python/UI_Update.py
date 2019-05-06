@@ -6,10 +6,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 def snap_start(self):
-    self.core_status_label.setText(<html><head/><body><p>Imaging Core Status: <span style=" color:#ffff00;">IMAGING</span></p></body></html>)
+    self.core_status_label.setText("Imaging Core Status: IMAGING")
     
 def snap_complete(self):
-    self.core_status_label.setText(<html><head/><body><p>Imaging Core Status: <span style=" color:#00aa00;">IDLE</span></p></body></html>)
+    self.core_status_label.setText("Imaging Core Status: IDLE")
     
     snap_img = PyQt5.QtGui.QImage("../_temp/snapshot.jpg")
     self.Image_Frame.setPixmap(QtGui.QPixmap(snap_img))
