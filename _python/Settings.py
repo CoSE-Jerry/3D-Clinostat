@@ -40,7 +40,7 @@ def init():
     tag_index = 0
 
     global sensor_attached
-    sensor_attached= False
+    sensor_attached= True
 
     global ACC_X_text
     ACC_X_text="offline"
