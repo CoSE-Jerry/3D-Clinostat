@@ -71,25 +71,14 @@ def validate_input(self):
 def update_imaging(self):
     if(Settings.imaging):
         self.snapshot_pushButton.setEnabled(False)
-        self.snapshot_pushButton.setText("PROCESSING...")
-        
-        self.preview_pushButton.setEnabled(False)
-        self.preview_pushButton.setText("PROCESSING...")
-        
+        self.preview_pushButton.setEnabled(False)     
         self.rotate_pushButton.setEnabled(False)
-        self.rotate_pushButton.setText("PROCESSING...")
-
         self.startImaging_pushButton.setEnabled(False)
         
     else:
         self.snapshot_pushButton.setEnabled(True)
-        self.snapshot_pushButton.setText("SNAPSHOT")
-        
         self.preview_pushButton.setEnabled(True)
-        self.preview_pushButton.setText("PREVIEW")
-        
         self.rotate_pushButton.setEnabled(True)
-        self.rotate_pushButton.setText("ROTATE IMAGE")
 
         validate_input(self)
 
