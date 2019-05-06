@@ -27,10 +27,20 @@ class Cycle(QThread):
         for x in Settings.commands_list:
             Settings.sendCMD(Settings.lighting_addr,x)    
             sleep(0.1)
-        Commands.clear_lights(self)
-            
+
+        on =true
         while True:
             for x in range(Settings.cycle_time):
+                sleep(1)
+            if(on):
+                Commands.clear_lights(self)
+            else:
+                for i in Settings.commands_list:
+                    Settings.sendCMD(Settings.lighting_addr,i)    
+                    sleep(0.1)
+            
+            
+            '''for x in range(Settings.cycle_time):
                 sleep(1)
                 if not Settings.cycle_running:
                     break
@@ -49,7 +59,7 @@ class Cycle(QThread):
                 Settings.sendCMD(Settings.lighting_addr,i)    
                 sleep(0.1)
             if not Settings.cycle_running:
-                break
+                break'''
             
             
         
