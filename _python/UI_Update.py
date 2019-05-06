@@ -36,6 +36,9 @@ def preview_complete(self):
 def image_update(self):
     capture_img = PyQt5.QtGui.QImage(Settings.current_image)
     self.Image_Frame.setPixmap(QtGui.QPixmap(capture_img))
+    Settings.trasmitted = 0
+    self.core_status_label.setText("Imaging Core Status: IDLE")    
+
 
 def sensor_update(self):
     self.ACC_X_text_label.setText(Settings.ACC_X_text)
