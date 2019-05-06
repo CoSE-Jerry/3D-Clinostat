@@ -13,6 +13,13 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import QThread
 from picamera import PiCamera
 
+
+i2c = busio.I2C(board.SCL, board.SDA)
+sensor = adafruit_fxos8700.FXOS8700(i2c)
+
+i2c2 = busio.I2C(board.SCL, board.SDA)
+sensor2 = adafruit_fxas21002c.FXAS21002C(i2c2)
+
 class Snap(QThread):
     transmit = QtCore.pyqtSignal()
 
@@ -88,7 +95,7 @@ class Sensor(QThread):
         self._running = False
 
     def run(self):
-        i2c = busio.I2C(board.SCL, board.SDA)
+        '''i2c = busio.I2C(board.SCL, board.SDA)
         sensor = adafruit_fxos8700.FXOS8700(i2c)
 
         i2c2 = busio.I2C(board.SCL, board.SDA)
@@ -128,7 +135,42 @@ class Sensor(QThread):
                     Settings.MAG_Y_text= "OFFLINE"
                     Settings.MAG_Z_text= "OFFLINE"
                 
-            Commands.sensor_check()
+            Commands.sensor_check()'''
+        while True:
+            while(Commands.sensor_check())
+                if(Settings.tag_index == 0):
+                    accel_x, accel_y, accel_z = sensor.accelerometer
+                    Settings.ACC_X_text= "{0:.2f}".format(accel_x)
+                    Settings.ACC_Y_text= "{0:.2f}".format(accel_y)
+                    Settings.ACC_Z_text= "{0:.2f}".format(accel_z)
+
+                elif(Settings.tag_index == 1):
+                    gyro_x, gyro_y, gyro_z = sensor2.gyroscope
+                    Settings.GYRO_X_text= "{0:.2f}".format(gyro_x)
+                    Settings.GYRO_Y_text= "{0:.2f}".format(gyro_y)
+                    Settings.GYRO_Z_text= "{0:.2f}".format(gyro_z)
+                else:
+                    mag_x, mag_y, mag_z = sensor.magnetometer
+                    Settings.MAG_X_text= "{0:.2f}".format(mag_x)
+                    Settings.MAG_Y_text= "{0:.2f}".format(mag_y)
+                    Settings.MAG_Z_text= "{0:.2f}".format(mag_z)
+                
+            Settings.ACC_X_text= "OFFLINE"
+            Settings.ACC_Y_text= "OFFLINE"
+            Settings.ACC_Z_text= "OFFLINE"
+            
+            Settings.GYRO_X_text= "OFFLINE"
+            Settings.GYRO_Y_text= "OFFLINE"
+            Settings.GYRO_Z_text= "OFFLINE"
+            
+            Settings.MAG_X_text= "OFFLINE"
+            Settings.MAG_Y_text= "OFFLINE"
+            Settings.MAG_Z_text= "OFFLINE"
+
+            self.update.emit()
+            sleep(0.1)
+
+        
 
 class Timelapse(QThread):
     captured = QtCore.pyqtSignal()
