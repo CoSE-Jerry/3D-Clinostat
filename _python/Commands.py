@@ -5,7 +5,7 @@ import socket
 #from PyQt5 import QtCore, QtGui, QtWidgets
 
 def init():
-    clear_lights
+    clear_lights()
     sleep(0.1)
     Settings.sendCMD(Settings.frame_addr,"5~")
     sleep(0.1)
