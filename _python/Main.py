@@ -28,10 +28,16 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             Commands.core_slider_change(self)
 
     def frame_spin_select(self):
-        Commands.frame_spin_select(self)
+        if(Settings.LINKED):
+            Commands.linked_spin_change(self)
+        else:
+            Commands.frame_spin_change(self)
 
     def core_spin_select(self):
-        Commands.core_spin_select(self)
+        if(Settings.LINKED):
+            Commands.linked_spin_change(self)
+        else:
+            Commands.core_spin_change(self)
 
     def reverse_frame_select(self):
         if(Settings.LINKED):

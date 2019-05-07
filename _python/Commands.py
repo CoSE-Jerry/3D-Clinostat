@@ -5,7 +5,7 @@ import socket
 #from PyQt5 import QtCore, QtGui, QtWidgets
 
 def init():
-    Settings.sendCMD(Settings.lighting_addr,"1~0~34~0~0~0~0")
+    clear_lights
     sleep(0.1)
     Settings.sendCMD(Settings.frame_addr,"5~")
     sleep(0.1)
@@ -36,7 +36,7 @@ def light_reset(self):
     self.BRT_spinBox.setValue(50)
     Settings.commands_list.clear()
 
-def clear_lights(self):
+def clear_lights():
     Settings.sendCMD(Settings.lighting_addr,"1~0~34~0~0~0~0")
     
 def ergz_motor(self,addr):
@@ -85,6 +85,35 @@ def linked_slider_change(self):
     self.frame_verticalSlider.blockSignals(False)
 
 
+def linked_spin_change(self):
+    self.core_spinBox.blockSignals(True)
+    self.frame_spinBox.blockSignals(True)
+    self.core_verticalSlider.blockSignals(True)
+    self.frame_verticalSlider.blockSignals(True)
+    
+    if(Settings.frame_RPM != self.frame_spinBox.value()):
+        Settings.frame_RPM=self.frame_spinBox.value()
+        Settings.core_RPM=Settings.frame_RPM
+        self.core_verticalSlider.setValue(Settings.core_RPM*10)
+        self.core_spinBox.setValue(Settings.core_RPM)
+        self.frame_verticalSlider.setValue(Settings.frame_RPM)
+    else:
+        Settings.core_RPM=self.core_spinBox.value()
+        Settings.frame_RPM=Settings.core_RPM
+        self.frame_verticalSlider.setValue(Settings.frame_RPM*10)
+        self.frame_spinBox.setValue(Settings.core_RPM)
+        self.core_spinBox.setValue(Settings.frame_RPM)
+
+    CMD = "2~"+Settings.getInterval(Settings.frame_RPM)
+    Settings.sendCMD(Settings.frame_addr,CMD)
+    sleep(0.02)
+    CMD = "2~"+Settings.getInterval(Settings.core_RPM)
+    Settings.sendCMD(Settings.core_addr,CMD)
+    
+    self.core_spinBox.blockSignals(False)
+    self.frame_spinBox.blockSignals(False)
+    self.core_verticalSlider.blockSignals(False)
+    self.frame_verticalSlider.blockSignals(False)
 
 def frame_spin_select(self):
     Settings.frame_RPM=self.frame_spinBox.value()
