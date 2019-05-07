@@ -14,12 +14,11 @@ def init():
 
 
 def light_confirm(self):
-    curr_cmd = "1~"+str(self.Start_spinBox.value())+"~"+str(self.End_spinBox.value())+"~"+ str(self.R_spinBox.value()) + "~" + str(self.G_spinBox.value()) + "~" + str(self.B_spinBox.value()) + "~"+str(self.W_spinBox.value())
+    curr_cmd = str(self.Start_spinBox.value())+"~"+str(self.End_spinBox.value())+"~"+ str(self.R_spinBox.value()) + "~" + str(self.G_spinBox.value()) + "~" + str(self.B_spinBox.value()) + "~"+str(self.W_spinBox.value())
     Settings.commands_list.append(curr_cmd)
-    Settings.sendCMD(Settings.lighting_addr,curr_cmd)
+    Settings.sendCMD(Settings.lighting_addr,"1~"+curr_cmd)
     sleep(0.1)
     curr_cmd = "2~"+str(self.BRT_spinBox.value())
-    Settings.commands_list.append(curr_cmd)
     Settings.sendCMD(Settings.lighting_addr,curr_cmd)
 
 def light_reset(self):
@@ -164,7 +163,6 @@ def reverse_core_select(self):
 
 def IR_trigger(self):
     Settings.sendCMD(Settings.lighting_addr,"3~")
-    Settings.commands_list.append("3~")
     if not Settings.IR_STAT:
         Settings.IR_STAT=True
         self.IR_pushButton.setText("INFRARED:ON")
