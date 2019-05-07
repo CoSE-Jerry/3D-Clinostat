@@ -212,8 +212,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Commands.init()
 
         self.Sensor_tabWidget.currentChanged.connect(lambda: self.printci())
-        self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.frame_addr))
-        self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(self,Settings.core_addr))
+        self.frameErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(Settings.frame_addr))
+        self.coreErgz_pushButton.clicked.connect(lambda: Commands.ergz_motor(Settings.core_addr))
         
         self.snapshot_pushButton.clicked.connect(lambda: self.start_snapshot())
         self.preview_pushButton.clicked.connect(lambda: self.start_preview())

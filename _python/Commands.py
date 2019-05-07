@@ -39,7 +39,7 @@ def light_reset(self):
 def clear_lights():
     Settings.sendCMD(Settings.lighting_addr,"1~0~34~0~0~0~0")
     
-def ergz_motor(self,addr):
+def ergz_motor(addr):
     if(Settings.LINKED):
         Settings.sendCMD(Settings.frame_addr,"1~")
         Settings.sendCMD(Settings.core_addr,"1~")
@@ -95,13 +95,14 @@ def linked_spin_change(self):
         Settings.frame_RPM=self.frame_spinBox.value()
         Settings.core_RPM=Settings.frame_RPM
         self.core_verticalSlider.setValue(Settings.core_RPM*10)
-        self.core_spinBox.setValue(Settings.core_RPM)
         self.frame_verticalSlider.setValue(Settings.frame_RPM*10)
+        self.core_spinBox.setValue(Settings.core_RPM)
+        
     else:
         Settings.core_RPM=self.core_spinBox.value()
         Settings.frame_RPM=Settings.core_RPM
         self.frame_verticalSlider.setValue(Settings.frame_RPM*10)
-        self.frame_spinBox.setValue(Settings.core_RPM)
+        self.core_verticalSlider.setValue(Settings.core_RPM*10)
         self.core_spinBox.setValue(Settings.frame_RPM)
 
     CMD = "2~"+Settings.getInterval(Settings.frame_RPM)
