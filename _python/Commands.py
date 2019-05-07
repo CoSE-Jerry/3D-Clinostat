@@ -4,6 +4,15 @@ import socket
 #from PyQt5.QtCore import QThread
 #from PyQt5 import QtCore, QtGui, QtWidgets
 
+def init()
+    Settings.sendCMD(Settings.lighting_addr,"1~0~34~0~0~0~0")
+    sleep(0.02)
+    Settings.sendCMD(Settings.frame_addr,"5~")
+    sleep(0.02)
+    Settings.sendCMD(Settings.core_addr,"5")
+    
+
+
 def light_confirm(self):
     curr_cmd = "1~"+str(self.Start_spinBox.value())+"~"+str(self.End_spinBox.value())+"~"+ str(self.R_spinBox.value()) + "~" + str(self.G_spinBox.value()) + "~" + str(self.B_spinBox.value()) + "~"+str(self.W_spinBox.value())
     Settings.commands_list.append(curr_cmd)
