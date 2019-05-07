@@ -23,10 +23,10 @@ class IR(QThread):
         self._running = False
 
     def run(self):
-        Commands.IR_trigger(self)
+        Settings.sendCMD(Settings.lighting_addr,"3~")
         Commands.clear_lights(self)
         sleep(5)
-        Commands.IR_trigger(self)
+        Settings.sendCMD(Settings.lighting_addr,"3~")
         
         for x in Settings.commands_list:
             Settings.sendCMD(Settings.lighting_addr,x)    

@@ -116,11 +116,11 @@ def IR_trigger(self):
     Settings.commands_list.append("3~")
     if not Settings.IR_STAT:
         Settings.IR_STAT=True
-        MainWindow.IR_pushButton.setText("INFRARED:ON")
+        self.IR_pushButton.setText("INFRARED:ON")
     
     else:
         Settings.IR_STAT=False
-        MainWindow.IR_pushButton.setText("INFRARED:OFF")
+        self.IR_pushButton.setText("INFRARED:OFF")
 
     
 
