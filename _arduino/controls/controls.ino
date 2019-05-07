@@ -92,6 +92,7 @@ void exeCMD() {
   if (commands[0] == 1)
   {
     stripUpdate();
+    strip.show();
   }
 
   if (commands[0] == 2)
@@ -111,6 +112,16 @@ void exeCMD() {
     }
     IR = !IR;
   }
+
+  if (commands[0] == 4)
+  {
+    stripUpdate();
+  }
+
+  if (commands[0] == 5)
+  {
+    stripShow();
+  }
 }
 
 void colorWipe(uint32_t c, uint8_t wait) {
@@ -126,8 +137,12 @@ void stripUpdate() {
     if (i >= commands[1] && i < commands[2]) {
       strip.setPixelColor(i, commands[3], commands[4], commands[5], commands[6]);
     }
-    strip.show();
   }
+
+}
+
+void stripShow() {
+  strip.show();
 }
 
 void brightnessUpdate() {
