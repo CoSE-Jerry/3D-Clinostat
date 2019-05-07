@@ -127,7 +127,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
                 self.Progress_Bar.setValue(Settings.current+1)
         except Exception as e:
             print(e)
-    def ir_imaging(self)
+    def ir_imaging(self):
         self.ir_Thread = Threads.IR()
         self.ir_Thread.start()
 
@@ -194,7 +194,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         Settings.tag_index=self.Sensor_tabWidget.currentIndex()
 
     def update_irstate(self):
-        Settings.IR_state = !Settings.IR_state
+        Settings.IR_state = not Settings.IR_state
 
     
     def __init__(self):
