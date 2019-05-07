@@ -62,7 +62,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Lighting_tab">
      <attribute name="title">
@@ -331,6 +331,9 @@
        </property>
       </widget>
       <widget class="QPushButton" name="rainbow_pushButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -344,6 +347,9 @@
        </property>
       </widget>
       <widget class="QPushButton" name="disco_pushButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -366,7 +372,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Light Cycle&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Power Cycle&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QSpinBox" name="powerCycle_spinBox">
@@ -431,7 +437,7 @@
        <string>INFRARED:OFF</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="checkBox">
+     <widget class="QCheckBox" name="IR_checkBox">
       <property name="geometry">
        <rect>
         <x>450</x>
@@ -1035,7 +1041,7 @@
      <widget class="QTabWidget" name="Expert_tab">
       <property name="geometry">
        <rect>
-        <x>380</x>
+        <x>20</x>
         <y>10</y>
         <width>231</width>
         <height>381</height>
@@ -1519,13 +1525,16 @@
        </widget>
       </widget>
      </widget>
-     <widget class="QFrame" name="frame_7">
+     <widget class="QFrame" name="frame_6">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>400</y>
-        <width>231</width>
-        <height>111</height>
+        <x>270</x>
+        <y>10</y>
+        <width>351</width>
+        <height>501</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -1534,19 +1543,6 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QPushButton" name="update_pushButton">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>30</y>
-         <width>141</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Update</string>
-       </property>
-      </widget>
      </widget>
     </widget>
    </widget>
