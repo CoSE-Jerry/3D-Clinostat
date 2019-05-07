@@ -73,6 +73,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.Snap_Thread.transmit.connect(lambda: UI_Update.transmit_update(self))
             self.Snap_Thread.started.connect(lambda: UI_Update.imaging_start(self))
             self.Snap_Thread.finished.connect(lambda: UI_Update.snap_complete(self))
+            self.Snap_Thread.ir.connect(lambda: self.ir_imaging())
             
             self.Snap_Thread.start()
             
@@ -100,6 +101,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
             self.Preview_Thread.transmit.connect(lambda: UI_Update.transmit_update(self))
             self.Preview_Thread.started.connect(lambda: UI_Update.imaging_start(self))
             self.Preview_Thread.finished.connect(lambda: UI_Update.preview_complete(self))
+            self.Preview_Thread.ir.connect(lambda: self.ir_imaging())
 
             self.Preview_Thread.start()
             
@@ -116,6 +118,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
                 self.Timelapse_Thread.captured.connect(lambda: UI_Update.image_captured(self))
                 self.Timelapse_Thread.transmitstart.connect(lambda: UI_Update.transmitst(self))
                 self.Timelapse_Thread.finished.connect(lambda: UI_Update.timelapse_end(self))
+                self.Timelapse_Thread.ir.connect(lambda: self.ir_imaging())
 
                 self.Timelapse_Thread.start()
             
@@ -124,6 +127,9 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
                 self.Progress_Bar.setValue(Settings.current+1)
         except Exception as e:
             print(e)
+    def ir_imaging(self)
+        self.ir_Thread = Threads.IR()
+        self.ir_Thread.start()
 
     def rotate_image(self):
         Settings.rotation += 1
@@ -186,6 +192,10 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
 
     def printci(self):
         Settings.tag_index=self.Sensor_tabWidget.currentIndex()
+
+    def update_irstate(self):
+        Settings.IR_state = !Settings.IR_state
+
     
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -235,6 +245,8 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.y_resolution_spinBox.valueChanged.connect(lambda: self.update_resolution())
 
         self.JPG_radioButton.toggled.connect(lambda: self.update_mode())
+        self.IR_checkBox.stateChanged(lambda: self.update_irstate())
+
 
 
 

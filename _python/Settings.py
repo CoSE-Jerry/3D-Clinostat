@@ -113,6 +113,9 @@ def init():
 
     global cycle_time
     cycle_time=60
+
+    global IR_state
+    IR_state = False
     
     global forward
     forward = QtGui.QIcon()

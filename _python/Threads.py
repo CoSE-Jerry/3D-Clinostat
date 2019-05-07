@@ -13,6 +13,25 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import QThread
 from picamera import PiCamera
 
+
+class IR(QThread):
+
+    def __init__(self):
+        QThread.__init__(self)
+
+    def __del__(self):
+        self._running = False
+
+    def run(self):
+        Commands.IR_trigger(self)
+        Commands.clear_lights(self)
+        sleep(5)
+        Commands.IR_trigger(self)
+        
+        for x in Settings.commands_list:
+            Settings.sendCMD(Settings.lighting_addr,x)    
+            sleep(0.1)
+            
 class Cycle(QThread):
 
     def __init__(self):
@@ -50,6 +69,7 @@ class Cycle(QThread):
         
 
 class Snap(QThread):
+    ir = QtCore.pyqtSignal()
     transmit = QtCore.pyqtSignal()
 
     def __init__(self):
@@ -63,6 +83,8 @@ class Snap(QThread):
         ip_address = "10.0.5.2"
         server_address = (ip_address, 23456)
         sock.connect(server_address)
+        if Settings.IR_state:
+            self.ir.emit()
         cmd = "A~"+str(350)+"~"+str(350)+"~"+str(Settings.rotation)+"~1"
         sock.sendall(cmd.encode())
 
@@ -77,6 +99,7 @@ class Snap(QThread):
 
 class Preview(QThread):
     transmit = QtCore.pyqtSignal()
+    ir = QtCore.pyqtSignal()
 
     def __init__(self):
         QThread.__init__(self)
@@ -89,7 +112,8 @@ class Preview(QThread):
         ip_address = "10.0.5.2"
         server_address = (ip_address, 23456)
         sock.connect(server_address)
-
+        if Settings.IR_state:
+            self.ir.emit()
         cmd = "A~"+str(Settings.x_resolution)+"~"+str(Settings.y_resolution)+"~"+str(Settings.rotation)+"~"+str(Settings.imaging_mode)
         
         sock.sendall(cmd.encode())
@@ -155,6 +179,7 @@ class Timelapse(QThread):
     captured = QtCore.pyqtSignal()
     transmit = QtCore.pyqtSignal()
     transmitstart = QtCore.pyqtSignal()
+    ir = QtCore.pyqtSignal()
 
     def __init__(self):
         QThread.__init__(self)
@@ -178,7 +203,8 @@ class Timelapse(QThread):
             ip_address = "10.0.5.2"
             server_address = (ip_address, 23456)
             sock.connect(server_address)
-
+            if Settings.IR_state:
+                self.ir.emit()
             cmd = "A~"+str(Settings.x_resolution)+"~"+str(Settings.y_resolution)+"~"+str(Settings.rotation)+"~"+str(Settings.imaging_mode)
 
             
