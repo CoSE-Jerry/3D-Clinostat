@@ -1751,7 +1751,7 @@
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+       <enum>QFrame::Sunken</enum>
       </property>
       <widget class="QWidget" name="horizontalLayoutWidget_11">
        <property name="geometry">
@@ -1848,7 +1848,7 @@
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+       <enum>QFrame::Sunken</enum>
       </property>
       <widget class="QWidget" name="horizontalLayoutWidget_12">
        <property name="geometry">
