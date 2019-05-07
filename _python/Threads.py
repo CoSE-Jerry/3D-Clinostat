@@ -23,14 +23,21 @@ class IR(QThread):
         self._running = False
 
     def run(self):
-        Settings.sendCMD(Settings.lighting_addr,"3~")
-        Commands.clear_lights()
-        sleep(5)
-        Settings.sendCMD(Settings.lighting_addr,"3~")
+        if not Settings.IR_STAT:
+            Settings.sendCMD(Settings.lighting_addr,"3~")
+            Commands.clear_lights()
+            sleep(4)
+            Settings.sendCMD(Settings.lighting_addr,"3~")
+        else:
+            Commands.clear_lights()
+            sleep(4)
+            
         
         for x in Settings.commands_list:
-            Settings.sendCMD(Settings.lighting_addr,x)    
+            cmd = "4~"+x
+            Settings.sendCMD(Settings.lighting_addr,cmd)    
             sleep(0.1)
+        Settings.sendCMD(Settings.lighting_addr,"5~")
             
 class Cycle(QThread):
 
@@ -41,6 +48,8 @@ class Cycle(QThread):
         self._running = False
 
     def run(self):
+        if(Settings.IR_STAT):
+            Settings.sendCMD(Settings.lighting_addr,"3~")
         Commands.clear_lights()
         sleep(1)
         for x in Settings.commands_list:
@@ -48,6 +57,8 @@ class Cycle(QThread):
             Settings.sendCMD(Settings.lighting_addr,cmd)    
             sleep(0.1)
         Settings.sendCMD(Settings.lighting_addr,"5~")
+        if(Settings.IR_STAT):
+            Settings.sendCMD(Settings.lighting_addr,"3~")
         on_stat = True
         
         while True:
@@ -59,6 +70,8 @@ class Cycle(QThread):
                     break
                 
             if(on_stat):
+                if(Settings.IR_STAT):
+                    Settings.sendCMD(Settings.lighting_addr,"3~")
                 Commands.clear_lights()
                 on_stat = False
             else:
@@ -67,6 +80,8 @@ class Cycle(QThread):
                     Settings.sendCMD(Settings.lighting_addr,cmd)    
                     sleep(0.1)
                 Settings.sendCMD(Settings.lighting_addr,"5~")
+                if(Settings.IR_STAT):
+                    Settings.sendCMD(Settings.lighting_addr,"3~")
                 on_stat = True
             if not Settings.cycle_running:
                 break
