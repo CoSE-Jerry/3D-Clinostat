@@ -67,7 +67,7 @@ class Cycle(QThread):
                     Settings.sendCMD(Settings.lighting_addr,cmd)    
                     sleep(0.1)
                 Settings.sendCMD(Settings.lighting_addr,"5~")
-                on = True
+                on_stat = True
             if not Settings.cycle_running:
                 break
         
