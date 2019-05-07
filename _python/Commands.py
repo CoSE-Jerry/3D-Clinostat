@@ -96,7 +96,7 @@ def linked_spin_change(self):
         Settings.core_RPM=Settings.frame_RPM
         self.core_verticalSlider.setValue(Settings.core_RPM*10)
         self.core_spinBox.setValue(Settings.core_RPM)
-        self.frame_verticalSlider.setValue(Settings.frame_RPM)
+        self.frame_verticalSlider.setValue(Settings.frame_RPM*10)
     else:
         Settings.core_RPM=self.core_spinBox.value()
         Settings.frame_RPM=Settings.core_RPM
