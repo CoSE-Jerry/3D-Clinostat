@@ -24,7 +24,7 @@ class IR(QThread):
 
     def run(self):
         Settings.sendCMD(Settings.lighting_addr,"3~")
-        Commands.clear_lights(self)
+        Commands.clear_lights()
         sleep(5)
         Settings.sendCMD(Settings.lighting_addr,"3~")
         
@@ -47,8 +47,8 @@ class Cycle(QThread):
             Settings.sendCMD(Settings.lighting_addr,"4~"+x)    
             sleep(0.1)
         Settings.sendCMD(Settings.lighting_addr,"5~")
-
         on_stat = True
+        
         while True:
             for x in range(Settings.cycle_time):
                 sleep(1)
@@ -58,7 +58,7 @@ class Cycle(QThread):
                     break
                 
             if(on_stat):
-                Commands.clear_lights(self)
+                Commands.clear_lights()
                 on_stat = False
             else:
                 for i in Settings.commands_list:
