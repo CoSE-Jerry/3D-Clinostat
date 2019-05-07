@@ -44,7 +44,8 @@ class Cycle(QThread):
         Commands.clear_lights()
         sleep(1)
         for x in Settings.commands_list:
-            Settings.sendCMD(Settings.lighting_addr,"4~"+x)    
+            cmd = "4~"+x
+            Settings.sendCMD(Settings.lighting_addr,cmd)    
             sleep(0.1)
         Settings.sendCMD(Settings.lighting_addr,"5~")
         on_stat = True
@@ -61,8 +62,9 @@ class Cycle(QThread):
                 Commands.clear_lights()
                 on_stat = False
             else:
-                for i in Settings.commands_list:
-                    Settings.sendCMD(Settings.lighting_addr,"4~"+x)    
+                for i in Settings.commands_list:'
+                    cmd = "4~"+i
+                    Settings.sendCMD(Settings.lighting_addr,cmd)    
                     sleep(0.1)
                 Settings.sendCMD(Settings.lighting_addr,"5~")
                 on = True
