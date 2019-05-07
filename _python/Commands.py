@@ -48,11 +48,16 @@ def ergz_motor(addr):
 
 def frame_slider_change(self):
     Settings.frame_RPM=self.frame_verticalSlider.sliderPosition()/10
+
+    self.frame_spinBox.blockSignals(True)
     self.frame_spinBox.setValue(Settings.frame_RPM)
+    self.frame_spinBox.blockSignals(False)
     
 def core_slider_change(self):
     Settings.core_RPM=self.core_verticalSlider.sliderPosition()/10
+    self.core_spinBox.blockSignals(True)
     self.core_spinBox.setValue(Settings.core_RPM)
+    self.core_spinBox.blockSignals(False)
 
 def linked_slider_change(self):
     self.core_spinBox.blockSignals(True)
