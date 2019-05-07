@@ -9,7 +9,7 @@ def init():
     sleep(0.1)
     Settings.sendCMD(Settings.frame_addr,"5~")
     sleep(0.1)
-    Settings.sendCMD(Settings.core_addr,"5")
+    Settings.sendCMD(Settings.core_addr,"5~")
     
 
 
