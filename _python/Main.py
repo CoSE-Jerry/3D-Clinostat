@@ -245,7 +245,7 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         self.y_resolution_spinBox.valueChanged.connect(lambda: self.update_resolution())
 
         self.JPG_radioButton.toggled.connect(lambda: self.update_mode())
-        self.IR_checkBox.stateChanged(lambda: self.update_irstate())
+        self.IR_checkBox.stateChanged.connect(lambda: self.update_irstate())
 
 
 
