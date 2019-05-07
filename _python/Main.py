@@ -31,13 +31,13 @@ class MainWindow(QMainWindow, Clinostat_UI.Ui_MainWindow):
         if(Settings.LINKED):
             Commands.linked_spin_change(self)
         else:
-            Commands.frame_spin_change(self)
+            Commands.frame_spin_select(self)
 
     def core_spin_select(self):
         if(Settings.LINKED):
             Commands.linked_spin_change(self)
         else:
-            Commands.core_spin_change(self)
+            Commands.core_spin_select(self)
 
     def reverse_frame_select(self):
         if(Settings.LINKED):

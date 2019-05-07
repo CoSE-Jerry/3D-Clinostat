@@ -92,6 +92,7 @@ def linked_spin_change(self):
     self.frame_verticalSlider.blockSignals(True)
     
     if(Settings.frame_RPM != self.frame_spinBox.value()):
+        
         Settings.frame_RPM=self.frame_spinBox.value()
         Settings.core_RPM=Settings.frame_RPM
         self.core_verticalSlider.setValue(Settings.core_RPM*10)
