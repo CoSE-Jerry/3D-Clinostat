@@ -6,9 +6,9 @@ import socket
 
 def init():
     Settings.sendCMD(Settings.lighting_addr,"1~0~34~0~0~0~0")
-    sleep(0.02)
+    sleep(0.1)
     Settings.sendCMD(Settings.frame_addr,"5~")
-    sleep(0.02)
+    sleep(0.1)
     Settings.sendCMD(Settings.core_addr,"5")
     
 
