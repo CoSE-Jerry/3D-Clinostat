@@ -73,6 +73,8 @@ class Cycle(QThread):
                     break
                 
             if(on_stat):
+                if(Settings.IR_STAT):
+                    Settings.sendCMD(Settings.lighting_addr,"3~")
                 Commands.clear_lights()
                 on_stat = False
             else:
