@@ -57,8 +57,8 @@ class Cycle(QThread):
             Settings.sendCMD(Settings.lighting_addr,cmd)    
             sleep(0.1)
         Settings.sendCMD(Settings.lighting_addr,"5~")
-        sleep(0.1)
         if(Settings.IR_STAT):
+            sleep(0.1)
             Settings.sendCMD(Settings.lighting_addr,"3~")
         on_stat = True
         
@@ -68,11 +68,11 @@ class Cycle(QThread):
                 
                 if not Settings.cycle_running:
                     on_stat = False
-                    if(Settings.IR_STAT):
-                        Settings.sendCMD(Settings.lighting_addr,"3~")
                     break
                 
             if(on_stat):
+                if(Settings.IR_STAT):
+                    Settings.sendCMD(Settings.lighting_addr,"3~")
                 Commands.clear_lights()
                 on_stat = False
             else:
@@ -81,8 +81,8 @@ class Cycle(QThread):
                     Settings.sendCMD(Settings.lighting_addr,cmd)    
                     sleep(0.1)
                 Settings.sendCMD(Settings.lighting_addr,"5~")
-                sleep(0.1)
                 if(Settings.IR_STAT):
+                    sleep(0.1)
                     Settings.sendCMD(Settings.lighting_addr,"3~")
                 on_stat = True
             if not Settings.cycle_running:
